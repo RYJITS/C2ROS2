@@ -141,10 +141,13 @@ function setupGlobalEventHandlers() {
     setupDragAndDrop();
     
     // Raccourcis clavier globaux
-    setupKeyboardShortcuts();
-    
-    // Configurer les gestionnaires d'authentification
-    setupAuthEventListeners();
+  setupKeyboardShortcuts();
+
+  // Configurer les gestionnaires d'authentification
+  setupAuthEventListeners();
+
+  // Gestionnaire d'installation PWA
+  setupPWAInstall();
 }
 
 /**
@@ -810,6 +813,42 @@ function clearSidebarApps() {
     if (sidebarApps) {
         sidebarApps.innerHTML = '';
     }
+}
+
+/**
+ * Configurer l'installation de la PWA via la tuile d'accueil
+ */
+let deferredInstallPrompt;
+function setupPWAInstall() {
+    const installTile = document.getElementById('install-tile');
+    const installBtn = document.getElementById('install-btn');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredInstallPrompt = e;
+        if (installTile) {
+            installTile.style.display = 'block';
+        }
+    });
+
+    if (installBtn) {
+        installBtn.addEventListener('click', async () => {
+            if (!deferredInstallPrompt) return;
+            deferredInstallPrompt.prompt();
+            const { outcome } = await deferredInstallPrompt.userChoice;
+            if (outcome === 'accepted' && installTile) {
+                installTile.style.display = 'none';
+            }
+            deferredInstallPrompt = null;
+        });
+    }
+
+    window.addEventListener('appinstalled', () => {
+        if (installTile) {
+            installTile.style.display = 'none';
+        }
+        deferredInstallPrompt = null;
+    });
 }
 
 /**

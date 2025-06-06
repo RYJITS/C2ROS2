@@ -8,6 +8,7 @@ La petite croix fermant la liste déroulante des applications sur mobile adopte 
 En mode mobile, la barre de navigation basse comprend un bouton **Applications**. L'icône est chargée grâce à l'ajout du pictogramme `list` dans `IconManager`.
 L'ajout d'un fichier `manifest.webmanifest` permet d'installer C2R OS en plein écran sur mobile.
 Les icônes nécessaires à la PWA sont chargées dynamiquement afin d'éviter tout fichier binaire dans le dépôt.
+Une tuile sur la page d'accueil invite l'utilisateur à installer l'application en PWA.
 
 La page Profil permet de réordonner visuellement les applications installées grâce à SortableJS. Un bouton de déconnexion est également présent sur cette page.
 Un interrupteur permet désormais de désactiver tous les pop-ups d'information depuis les préférences du profil.

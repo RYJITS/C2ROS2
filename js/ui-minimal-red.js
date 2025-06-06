@@ -115,8 +115,7 @@ class UIMinimalRed {
         dropdown.className = 'mobile-apps-dropdown';
         dropdown.innerHTML = `
             <div class="mobile-apps-header">
-                <h3>Applications installées</h3>
-                <button class="close-btn" id="close-mobile-apps">&times;</button>
+                <button class="close-btn" id="close-mobile-apps" aria-label="Fermer">&times;</button>
             </div>
             <div class="mobile-apps-list" id="mobile-apps-list">
                 <!-- Applications générées dynamiquement -->
@@ -185,7 +184,7 @@ class UIMinimalRed {
         const installedApps = appCore.getInstalledApps();
         
         if (installedApps.length === 0) {
-            appsList.innerHTML = '<p class="no-apps">Aucune application installée</p>';
+            appsList.innerHTML = '';
             return;
         }
         

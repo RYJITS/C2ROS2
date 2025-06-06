@@ -18,14 +18,10 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - En mode mobile, la poubelle s'affiche désormais en rouge grâce à une règle CSS dédiée.
 - En affichage mobile, un bouton **Applications** apparaît dans la barre de navigation basse.
 - La croix du menu mobile adopte la même couleur neutre que les autres boutons.
+- Le titre du menu mobile a été retiré et les icônes y sont plus petites.
 - Depuis la version 1.1.0, les applications installées peuvent être réordonnées par glisser-déposer dans la page Profil.
 - Un bouton de déconnexion est disponible dans la page Profil.
-cjadx3-codex/2025-06-06
-- La barre latérale intègre un bouton de réduction discret dans son coin supérieur droit ; l'icône passe d'une croix à un petit carré selon l'état de la barre.
-=======
-- Une option permet de désactiver les pop-ups d'information dans les préférences du profil.
 - La barre latérale intègre un bouton de réduction : l'icône passe d'une croix à un petit carré suivant l'état de la barre.
-main
 - La barre latérale utilise un dégradé de gris et une ombre portée pour s'intégrer au thème.
 - En mode PC, la barre latérale adopte un style de tuile plus sobre, sans barre de défilement.
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.

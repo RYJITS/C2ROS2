@@ -1,5 +1,10 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.6] - 2025-06-12 "UI"
+
+### ✨ Améliorations du bouton de réduction
+- Le bouton de basculement de la sidebar est désormais plus discret et collé au coin supérieur droit en mode desktop.
+
 ## [1.1.5] - 2025-06-11 "UI Icons"
 
 ### ✨ Harmonisation des icônes

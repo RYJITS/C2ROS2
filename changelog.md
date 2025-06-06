@@ -1,9 +1,16 @@
 # 📝 C2R OS - Journal des modifications
 
+i9mo3r-codex/2025-06-06
 ## [1.1.6] - 2025-06-12 "InfoToggle"
 
 ### ✨ Préférences
 - Possibilité de désactiver tous les pop-ups d'information depuis la page Profil.
+=======
+## [1.1.6] - 2025-06-12 "Contact"
+
+### 📮 Formulaire de contact
+- Ajout d'une page `contact.html` pour envoyer un message depuis le navigateur.
+main
 
 ## [1.1.5] - 2025-06-11 "UI Icons"
 

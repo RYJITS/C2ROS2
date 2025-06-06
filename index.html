@@ -114,6 +114,12 @@
                             <h3>Configurez le système</h3>
                             <p>Accédez aux options avancées si vous disposez des droits.</p>
                         </div>
+                        <div class="card info-tile" id="install-tile" style="display:none;">
+                            <span data-icon="download"></span>
+                            <h3>Installer C2R OS</h3>
+                            <p>Ajoutez l'application à l'écran d'accueil pour un accès direct.</p>
+                            <button id="install-btn" class="btn btn-primary">Installer</button>
+                        </div>
                     </div>
 
                     <div id="daily-tip" class="daily-tip">
@@ -325,8 +331,7 @@
 
     <div class="mobile-apps-dropdown" id="mobile-apps-dropdown">
         <div class="mobile-apps-header">
-            <h3>Applications installées</h3>
-            <button class="close-btn" id="close-mobile-apps">&times;</button>
+            <button class="close-btn" id="close-mobile-apps" aria-label="Fermer">&times;</button>
         </div>
         <div class="mobile-apps-list" id="mobile-apps-list"></div>
     </div>

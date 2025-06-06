@@ -83,7 +83,7 @@
 
 .mobile-apps-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: var(--c2r-spacing-md);
     border-bottom: 1px solid var(--c2r-border);
@@ -113,6 +113,12 @@
     gap: var(--c2r-spacing-md);
     padding: var(--c2r-spacing-sm) 0;
     border-bottom: 1px solid var(--c2r-border);
+}
+
+.mobile-app-item .app-icon {
+    font-size: var(--font-size-lg);
+    min-width: 20px;
+    text-align: center;
 }
 
 .mobile-app-item:last-child {

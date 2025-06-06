@@ -62,7 +62,7 @@ class BottomNav {
 
         const installed = appCore.getInstalledApps();
         if (installed.length === 0) {
-            appsList.innerHTML = '<p class="no-apps">Aucune application installée</p>';
+            appsList.innerHTML = '';
             return;
         }
 

@@ -289,7 +289,7 @@ body.minimal-sidebar .btn-logout:active {
     cursor: pointer;
     z-index: 1001;
     transition: var(--c2r-transition);
-    color: var(--c2r-text-muted);
+    color: var(--c2r-border);
     font-size: var(--font-size-sm);
 }
 

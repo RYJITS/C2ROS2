@@ -72,7 +72,7 @@ body.sidebar-right .sidebar {
 .nav-menu {
     flex: 1;
     padding: var(--c2r-spacing-md) 0;
-    overflow-y: auto;
+    overflow-y: visible;
 }
 
 .nav-item {
@@ -547,6 +547,15 @@ body.sidebar-right .sidebar {
 }
 
 /* Responsive */
+
+@media (min-width: 769px) {
+    .nav-link {
+        border-radius: var(--c2r-radius);
+        border: 1px solid var(--c2r-border);
+        background-color: var(--c2r-bg-card);
+        margin: 2px 8px;
+    }
+}
 @media (max-width: 768px) {
     body {
         grid-template-columns: 1fr;
@@ -584,6 +593,10 @@ body.sidebar-right .sidebar {
     
     .sidebar-toggle {
         display: block;
+    }
+
+    .nav-menu {
+        overflow-y: auto;
     }
     
     

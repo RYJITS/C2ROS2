@@ -27,6 +27,7 @@ cjadx3-codex/2025-06-06
 - La barre latérale intègre un bouton de réduction : l'icône passe d'une croix à un petit carré suivant l'état de la barre.
 main
 - La barre latérale utilise un dégradé de gris et une ombre portée pour s'intégrer au thème.
+- En mode PC, la barre latérale adopte un style de tuile plus sobre, sans barre de défilement.
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.
 - La page d'accueil présente des tuiles explicatives pour découvrir le fonctionnement du site.
 - Les applications internes utilisent désormais uniquement les icônes Font Awesome pour un style unifié.

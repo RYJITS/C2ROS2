@@ -1,15 +1,20 @@
 # 📝 C2R OS - Journal des modifications
 
+gifv4p-codex/2025-06-06
+=======
 nmg7gi-codex/2025-06-06
 =======
 9jl834-codex/2025-06-06
 =======
 kce102-codex/2025-06-06
 main
+main
 ## [1.1.6] - 2025-06-12 "SidebarTiles"
 
 ### ✨ Interface
 - La sidebar PC adopte un style de tuile plus sobre et ne comporte plus de barre de défilement.
+gifv4p-codex/2025-06-06
+=======
 nmg7gi-codex/2025-06-06
 
 ### ✨ Améliorations du bouton de réduction
@@ -25,6 +30,7 @@ nmg7gi-codex/2025-06-06
 =======
 cjadx3-codex/2025-06-06
 main
+main
 ## [1.1.6] - 2025-06-12 "UI"
 
 ### ✨ Améliorations du bouton de réduction
@@ -33,13 +39,19 @@ main
 
 ### ✨ Préférences
 - Possibilité de désactiver tous les pop-ups d'information depuis la page Profil.
+gifv4p-codex/2025-06-06
+=======
 - La désactivation masque désormais également les notifications de lancement ou de désinstallation d'application.
+main
 ## [1.1.6] - 2025-06-12 "Contact"
 
 ### 📮 Formulaire de contact
 - Ajout d'une page `contact.html` pour envoyer un message depuis le navigateur.
+gifv4p-codex/2025-06-06
+=======
 9jl834-codex/2025-06-06
 =======
+main
 main
 main
 main

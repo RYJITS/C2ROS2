@@ -20,12 +20,17 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - La croix du menu mobile adopte la même couleur neutre que les autres boutons.
 - Depuis la version 1.1.0, les applications installées peuvent être réordonnées par glisser-déposer dans la page Profil.
 - Un bouton de déconnexion est disponible dans la page Profil.
+gifv4p-codex/2025-06-06
+- La barre latérale intègre un bouton de réduction discret dans son coin supérieur droit ; l'icône passe d'une croix à un petit carré selon l'état de la barre.
+- Une option permet de désactiver les pop-ups d'information dans les préférences du profil.
+=======
 nmg7gi-codex/2025-06-06
 - La barre latérale intègre un bouton de réduction discret dans son coin supérieur droit ; l'icône passe d'une croix à un petit carré selon l'état de la barre.
 - Une option permet de désactiver les pop-ups d'information dans les préférences du profil.
 =======
 - Une option permet de désactiver les pop-ups d'information dans les préférences du profil, ce qui masque toutes les notifications du système.
 - La barre latérale intègre un bouton de réduction discret dans son coin supérieur droit ; l'icône passe d'une croix à un petit carré selon l'état de la barre.
+main
 main
 - La barre latérale utilise un dégradé de gris et une ombre portée pour s'intégrer au thème.
 - En mode PC, la barre latérale adopte un style de tuile plus sobre, sans barre de défilement.

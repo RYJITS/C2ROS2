@@ -1,6 +1,15 @@
 # 📝 C2R OS - Journal des modifications
+a5fgfv-codex/2025-06-06
+a5fgfv-codex/2025-06-06
+## [1.1.7] - 2025-06-13 "MobileApps"
 
+### ✨ Interface mobile
+- Suppression du titre "Applications installées" dans le menu mobile.
+- Icônes réduites pour un affichage plus épuré.
+
+=======
 gifv4p-codex/2025-06-06
+main
 =======
 nmg7gi-codex/2025-06-06
 =======
@@ -13,7 +22,11 @@ main
 
 ### ✨ Interface
 - La sidebar PC adopte un style de tuile plus sobre et ne comporte plus de barre de défilement.
+ a5fgfv-codex/2025-06-06
+ a5fgfv-codex/2025-06-06
+=======
 gifv4p-codex/2025-06-06
+main
 =======
 nmg7gi-codex/2025-06-06
 

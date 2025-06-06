@@ -12,6 +12,7 @@ class UICore {
         this.sidebarOpen = false;
         this.currentPage = 'home';
         this.notifications = [];
+        this.showInfoPopups = true;
         
         this.init();
     }
@@ -130,6 +131,10 @@ class UICore {
         if (preferences.animations !== undefined) {
             this.setAnimations(preferences.animations);
         }
+
+        if (preferences.showInfoPopups !== undefined) {
+            this.setInfoPopups(preferences.showInfoPopups);
+        }
     }
     
     /**
@@ -178,6 +183,14 @@ class UICore {
             sidebarPositionToggle.addEventListener('change', (e) => {
                 const isRight = e.target.checked;
                 this.setSidebarPosition(isRight ? 'right' : 'left');
+                this.savePreferences();
+            });
+        }
+
+        const infoPopupsToggle = document.getElementById('info-popups-toggle');
+        if (infoPopupsToggle) {
+            infoPopupsToggle.addEventListener('change', (e) => {
+                this.setInfoPopups(!e.target.checked);
                 this.savePreferences();
             });
         }
@@ -361,6 +374,7 @@ class UICore {
         const themeToggle = document.getElementById('theme-toggle');
         const welcomeToggle = document.getElementById('welcome-toggle');
         const sidebarToggle = document.getElementById('sidebar-position-toggle');
+        const infoPopupsToggle = document.getElementById('info-popups-toggle');
         
         if (themeToggle) {
             themeToggle.checked = preferences.theme === 'dark';
@@ -372,6 +386,10 @@ class UICore {
         
         if (sidebarToggle) {
             sidebarToggle.checked = preferences.sidebarPosition === 'right';
+        }
+
+        if (infoPopupsToggle) {
+            infoPopupsToggle.checked = !preferences.showInfoPopups;
         }
     }
     
@@ -858,6 +876,20 @@ class UICore {
     setAnimations(enabled) {
         document.body.setAttribute('data-animations', enabled ? 'enabled' : 'disabled');
     }
+
+    /**
+     * Activer ou non les pop-ups d'information
+     * @param {boolean} enabled - Pop-ups actifs
+     */
+    setInfoPopups(enabled) {
+        this.showInfoPopups = enabled;
+        const dailyTip = document.getElementById('daily-tip');
+        if (dailyTip && !enabled) {
+            dailyTip.style.display = 'none';
+        } else if (dailyTip && enabled) {
+            dailyTip.style.display = document.getElementById('welcome-toggle')?.checked ? 'block' : 'none';
+        }
+    }
     
     /**
      * Basculer la sidebar
@@ -941,7 +973,8 @@ class UICore {
                 sidebarPosition: document.body.classList.contains('sidebar-right') ? 'right' : 'left',
                 showWelcomeMessage: document.getElementById('welcome-toggle')?.checked ?? true,
                 fontSize: document.body.getAttribute('data-font-size') || 'medium',
-                animations: document.body.getAttribute('data-animations') !== 'disabled'
+                animations: document.body.getAttribute('data-animations') !== 'disabled',
+                showInfoPopups: !(document.getElementById('info-popups-toggle')?.checked)
             };
             
             userCore.updatePreferences(preferences);
@@ -1002,6 +1035,7 @@ class UICore {
      * @param {number} duration - Durée en ms
      */
     showNotification(message, type = 'info', duration = 3000) {
+        if (this.showInfoPopups === false) return;
         const container = document.getElementById('notifications-container');
         if (!container) return;
         

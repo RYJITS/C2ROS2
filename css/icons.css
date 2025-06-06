@@ -193,7 +193,8 @@
     }
 
     /* Couleur rouge de la poubelle en mode mobile */
-    .app-toggle-btn.installed .icon {
+    .app-toggle-btn.installed .icon,
+    .app-toggle-btn .fa-trash {
         color: var(--error-color) !important;
     }
 }

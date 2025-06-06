@@ -36,7 +36,8 @@ class ProfileSystem {
                     sidebarPosition: 'left',
                     showWelcomeMessage: true,
                     fontSize: 'medium',
-                    animations: true
+                    animations: true,
+                    showInfoPopups: true
                 },
                 defaultApps: ['notepad', 'todolist'],
                 restrictions: {
@@ -53,7 +54,8 @@ class ProfileSystem {
                     sidebarPosition: 'left',
                     showWelcomeMessage: true,
                     fontSize: 'medium',
-                    animations: true
+                    animations: true,
+                    showInfoPopups: true
                 },
                 defaultApps: ['notepad', 'todolist', 'weather'],
                 restrictions: {
@@ -70,7 +72,8 @@ class ProfileSystem {
                     sidebarPosition: 'left',
                     showWelcomeMessage: false,
                     fontSize: 'small',
-                    animations: false
+                    animations: false,
+                    showInfoPopups: true
                 },
                 defaultApps: ['notepad', 'htmlformatter', 'markdownreader'],
                 restrictions: {
@@ -87,7 +90,8 @@ class ProfileSystem {
                     sidebarPosition: 'left',
                     showWelcomeMessage: true,
                     fontSize: 'large',
-                    animations: true
+                    animations: true,
+                    showInfoPopups: true
                 },
                 defaultApps: ['notepad', 'todolist'],
                 restrictions: {

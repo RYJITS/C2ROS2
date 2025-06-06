@@ -107,7 +107,7 @@
 /* Icônes du bouton de basculement sidebar */
 .sidebar-toggle-minimal .icon {
     font-size: 1.2rem;
-    color: var(--text-primary);
+    color: var(--c2r-border);
 }
 
 /* Effets hover pour les icônes interactives */

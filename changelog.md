@@ -1,12 +1,27 @@
 # 📝 C2R OS - Journal des modifications
 
+nmg7gi-codex/2025-06-06
+=======
 9jl834-codex/2025-06-06
 =======
 kce102-codex/2025-06-06
+main
 ## [1.1.6] - 2025-06-12 "SidebarTiles"
 
 ### ✨ Interface
 - La sidebar PC adopte un style de tuile plus sobre et ne comporte plus de barre de défilement.
+nmg7gi-codex/2025-06-06
+
+### ✨ Améliorations du bouton de réduction
+- Le bouton de basculement de la sidebar est désormais plus discret et collé au coin supérieur droit en mode desktop.
+
+### ✨ Préférences
+- Possibilité de désactiver tous les pop-ups d'information depuis la page Profil.
+
+### 📮 Formulaire de contact
+- Ajout d'une page `contact.html` pour envoyer un message depuis le navigateur.
+- Une tuile d'accueil propose désormais l'installation de C2R OS en PWA.
+=======
 =======
 cjadx3-codex/2025-06-06
 main
@@ -25,6 +40,7 @@ main
 - Ajout d'une page `contact.html` pour envoyer un message depuis le navigateur.
 9jl834-codex/2025-06-06
 =======
+main
 main
 main
 main

@@ -14,8 +14,28 @@
         background-color: var(--c2r-bg-card);
         border-top: 1px solid var(--c2r-border);
         z-index: var(--z-sidebar);
-        justify-content: space-around;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 var(--c2r-spacing-lg);
+    }
+
+    .bottom-nav .nav-group {
+        display: flex;
         align-items: center;
+        gap: var(--c2r-spacing-lg);
+    }
+
+    .bottom-nav .nav-center {
+        position: relative;
+        transform: translateY(-20%);
+    }
+
+    .bottom-nav .profile-btn {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background-color: var(--c2r-bg-card);
+        border: 1px solid var(--c2r-border);
     }
 
     .bottom-nav .nav-icon {

@@ -306,18 +306,27 @@
 
     <!-- Barre de navigation mobile -->
     <nav class="bottom-nav mobile-only">
-        <a href="#home" class="nav-link" data-page="home" aria-label="Accueil">
-            <span class="nav-icon" data-icon="home"></span>
-        </a>
-        <a href="#store" class="nav-link" data-page="store" aria-label="Store">
-            <span class="nav-icon" data-icon="store"></span>
-        </a>
-        <a href="#profile" class="nav-link" data-page="profile" aria-label="Profil">
-            <span class="nav-icon" data-icon="profile"></span>
-        </a>
-        <button class="nav-link" id="mobile-apps-btn" aria-label="Applications">
-            <span class="nav-icon" data-icon="list"></span>
-        </button>
+        <div class="nav-group nav-left">
+            <a href="#home" class="nav-link" data-page="home" aria-label="Accueil">
+                <span class="nav-icon" data-icon="home"></span>
+            </a>
+            <a href="#store" class="nav-link" data-page="store" aria-label="Store">
+                <span class="nav-icon" data-icon="store"></span>
+            </a>
+        </div>
+        <div class="nav-group nav-center">
+            <a href="#profile" class="nav-link profile-btn" data-page="profile" aria-label="Profil">
+                <span class="nav-icon" data-icon="profile"></span>
+            </a>
+        </div>
+        <div class="nav-group nav-right">
+            <button class="nav-link" id="mobile-apps-btn" aria-label="Applications">
+                <span class="nav-icon" data-icon="list"></span>
+            </button>
+            <a href="contact.html" class="nav-link" data-page="contact" aria-label="Contact">
+                <span class="nav-icon" data-icon="contact"></span>
+            </a>
+        </div>
     </nav>
 
     <div class="mobile-apps-dropdown" id="mobile-apps-dropdown">

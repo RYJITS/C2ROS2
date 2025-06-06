@@ -3,6 +3,8 @@ a5fgfv-codex/2025-06-06
 a5fgfv-codex/2025-06-06
 ## [1.1.7] - 2025-06-13 "MobileApps"
 
+844xm7-codex/2025-06-06
+=======
 ### ✨ Interface mobile
 - Suppression du titre "Applications installées" dans le menu mobile.
 - Icônes réduites pour un affichage plus épuré.
@@ -18,10 +20,22 @@ nmg7gi-codex/2025-06-06
 kce102-codex/2025-06-06
 main
 main
+main
 ## [1.1.6] - 2025-06-12 "SidebarTiles"
 
 ### ✨ Interface
 - La sidebar PC adopte un style de tuile plus sobre et ne comporte plus de barre de défilement.
+844xm7-codex/2025-06-06
+
+### ✨ Améliorations du bouton de réduction
+- Le bouton de basculement de la sidebar est désormais plus discret et collé au coin supérieur droit en mode desktop.
+
+### ✨ Préférences
+- Possibilité de désactiver tous les pop-ups d'information depuis la page Profil.
+
+### 📮 Formulaire de contact
+- Ajout d'une page `contact.html` pour envoyer un message depuis le navigateur.
+=======
  a5fgfv-codex/2025-06-06
  a5fgfv-codex/2025-06-06
 =======
@@ -64,6 +78,7 @@ gifv4p-codex/2025-06-06
 =======
 9jl834-codex/2025-06-06
 =======
+main
 main
 main
 main

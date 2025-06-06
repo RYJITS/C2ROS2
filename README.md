@@ -20,12 +20,8 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - La croix du menu mobile adopte la même couleur neutre que les autres boutons.
 - Depuis la version 1.1.0, les applications installées peuvent être réordonnées par glisser-déposer dans la page Profil.
 - Un bouton de déconnexion est disponible dans la page Profil.
-cjadx3-codex/2025-06-06
 - La barre latérale intègre un bouton de réduction discret dans son coin supérieur droit ; l'icône passe d'une croix à un petit carré selon l'état de la barre.
-=======
 - Une option permet de désactiver les pop-ups d'information dans les préférences du profil.
-- La barre latérale intègre un bouton de réduction : l'icône passe d'une croix à un petit carré suivant l'état de la barre.
-main
 - La barre latérale utilise un dégradé de gris et une ombre portée pour s'intégrer au thème.
 - En mode PC, la barre latérale adopte un style de tuile plus sobre, sans barre de défilement.
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.
@@ -33,6 +29,7 @@ main
 - Les applications internes utilisent désormais uniquement les icônes Font Awesome pour un style unifié.
 - Sur mobile, l'application peut s'installer en plein écran grâce au fichier `manifest.webmanifest`.
 - Les icônes PWA ne sont pas incluses dans le dépôt pour éviter d'ajouter des fichiers binaires.
+- Une tuile d'accueil propose l'installation directe de l'application en PWA.
 
 ## Aperçu local
 

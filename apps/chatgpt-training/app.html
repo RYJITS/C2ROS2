@@ -1,0 +1,78 @@
+<div class="training-app">
+    <h2><span data-icon="robot"></span> Formation ChatGPT</h2>
+
+    <div class="training-page active" data-page="1">
+        <p>Bienvenue dans cette formation interactive dédiée à l'utilisation de ChatGPT.</p>
+    </div>
+
+    <div class="training-page" data-page="2">
+        <h3>1. Comprendre ChatGPT</h3>
+        <p>ChatGPT est un assistant conversationnel capable de générer du texte en fonction de vos instructions. Plus votre demande est précise, plus la réponse sera pertinente.</p>
+    </div>
+
+    <div class="training-page" data-page="3">
+        <h3>2. Rédiger des prompts efficaces</h3>
+        <p>Formulez toujours votre demande avec un contexte clair et un objectif précis pour obtenir une réponse pertinente.</p>
+    </div>
+
+    <div class="training-page" data-page="4">
+        <h3>3. Exemples pour la rédaction</h3>
+        <p>Demandez la rédaction d'emails ou de textes courts en détaillant le ton souhaité.</p>
+    </div>
+
+    <div class="training-page" data-page="5">
+        <h3>4. Exemples pour l'analyse</h3>
+        <p>Fournissez un texte à résumer ou à analyser pour obtenir les points clés ou un style d'écriture.</p>
+    </div>
+
+    <div class="training-page" data-page="6">
+        <h3>5. Exemples pour le code</h3>
+        <ul>
+            <li><code>Écris une fonction JavaScript qui trie un tableau</code></li>
+            <li><code>Montre-moi un exemple d'appel API en Python</code></li>
+        </ul>
+    </div>
+
+    <div class="training-page" data-page="7">
+        <h3>6. Bonnes pratiques</h3>
+        <p>Structurez vos questions, précisez le format attendu et n'hésitez pas à poser des questions de suivi.</p>
+    </div>
+
+    <div class="training-page" data-page="8">
+        <h3>7. Personnalisation des réponses</h3>
+        <p>Indiquez le public ciblé ou le niveau de langage souhaité pour adapter les réponses.</p>
+    </div>
+
+    <div class="training-page" data-page="9">
+        <h3>8. Résumé</h3>
+        <p>En combinant contexte, exemples et questions de suivi, vous optimisez la qualité des réponses de ChatGPT.</p>
+    </div>
+
+    <div class="training-page" data-page="10">
+        <h3>9. Quiz final</h3>
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. Quelle est la meilleure façon de formuler un prompt&nbsp;?</p>
+                <label><input type="radio" name="q1" value="a"> Rester vague et bref</label>
+                <label><input type="radio" name="q1" value="b"> Donner le contexte et l'objectif</label>
+            </div>
+            <div class="question">
+                <p>2. Comment demander un exemple de code&nbsp;?</p>
+                <label><input type="radio" name="q2" value="a"> "Fais-le"</label>
+                <label><input type="radio" name="q2" value="b"> "Écris-moi une fonction qui..."</label>
+            </div>
+            <div class="question">
+                <p>3. Existe-t-il un raccourci pour régénérer une réponse&nbsp;?</p>
+                <label><input type="radio" name="q3" value="a"> Ctrl+R</label>
+                <label><input type="radio" name="q3" value="b"> Non, il faut utiliser le bouton dédié</label>
+            </div>
+            <button type="button" onclick="submitQuiz()">Valider</button>
+        </form>
+        <div id="quiz-result" class="quiz-result"></div>
+    </div>
+
+    <div class="training-nav">
+        <button id="prevBtn" onclick="changePage(-1)" disabled>Précédent</button>
+        <button id="nextBtn" onclick="changePage(1)">Suivant</button>
+    </div>
+</div>

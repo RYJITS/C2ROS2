@@ -1,0 +1,88 @@
+<div class="htmlformatter-app">
+    <div class="htmlformatter-header">
+        <h2><span data-icon="globe"></span> Formateur HTML</h2>
+        <p>Créez et formatez du code HTML/CSS facilement</p>
+    </div>
+    
+    <div class="htmlformatter-toolbar">
+        <button onclick="newDocument()" class="toolbar-btn"><span data-icon="file-new"></span> Nouveau</button>
+        <button onclick="loadTemplate()" class="toolbar-btn"><span data-icon="clipboard"></span> Template</button>
+        <button onclick="formatCode()" class="toolbar-btn"><span data-icon="format"></span> Formater</button>
+        <button onclick="previewCode()" class="toolbar-btn"><span data-icon="preview"></span> Aperçu</button>
+        <button onclick="clearAll()" class="toolbar-btn"><span data-icon="uninstall"></span> Effacer</button>
+    </div>
+    
+    <div class="code-container">
+        <div class="code-editor">
+            <div class="editor-tabs">
+                <button class="tab-btn active" onclick="switchTab('html')" id="html-tab">HTML</button>
+                <button class="tab-btn" onclick="switchTab('css')" id="css-tab">CSS</button>
+            </div>
+            
+            <div class="editor-content">
+                <div class="editor-panel" id="html-panel">
+                    <textarea id="html-input" placeholder="Entrez votre code HTML ici..."><!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page</title>
+</head>
+<body>
+    <h1>Bonjour le monde !</h1>
+    <p>Ceci est un exemple de page HTML.</p>
+</body>
+</html></textarea>
+                </div>
+                
+                <div class="editor-panel" id="css-panel" style="display: none;">
+                    <textarea id="css-input" placeholder="Entrez votre code CSS ici...">body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+}</textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="code-preview">
+            <h3>Aperçu</h3>
+            <iframe id="preview-frame" sandbox="allow-same-origin"></iframe>
+        </div>
+    </div>
+    
+    <div class="htmlformatter-actions">
+        <button onclick="downloadHTML()" class="action-btn btn btn-primary"><span data-icon="save"></span> Télécharger HTML</button>
+        <button onclick="copyHTML()" class="action-btn btn btn-secondary"><span data-icon="clipboard"></span> Copier HTML</button>
+        <button onclick="copyCSS()" class="action-btn btn btn-secondary"><span data-icon="clipboard"></span> Copier CSS</button>
+        <button onclick="validateCode()" class="action-btn btn btn-success"><span data-icon="check"></span> Valider</button>
+    </div>
+    
+    <div class="code-snippets">
+        <h3>Snippets utiles</h3>
+        <div class="snippets-grid">
+            <button onclick="insertSnippet('button')" class="snippet-btn"><span data-icon="square"></span> Bouton</button>
+            <button onclick="insertSnippet('form')" class="snippet-btn"><span data-icon="edit"></span> Formulaire</button>
+            <button onclick="insertSnippet('table')" class="snippet-btn"><span data-icon="table"></span> Tableau</button>
+            <button onclick="insertSnippet('card')" class="snippet-btn"><span data-icon="note"></span> Carte</button>
+            <button onclick="insertSnippet('navbar')" class="snippet-btn"><span data-icon="bars"></span> Navigation</button>
+            <button onclick="insertSnippet('footer')" class="snippet-btn"><span data-icon="square"></span> Footer</button>
+        </div>
+    </div>
+    
+    <div class="validation-results" id="validation-results" style="display: none;">
+        <h3>Résultats de validation</h3>
+        <div id="validation-output"></div>
+    </div>
+</div>

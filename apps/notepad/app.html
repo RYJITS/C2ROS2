@@ -1,0 +1,101 @@
+<div class="notepad-app">
+    <div class="notepad-toolbar">
+        <div class="toolbar-group">
+            <button id="new-note" class="toolbar-btn" title="Nouveau document">
+                <span data-icon="file-new"></span> Nouveau
+            </button>
+            <button id="save-note" class="toolbar-btn" title="Sauvegarder">
+                <span data-icon="save"></span> Sauvegarder
+            </button>
+            <button id="load-note" class="toolbar-btn" title="Charger">
+                <span data-icon="open"></span> Charger
+            </button>
+        </div>
+        
+        <div class="toolbar-group">
+            <button id="ai-assist" class="toolbar-btn ai-btn" title="Assistance IA">
+                <span data-icon="robot"></span> IA Assistant
+            </button>
+            <select id="ai-action" class="ai-select">
+                <option value="improve">Améliorer le texte</option>
+                <option value="correct">Corriger orthographe</option>
+                <option value="summarize">Résumer</option>
+                <option value="translate">Traduire en anglais</option>
+                <option value="format">Formater</option>
+            </select>
+        </div>
+        
+        <div class="toolbar-group">
+            <select id="font-size" class="toolbar-select">
+                <option value="12">12px</option>
+                <option value="14" selected>14px</option>
+                <option value="16">16px</option>
+                <option value="18">18px</option>
+                <option value="20">20px</option>
+            </select>
+            <button id="word-count" class="toolbar-btn info-btn" title="Statistiques">
+                <span data-icon="stats"></span> <span id="word-counter">0 mots</span>
+            </button>
+        </div>
+    </div>
+    
+    <div class="notepad-content">
+        <textarea 
+            id="notepad-editor" 
+            placeholder="Commencez à écrire votre texte ici... 
+
+💡 Utilisez l'assistance IA pour améliorer votre texte !
+📝 Vos notes sont automatiquement sauvegardées
+⌨️ Raccourcis : Ctrl+S (sauvegarder), Ctrl+N (nouveau)"
+            spellcheck="true">
+        </textarea>
+    </div>
+    
+    <div class="notepad-status">
+        <div class="status-left">
+            <span id="char-count">0 caractères</span>
+            <span class="separator">•</span>
+            <span id="line-count">1 ligne</span>
+            <span class="separator">•</span>
+            <span id="save-status">Non sauvegardé</span>
+        </div>
+        <div class="status-right">
+            <span id="current-time"></span>
+        </div>
+    </div>
+    
+    <!-- Modal de sélection de fichier -->
+    <div id="file-modal" class="file-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Mes Documents</h3>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <div class="file-list" id="file-list">
+                <!-- Liste générée dynamiquement -->
+            </div>
+            <div class="modal-footer">
+                <input type="text" id="filename-input" placeholder="Nom du fichier..." maxlength="50">
+                <button id="confirm-action" class="btn-primary">Confirmer</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Zone de notification IA -->
+    <div id="ai-notification" class="ai-notification">
+        <div class="ai-content">
+            <div class="ai-header">
+                <span class="ai-icon" data-icon="robot"></span>
+                <span class="ai-title">Assistant IA</span>
+                <button id="close-ai" class="close-btn">&times;</button>
+            </div>
+            <div class="ai-result" id="ai-result">
+                <!-- Résultat IA affiché ici -->
+            </div>
+            <div class="ai-actions">
+                <button id="apply-ai" class="btn-primary">Appliquer</button>
+                <button id="cancel-ai" class="btn-secondary">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>

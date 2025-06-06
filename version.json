@@ -1,0 +1,23 @@
+{
+  "version": "1.1.0",
+  "build": "2025-05-27",
+  "codename": "Genesis",
+  "description": "Premier déploiement du système C2R OS",
+  "core_modules": [
+    "UserCore",
+    "AuthSystem", 
+    "AppCore",
+    "UICore",
+    "ProfileSystem",
+    "SystemIntegration"
+  ],
+  "features": [
+    "Gestion multi-utilisateurs",
+    "Store d'applications modulaire",
+    "Système de préférences",
+    "Interface responsive",
+    "Mode sombre/clair",
+    "Applications intégrées"
+  ],
+  "changelog_link": "./changelog.md"
+}

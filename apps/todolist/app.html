@@ -1,0 +1,122 @@
+<div class="todolist-app">
+    <div class="todolist-header">
+        <div class="header-title">
+            <h2><span data-icon="checkcircle"></span> To-Do Liste</h2>
+            <div class="progress-info">
+                <span id="progress-text">0 tâche(s) complétée(s)</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-actions">
+            <select id="filter-select" class="filter-select">
+                <option value="all">Toutes les tâches</option>
+                <option value="pending">En cours</option>
+                <option value="completed">Terminées</option>
+                <option value="priority">Prioritaires</option>
+            </select>
+            <button id="clear-completed" class="btn btn-danger btn-small">
+                <span data-icon="uninstall"></span> Vider terminées
+            </button>
+        </div>
+    </div>
+    
+    <div class="todolist-input">
+        <div class="input-group">
+            <input 
+                type="text" 
+                id="new-task-input" 
+                placeholder="Ajouter une nouvelle tâche... (Appuyez sur Entrée)"
+                maxlength="200"
+            >
+            <select id="priority-select" class="priority-select">
+                <option value="low">🟢 Basse</option>
+                <option value="medium" selected>🟡 Moyenne</option>
+                <option value="high">🔴 Haute</option>
+            </select>
+            <button id="add-task-btn" class="btn btn-primary">
+                <span data-icon="add"></span> Ajouter
+            </button>
+        </div>
+        
+        <div class="quick-actions">
+            <button class="quick-btn" onclick="addQuickTask('Répondre aux emails')"><span data-icon="mail"></span> Emails</button>
+            <button class="quick-btn" onclick="addQuickTask('Appeler le médecin')"><span data-icon="phone"></span> Appel</button>
+            <button class="quick-btn" onclick="addQuickTask('Faire les courses')"><span data-icon="cart"></span> Courses</button>
+            <button class="quick-btn" onclick="addQuickTask('Nettoyer le bureau')"><span data-icon="broom"></span> Ménage</button>
+        </div>
+    </div>
+    
+    <div class="todolist-content">
+        <div class="tasks-container" id="tasks-container">
+            <div class="empty-state" id="empty-state">
+                <div class="empty-icon" data-icon="note"></div>
+                <h3>Aucune tâche pour le moment</h3>
+                <p>Ajoutez votre première tâche ci-dessus pour commencer !</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="todolist-stats">
+        <div class="stat-item">
+            <span class="stat-value" id="total-tasks">0</span>
+            <span class="stat-label">Total</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value" id="pending-tasks">0</span>
+            <span class="stat-label">En cours</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value" id="completed-tasks">0</span>
+            <span class="stat-label">Terminées</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value" id="productivity-score">0%</span>
+            <span class="stat-label">Productivité</span>
+        </div>
+    </div>
+    
+    <!-- Modal d'édition de tâche -->
+    <div id="edit-modal" class="task-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><span data-icon="edit"></span> Modifier la tâche</h3>
+                <button id="close-edit-modal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="edit-task-text">Texte de la tâche :</label>
+                    <input type="text" id="edit-task-text" maxlength="200">
+                </div>
+                <div class="form-group">
+                    <label for="edit-task-priority">Priorité :</label>
+                    <select id="edit-task-priority">
+                        <option value="low">🟢 Basse</option>
+                        <option value="medium">🟡 Moyenne</option>
+                        <option value="high">🔴 Haute</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-task-category">Catégorie :</label>
+                    <select id="edit-task-category">
+                        <option value="work">💼 Travail</option>
+                        <option value="personal">👤 Personnel</option>
+                        <option value="health">🏥 Santé</option>
+                        <option value="shopping">🛒 Courses</option>
+                        <option value="other">📋 Autre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-task-notes">Notes (optionnel) :</label>
+                    <textarea id="edit-task-notes" rows="3" placeholder="Ajoutez des détails..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-task-changes" class="btn btn-primary"><span data-icon="save"></span> Sauvegarder</button>
+                <button id="cancel-task-edit" class="btn btn-secondary"><span data-icon="uninstall"></span> Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>

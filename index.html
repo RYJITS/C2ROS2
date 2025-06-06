@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C2R OS - Système Modulaire</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/apps.css">
+    <link rel="stylesheet" href="css/notifications.css">
+    <link rel="stylesheet" href="css/sidebar-minimal.css">
+    <link rel="stylesheet" href="css/bottom-nav.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-dark">
+    <!-- Navigation latérale -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h1 class="logo">C2R</h1>
+            <button class="sidebar-toggle mobile-only" id="sidebar-toggle" aria-label="Fermer le menu">
+                <span>&times;</span>
+            </button>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#home" class="nav-link active" data-page="home" aria-label="Accueil">
+                    <span class="nav-icon" data-icon="home"></span>
+                    <span class="nav-text">Accueil</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#store" class="nav-link" data-page="store" aria-label="Store d'applications">
+                    <span class="nav-icon" data-icon="store"></span>
+                    <span class="nav-text">Store</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#profile" class="nav-link" data-page="profile" aria-label="Profil utilisateur">
+                    <span class="nav-icon" data-icon="profile"></span>
+                    <span class="nav-text">Profil</span>
+                </a>
+            </li>
+            <li class="nav-item admin-only" style="display: none;">
+                <a href="#admin" class="nav-link" data-page="admin" aria-label="Configuration administrateur">
+                    <span class="nav-icon" data-icon="admin"></span>
+                    <span class="nav-text">Config</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Section Applications Installées -->
+        <div class="sidebar-section user-only" style="display: none;">
+            <h4 class="sidebar-section-title">Applications</h4>
+            <div class="sidebar-apps" id="sidebar-apps">
+                <!-- Applications installées -->
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <button class="btn-logout" id="logout-btn" aria-label="Se déconnecter">
+                <span class="nav-icon" data-icon="signout"></span>
+                <span class="nav-text">Déconnexion</span>
+            </button>
+        </div>
+    </nav>
+
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <!-- Page d'accueil -->
+        <section id="page-home" class="page active">
+            <div class="welcome-card">
+                <div class="welcome-header">
+                    <h1>Bienvenue sur C2R OS</h1>
+                    <p class="system-version">C2R OS v1.0.0 – Build 2025-05-27</p>
+                    <p class="update-time text-small">Mis à jour le <span id="update-time"></span></p>
+                </div>
+                
+                <div class="welcome-content">
+                    <p id="welcome-message" class="welcome-text">
+                        Votre système modulaire d'applications est prêt à l'emploi.
+                    </p>
+                    
+                    <div class="quick-actions">
+                        <button class="btn btn-primary" data-page="store" aria-label="Accéder au store">
+                            <span data-icon="store"></span>
+                            Accéder au Store
+                        </button>
+                    </div>
+
+                    <div class="info-tiles">
+                        <div class="card info-tile">
+                            <span data-icon="store"></span>
+                            <h3>Installez des applications</h3>
+                            <p>Parcourez le Store pour ajouter de nouvelles fonctionnalités.</p>
+                        </div>
+                        <div class="card info-tile">
+                            <span data-icon="profile"></span>
+                            <h3>Personnalisez votre profil</h3>
+                            <p>Modifiez vos préférences et gérez vos applications installées.</p>
+                        </div>
+                        <div class="card info-tile">
+                            <span data-icon="admin"></span>
+                            <h3>Configurez le système</h3>
+                            <p>Accédez aux options avancées si vous disposez des droits.</p>
+                        </div>
+                    </div>
+
+                    <div id="daily-tip" class="daily-tip">
+                        <h3><span data-icon="idea"></span> Conseil du jour</h3>
+                        <p>Explorez les nouvelles applications disponibles dans le Store pour enrichir votre expérience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Store -->
+        <section id="page-store" class="page">
+            <div class="page-header">
+                <h1>Store d'Applications</h1>
+                <div class="store-controls">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Rechercher une application..." aria-label="Rechercher une application">
+                        <span class="search-icon" data-icon="search"></span>
+                    </div>
+                    <select id="sort-select" aria-label="Trier les applications">
+                        <option value="name">Nom</option>
+                        <option value="installed">Installées</option>
+                        <option value="date">Date</option>
+                        <option value="type">Type</option>
+                    </select>
+                    <select id="type-filter" aria-label="Filtrer par type">
+                        <option value="all">Tous</option>
+                        <option value="application">Applications</option>
+                        <option value="information">Informations</option>
+                        <option value="service">Services</option>
+                        <option value="formation">Formations</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="apps-grid" id="apps-grid">
+                <!-- Applications générées dynamiquement -->
+            </div>
+        </section>
+
+        <!-- Page Profil -->
+        <section id="page-profile" class="page">
+            <div class="page-header">
+                <h1>Profil Utilisateur</h1>
+            </div>
+            
+            <div class="profile-content">
+                <div class="profile-info">
+                    <div class="user-details">
+                        <h3>Informations</h3>
+                        <p><strong>Email:</strong> <span id="user-email">utilisateur@c2ros.com</span></p>
+                        <p><strong>Rôle:</strong> <span id="user-role">Utilisateur</span></p>
+                    </div>
+                </div>
+                
+                <div class="installed-apps">
+                    <h3>Applications Installées</h3>
+                    <div id="installed-apps-list" class="apps-list">
+                        <!-- Liste générée dynamiquement -->
+                    </div>
+                </div>
+                
+                <div class="preferences">
+                    <h3>Préférences</h3>
+                    <div class="preference-group">
+                        <label class="switch-label">
+                            <span>Thème sombre</span>
+                            <label class="switch">
+                                <input type="checkbox" id="theme-toggle" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </label>
+                    </div>
+                    
+                    <div class="preference-group">
+                        <label class="switch-label">
+                            <span>Afficher message d'accueil</span>
+                            <label class="switch">
+                                <input type="checkbox" id="welcome-toggle" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </label>
+                    </div>
+                    
+                    <div class="preference-group">
+                        <label class="switch-label">
+                            <span>Barre latérale à droite</span>
+                            <label class="switch">
+                                <input type="checkbox" id="sidebar-position-toggle">
+                                <span class="slider"></span>
+                            </label>
+                        </label>
+                    </div>
+
+                    <button class="btn btn-secondary" id="clear-cache-user" aria-label="Vider le cache">
+                        Vider le cache
+                    </button>
+                        <button class="btn btn-secondary btn-logout" id="logout-btn-profile" aria-label="Se déconnecter">
+                            Déconnexion
+                        </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Admin -->
+        <section id="page-admin" class="page">
+            <div class="page-header">
+                <h1>Configuration Administrateur</h1>
+            </div>
+            
+            <div class="admin-content">
+                <div class="admin-section">
+                    <h3>Gestion des Utilisateurs</h3>
+                    <div class="users-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Rôle</th>
+                                    <th>Dernière connexion</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-table-body">
+                                <!-- Utilisateurs générés dynamiquement -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="admin-section">
+                    <h3>Statistiques Système</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4>Utilisateurs actifs</h4>
+                            <p class="stat-value" id="active-users">12</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Applications installées</h4>
+                            <p class="stat-value" id="total-installations">47</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Dernière mise à jour</h4>
+                            <p class="stat-value" id="last-update">27/05/2025</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-section">
+                    <h3>Actions Système</h3>
+                    <div class="system-actions">
+                        <button class="btn btn-danger" id="reset-system" aria-label="Réinitialiser le système">
+                            <span data-icon="refresh"></span>
+                            Réinitialiser Système
+                        </button>
+                    </div>
+                </div>
+                
+                <details class="advanced-section">
+                    <summary>Options Avancées</summary>
+                    <div class="advanced-content">
+                        <h4>Logs Système</h4>
+                        <div class="logs-container">
+                            <pre id="system-logs">Chargement des logs...</pre>
+                        </div>
+                        <button class="btn btn-secondary" id="clear-cache" aria-label="Vider le cache">
+                            Vider le Cache
+                        </button>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- Barre de navigation mobile -->
+    <nav class="bottom-nav mobile-only">
+        <a href="#home" class="nav-link" data-page="home" aria-label="Accueil">
+            <span class="nav-icon" data-icon="home"></span>
+        </a>
+        <a href="#store" class="nav-link" data-page="store" aria-label="Store">
+            <span class="nav-icon" data-icon="store"></span>
+        </a>
+        <a href="#profile" class="nav-link" data-page="profile" aria-label="Profil">
+            <span class="nav-icon" data-icon="profile"></span>
+        </a>
+        <button class="nav-link" id="mobile-apps-btn" aria-label="Applications">
+            <span class="nav-icon" data-icon="list"></span>
+        </button>
+    </nav>
+
+    <div class="mobile-apps-dropdown" id="mobile-apps-dropdown">
+        <div class="mobile-apps-header">
+            <h3>Applications installées</h3>
+            <button class="close-btn" id="close-mobile-apps">&times;</button>
+        </div>
+        <div class="mobile-apps-list" id="mobile-apps-list"></div>
+    </div>
+
+    <!-- Overlay mobile -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Modales de connexion/inscription -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Connexion à C2R OS</h2>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            
+            <!-- Formulaire de connexion -->
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Mot de passe</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+                <p class="auth-switch">
+                    Pas de compte ? <a href="#" id="show-register">S'inscrire</a>
+                </p>
+            </form>
+            
+            <!-- Formulaire d'inscription -->
+            <form id="register-form" class="auth-form" style="display: none;">
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-username">Nom d'utilisateur</label>
+                    <input type="text" id="register-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Mot de passe</label>
+                    <input type="password" id="register-password" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm">Confirmer mot de passe</label>
+                    <input type="password" id="register-confirm" required>
+                </div>
+                <button type="submit" class="btn btn-primary">S'inscrire</button>
+                <p class="auth-switch">
+                    Déjà un compte ? <a href="#" id="show-login">Se connecter</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Section applications installées dans sidebar -->
+    <div class="installed-apps-sidebar" id="installed-apps-sidebar">
+        <h4>Applications</h4>
+        <div class="installed-apps-list" id="sidebar-apps-list">
+            <!-- Applications installées générées dynamiquement -->
+        </div>
+    </div>
+
+    <!-- Zone d'exécution des applications -->
+    <div class="app-runner" id="app-runner" style="display: none;">
+        <div class="app-header">
+            <h3 id="running-app-title">Application</h3>
+            <button class="btn btn-small btn-secondary" id="close-app">Fermer</button>
+        </div>
+        <div class="app-content" id="app-content">
+            <!-- Contenu de l'application en cours -->
+        </div>
+    </div>
+
+    <!-- Chargement des modules C2R OS dans l'ordre de dépendance -->
+    <script src="js/modules/core/config.js"></script>
+    <script src="js/modules/ui/icon-manager.js"></script>
+    <script src="js/modules/user/user-core.js"></script>
+    <script src="js/modules/app/app-core.js"></script>
+    <script src="js/modules/ui/ui-core.js"></script>
+    <script src="js/modules/profile/profile-system.js"></script>
+    <script src="js/modules/system/system-integration.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+
+    <!-- Point d'entrée principal -->
+    <!-- Correctif mobile pour le menu hamburger -->
+    <script src="js/mobile-fix.js"></script>
+    <script src="js/sidebar-minimal.js"></script>
+    <script src="js/bottom-nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            IconManager.inject();
+        });
+        window.addEventListener('c2rosReady', () => {
+            IconManager.startAutoInject();
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

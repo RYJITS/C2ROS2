@@ -1,0 +1,206 @@
+/* Variables de thème C2R OS */
+
+:root {
+    /* Couleurs principales */
+    --c2r-accent: #E53935;
+    --c2r-accent-hover: #F74B45;
+    --c2r-accent-light: #FF7669;
+
+    /* Alias pour la coloration des icônes */
+    --primary-color: var(--c2r-accent);
+    --success-color: var(--c2r-success);
+    --warning-color: var(--c2r-warning);
+    --error-color: var(--c2r-error);
+    --info-color: var(--c2r-info);
+    
+    /* Espacement et bordures */
+    --c2r-radius: 12px;
+    --c2r-spacing-sm: 8px;
+    --c2r-spacing-md: 16px;
+    --c2r-spacing-lg: 24px;
+    --c2r-spacing-xl: 32px;
+    
+    /* Ombres */
+    --c2r-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --c2r-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --c2r-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+    
+    /* Transitions */
+    --c2r-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --c2r-transition-fast: all 0.15s ease;
+    
+    /* Tailles de police */
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-3xl: 32px;
+    
+    /* Poids de police */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Z-index */
+    --z-dropdown: 100;
+    --z-modal: 200;
+    --z-sidebar: 300;
+    --z-overlay: 400;
+}
+
+/* Thème sombre (par défaut) */
+.theme-dark {
+    --c2r-bg: #181818;
+    --c2r-bg-secondary: #1F1F1F;
+    --c2r-bg-tertiary: #222222;
+    --c2r-bg-card: #1F1F1F;
+    --c2r-bg-hover: #222222;
+    --c2r-bg-active: #2a2a2a;
+    
+    --c2r-text: #F5F5F5;
+    --c2r-text-secondary: #B0B0B0;
+    --c2r-text-muted: #999999;
+    --c2r-text-disabled: #666666;
+    
+    --c2r-border: #333333;
+    --c2r-border-light: #444444;
+    --c2r-border-focus: var(--c2r-accent);
+    
+    --c2r-input-bg: #1a1a1a;
+    --c2r-input-border: #333333;
+    --c2r-input-focus: var(--c2r-accent);
+    
+    --c2r-success: #22c55e;
+    --c2r-warning: #f59e0b;
+    --c2r-error: #ef4444;
+    --c2r-info: #3b82f6;
+    --icon-color: #ffffff;
+    
+    /* Ombres pour thème sombre */
+    --c2r-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --c2r-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --c2r-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+    
+    color-scheme: dark;
+}
+
+/* Thème clair */
+.theme-light {
+    --c2r-bg: #ffffff;
+    --c2r-bg-secondary: #f8f9fa;
+    --c2r-bg-tertiary: #e9ecef;
+    --c2r-bg-card: #ffffff;
+    --c2r-bg-hover: #f1f3f4;
+    --c2r-bg-active: #e8eaed;
+    
+    --c2r-text: #1a1a1a;
+    --c2r-text-secondary: #4a4a4a;
+    --c2r-text-muted: #6a6a6a;
+    --c2r-text-disabled: #9a9a9a;
+    
+    --c2r-border: #e1e5e9;
+    --c2r-border-light: #f1f3f4;
+    --c2r-border-focus: var(--c2r-accent);
+    
+    --c2r-input-bg: #ffffff;
+    --c2r-input-border: #d1d5db;
+    --c2r-input-focus: var(--c2r-accent);
+    
+    --c2r-success: #059669;
+    --c2r-warning: #d97706;
+    --c2r-error: #dc2626;
+    --c2r-info: #2563eb;
+    --icon-color: #1a1a1a;
+    
+    /* Ombres pour thème clair */
+    --c2r-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --c2r-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --c2r-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+    
+    color-scheme: light;
+}
+
+/* Transitions pour le changement de thème */
+* {
+    transition: background-color var(--c2r-transition-fast),
+                border-color var(--c2r-transition-fast),
+                color var(--c2r-transition-fast),
+                box-shadow var(--c2r-transition-fast);
+}
+
+/* Variables pour les breakpoints responsive */
+:root {
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+}
+
+/* Classes utilitaires pour l'accessibilité */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.focus-visible {
+    outline: 2px solid var(--c2r-accent);
+    outline-offset: 2px;
+}
+
+/* Variables d'animation */
+:root {
+    --slide-in: slideIn 0.3s ease-out;
+    --fade-in: fadeIn 0.3s ease-out;
+    --scale-in: scaleIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Préférences utilisateur pour les animations */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

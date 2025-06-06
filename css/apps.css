@@ -1,0 +1,285 @@
+/* CSS pour les applications - C2R OS */
+
+/* Section Applications Sidebar */
+.sidebar-section {
+    padding: var(--c2r-spacing-md) var(--c2r-spacing-lg);
+    border-top: 1px solid var(--c2r-border);
+}
+
+.sidebar-section-title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--c2r-text-muted);
+    margin: 0 0 var(--c2r-spacing-sm) 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-apps {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sidebar-app-item {
+    display: flex;
+    align-items: center;
+    gap: var(--c2r-spacing-sm);
+    padding: var(--c2r-spacing-sm);
+    border-radius: var(--c2r-radius);
+    cursor: pointer;
+    transition: var(--c2r-transition);
+    font-size: var(--font-size-sm);
+}
+
+.sidebar-app-item:hover {
+    background-color: var(--c2r-bg-hover);
+    color: var(--c2r-text);
+}
+
+.sidebar-app-item .app-icon {
+    font-size: var(--font-size-md);
+    min-width: 20px;
+    text-align: center;
+}
+
+.sidebar-app-item .app-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.no-apps {
+    color: var(--c2r-text-muted);
+    font-size: var(--font-size-xs);
+    text-align: center;
+    padding: var(--c2r-spacing-md);
+    margin: 0;
+    font-style: italic;
+}
+
+/* Modales d'applications */
+.app-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: var(--c2r-spacing-md);
+}
+
+.app-modal.show {
+    display: flex;
+}
+
+.app-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.app-modal-window {
+    position: relative;
+    background: var(--c2r-bg-card);
+    border: 1px solid var(--c2r-border);
+    border-radius: var(--c2r-radius);
+    width: 90%;
+    max-width: 1200px;
+    height: 80%;
+    max-height: 800px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+.app-modal.maximized .app-modal-window {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+}
+
+.app-modal.minimized .app-modal-window {
+    transform: scale(0.1);
+    opacity: 0;
+}
+
+.app-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--c2r-spacing-md);
+    background: var(--c2r-bg-secondary);
+    border-bottom: 1px solid var(--c2r-border);
+    min-height: 48px;
+}
+
+.app-modal-title {
+    display: flex;
+    align-items: center;
+    gap: var(--c2r-spacing-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--c2r-text);
+}
+
+.app-modal-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.app-modal-btn {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-sm);
+    transition: var(--c2r-transition);
+    font-family: inherit;
+}
+
+.app-modal-btn.minimize {
+    background: #fbbf24;
+    color: white;
+}
+
+.app-modal-btn.maximize {
+    background: #10b981;
+    color: white;
+}
+
+.app-modal-btn.close {
+    background: #ef4444;
+    color: white;
+}
+
+.app-modal-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.app-modal-content {
+    flex: 1;
+    overflow: auto;
+    background: var(--c2r-bg);
+}
+
+.app-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: var(--c2r-spacing-md);
+    color: var(--c2r-text-muted);
+}
+
+.loader {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--c2r-border);
+    border-top: 3px solid var(--c2r-accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Animations */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes modalSlideOut {
+    from {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+}
+
+/* Responsive pour les modales */
+@media (max-width: 768px) {
+    .app-modal {
+        padding: var(--c2r-spacing-sm);
+    }
+    
+    .app-modal-window {
+        width: 95%;
+        height: 90%;
+    }
+    
+    .app-modal.maximized .app-modal-window {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .sidebar-section {
+        padding: var(--c2r-spacing-sm) var(--c2r-spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .app-modal-window {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+    
+    .app-modal-header {
+        padding: var(--c2r-spacing-sm);
+    }
+    
+    .sidebar-app-item {
+        padding: var(--c2r-spacing-xs);
+    }
+    
+    .sidebar-app-item .app-name {
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* Thème sombre spécifique pour les applications */
+.theme-dark .app-modal-window {
+    background: var(--c2r-bg-card);
+    border-color: var(--c2r-border);
+}
+
+.theme-dark .app-modal-header {
+    background: var(--c2r-bg-secondary);
+}
+
+.theme-dark .app-modal-content {
+    background: var(--c2r-bg);
+}
+
+.theme-dark .sidebar-app-item:hover {
+    background-color: var(--c2r-bg-hover);
+}

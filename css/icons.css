@@ -1,0 +1,267 @@
+/**
+ * C2R OS - Styles pour Font Awesome Icons
+ * Configuration et personnalisation des icônes Font Awesome
+ */
+
+/* Configuration de base pour toutes les icônes Font Awesome */
+.icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+    color: var(--icon-color);
+}
+
+/* Icônes de navigation */
+.nav-icon .icon {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+
+/* Icônes dans la sidebar minimaliste */
+.minimal-sidebar .nav-icon .icon {
+    font-size: 1.3rem;
+    margin-right: 0;
+}
+
+/* Icônes des applications */
+.app-icon .icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Icônes dans les boutons */
+.btn .icon {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+.btn-small .icon {
+    font-size: 0.9rem;
+    margin-right: 0.3rem;
+}
+
+/* Icônes dans les cartes d'applications */
+.app-card .icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.app-toggle-btn .icon {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.app-actions .app-toggle-btn .icon {
+    font-size: 1.5rem;
+}
+
+.app-toggle-btn.installed .icon {
+    color: var(--error-color) !important;
+}
+
+/* Correction couleur poubelle sur mobile et desktop */
+.app-toggle-btn .fa-trash {
+    color: var(--error-color) !important;
+}
+
+/* Poubelle rouge en mode sidebar minimaliste */
+.minimal-sidebar .app-toggle-btn.installed .icon {
+    color: var(--error-color) !important;
+}
+
+/* Icônes de statut */
+.status-icon .icon {
+    font-size: 1rem;
+    margin-right: 0.3rem;
+}
+
+/* Icônes dans les tooltips */
+.tooltip .icon {
+    font-size: 0.9rem;
+    margin-right: 0.2rem;
+}
+
+/* Icônes dans la recherche */
+.search-icon .icon {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Icônes dans les sections */
+.daily-tip .icon {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Icônes du bouton de basculement sidebar */
+.sidebar-toggle-minimal .icon {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+/* Effets hover pour les icônes interactives */
+.nav-link:hover .icon,
+.nav-link:active .icon,
+.btn:hover .icon,
+.btn:active .icon,
+.app-card:hover .icon,
+.app-card:active .icon {
+    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+/* Icônes dans les applications installées */
+.sidebar-app-item .icon {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.minimal-sidebar .sidebar-app-item .icon {
+    font-size: 1.2rem;
+    margin-right: 0;
+}
+
+/* Icônes dans les stats */
+.stat-card .icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Icônes dans les actions système */
+.system-actions .icon {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+
+/* Icônes dans les formulaires */
+.form-group .icon {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-right: 0.3rem;
+}
+
+/* Animation pour les icônes de chargement */
+.icon-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Icônes colorées selon le contexte */
+.success .icon { color: var(--success-color); }
+.warning .icon { color: var(--warning-color); }
+.error .icon { color: var(--error-color); }
+.info .icon { color: var(--info-color); }
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+    .icon {
+        font-size: 1.1rem;
+    }
+
+    .app-icon .icon {
+        font-size: 1.8rem;
+    }
+
+    .app-card .icon {
+        font-size: 2rem;
+    }
+
+    .app-actions .app-toggle-btn .icon {
+        font-size: 1.3rem;
+    }
+
+    .nav-icon .icon {
+        font-size: 1rem;
+    }
+
+    /* Couleur rouge de la poubelle en mode mobile */
+    .app-toggle-btn.installed .icon {
+        color: var(--error-color) !important;
+    }
+}
+
+/* Thème sombre - ajustements spécifiques */
+.theme-dark .icon {
+    color: inherit;
+}
+
+.theme-dark .search-icon .icon {
+    color: var(--text-secondary);
+}
+
+
+/* Icônes dans les notifications */
+.notification .icon {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* Icônes dans les modales */
+.modal-header .icon {
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Icônes dans les listes */
+.apps-list .icon {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    color: var(--text-secondary);
+}
+
+/* Icônes dans les préférences */
+.preference-group .icon {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    color: var(--text-secondary);
+}
+
+/* Couleurs des icônes selon le thème */
+.theme-dark .icon,
+.dark-mode .icon {
+    color: #fff;
+}
+
+.theme-dark .app-toggle-btn .icon,
+.dark-mode .app-toggle-btn .icon {
+    color: white;
+}
+
+.theme-dark .app-toggle-btn.installed .icon,
+.dark-mode .app-toggle-btn.installed .icon {
+    color: var(--error-color) !important;
+}
+
+.theme-light .icon {
+    color: #000;
+}
+
+.icon-button .icon,
+.nav-icon .icon {
+    transition: color 0.2s ease;
+}
+
+.icon-button:hover .icon,
+.icon-button:active .icon {
+    color: var(--primary-color);
+}

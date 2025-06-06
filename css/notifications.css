@@ -1,0 +1,86 @@
+/* Système de notifications C2R OS */
+
+/* Conteneur de notifications */
+.notifications-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2100;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+}
+
+.notification {
+    background: var(--c2r-bg-card);
+    border: 1px solid var(--c2r-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-width: 300px;
+    max-width: 400px;
+    pointer-events: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.notification-success {
+    border-left: 4px solid var(--c2r-success);
+}
+
+.notification-error {
+    border-left: 4px solid var(--c2r-danger);
+}
+
+.notification-warning {
+    border-left: 4px solid var(--c2r-warning);
+}
+
+.notification-info {
+    border-left: 4px solid var(--c2r-primary);
+}
+
+.notification-message {
+    flex: 1;
+    color: var(--c2r-text-primary);
+    font-size: 14px;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: var(--c2r-text-secondary);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.notification-close:hover {
+    background: var(--c2r-bg-hover);
+    color: var(--c2r-text-primary);
+}
+
+@media (max-width: 768px) {
+    .notifications-container {
+        top: 80px;
+        right: 10px;
+        left: 10px;
+    }
+    
+    .notification {
+        min-width: auto;
+        max-width: none;
+    }
+}

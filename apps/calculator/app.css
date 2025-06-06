@@ -1,0 +1,118 @@
+.calculator-app {
+    max-width: 400px;
+    margin: 20px auto;
+    background: var(--c2r-bg-secondary);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.calculator-display {
+    margin-bottom: 20px;
+}
+
+#calc-display {
+    width: 100%;
+    height: 60px;
+    font-size: 24px;
+    text-align: right;
+    padding: 0 15px;
+    border: 2px solid var(--c2r-border);
+    border-radius: 8px;
+    background: var(--c2r-bg-primary);
+    color: var(--c2r-text-primary);
+    font-family: 'Courier New', monospace;
+}
+
+.calculator-buttons {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.button-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button-row.scientific {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 10px;
+}
+
+.calc-btn {
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.calc-btn.number {
+    background: var(--c2r-primary);
+    color: white;
+}
+
+.calc-btn.operator {
+    background: var(--c2r-secondary);
+    color: white;
+}
+
+.calc-btn.equals {
+    background: var(--c2r-success);
+    color: white;
+    grid-column: span 2;
+}
+
+.calc-btn.clear {
+    background: var(--c2r-danger);
+    color: white;
+}
+
+.calc-btn.function {
+    background: var(--c2r-warning);
+    color: white;
+    font-size: 14px;
+}
+
+.calc-btn.zero {
+    grid-column: span 2;
+}
+
+.calculator-history {
+    border-top: 1px solid var(--c2r-border);
+    padding-top: 15px;
+}
+
+.calculator-history h4 {
+    margin: 0 0 10px 0;
+    color: var(--c2r-text-primary);
+}
+
+.history-list {
+    max-height: 150px;
+    overflow-y: auto;
+    background: var(--c2r-bg-primary);
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.history-item {
+    padding: 5px 0;
+    border-bottom: 1px solid var(--c2r-border);
+    font-family: 'Courier New', monospace;
+    color: var(--c2r-text-secondary);
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}

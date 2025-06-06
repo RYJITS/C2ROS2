@@ -1,0 +1,100 @@
+/* Barre de navigation en bas pour mobile */
+.bottom-nav {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background-color: var(--c2r-bg-card);
+        border-top: 1px solid var(--c2r-border);
+        z-index: var(--z-sidebar);
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .bottom-nav .nav-icon {
+        font-size: var(--font-size-lg);
+    }
+
+    .bottom-nav .nav-link {
+        background: none;
+        border: none;
+        color: var(--c2r-text-secondary);
+        padding: var(--c2r-spacing-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bottom-nav .nav-link.active {
+        color: var(--c2r-accent);
+    }
+
+    .bottom-nav .nav-link.active::before {
+        display: none;
+    }
+}
+
+/* Menu déroulant des applications sur mobile */
+.mobile-apps-dropdown {
+    display: none;
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    max-height: 50vh;
+    background-color: var(--c2r-bg-card);
+    border-top: 1px solid var(--c2r-border);
+    border-left: 1px solid var(--c2r-border);
+    border-right: 1px solid var(--c2r-border);
+    overflow-y: auto;
+    z-index: calc(var(--z-sidebar) + 1);
+}
+
+.mobile-apps-dropdown.show {
+    display: block;
+}
+
+.mobile-apps-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--c2r-spacing-md);
+    border-bottom: 1px solid var(--c2r-border);
+}
+
+/* Bouton de fermeture du menu mobile */
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--c2r-text-muted);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.close-btn:hover {
+    color: var(--c2r-text);
+}
+
+.mobile-apps-list {
+    padding: var(--c2r-spacing-md);
+}
+
+.mobile-app-item {
+    display: flex;
+    align-items: center;
+    gap: var(--c2r-spacing-md);
+    padding: var(--c2r-spacing-sm) 0;
+    border-bottom: 1px solid var(--c2r-border);
+}
+
+.mobile-app-item:last-child {
+    border-bottom: none;
+}

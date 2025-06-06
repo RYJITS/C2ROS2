@@ -1,0 +1,36 @@
+.training-app {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--c2r-bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.training-app h2 {
+    margin-bottom: 10px;
+}
+.training-page {
+    display: none;
+    margin-bottom: 20px;
+}
+.training-page.active {
+    display: block;
+}
+.quiz-section .question {
+    margin-bottom: 15px;
+}
+.quiz-section label {
+    display: block;
+    margin-left: 20px;
+}
+.quiz-result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+.training-nav {
+    text-align: center;
+    margin-top: 20px;
+}
+.training-nav button {
+    margin: 0 10px;
+}

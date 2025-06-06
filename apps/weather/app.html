@@ -1,0 +1,92 @@
+<div class="weather-app">
+    <div class="weather-header">
+        <h2><span data-icon="weather"></span> Météo</h2>
+        <div class="location-input">
+            <input type="text" id="city-input" placeholder="Entrez une ville..." value="Paris">
+            <button onclick="getWeather()" class="btn-search"><span data-icon="search"></span></button>
+        </div>
+    </div>
+    
+    <div class="weather-current">
+        <div class="current-weather" id="current-weather">
+            <div class="weather-icon" data-icon="sun"></div>
+            <div class="weather-info">
+                <div class="temperature">22°C</div>
+                <div class="description">Ensoleillé</div>
+                <div class="location">Paris, France</div>
+            </div>
+        </div>
+        
+        <div class="weather-details">
+            <div class="detail-item">
+                <span class="detail-label" data-icon="droplet"> Humidité</span>
+                <span class="detail-value" id="humidity">65%</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label" data-icon="wind"> Vent</span>
+                <span class="detail-value" id="wind">12 km/h</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label" data-icon="preview"> Visibilité</span>
+                <span class="detail-value" id="visibility">10 km</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label" data-icon="thermometer"> Ressenti</span>
+                <span class="detail-value" id="feels-like">25°C</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="weather-forecast">
+        <h3>Prévisions 5 jours</h3>
+        <div class="forecast-list" id="forecast-list">
+            <div class="forecast-item">
+                <div class="forecast-day">Lun</div>
+                <div class="forecast-icon" data-icon="cloud-sun"></div>
+                <div class="forecast-temps">
+                    <span class="high">24°</span>
+                    <span class="low">16°</span>
+                </div>
+            </div>
+            <div class="forecast-item">
+                <div class="forecast-day">Mar</div>
+                <div class="forecast-icon" data-icon="rain"></div>
+                <div class="forecast-temps">
+                    <span class="high">19°</span>
+                    <span class="low">12°</span>
+                </div>
+            </div>
+            <div class="forecast-item">
+                <div class="forecast-day">Mer</div>
+                <div class="forecast-icon" data-icon="lightning"></div>
+                <div class="forecast-temps">
+                    <span class="high">17°</span>
+                    <span class="low">10°</span>
+                </div>
+            </div>
+            <div class="forecast-item">
+                <div class="forecast-day">Jeu</div>
+                <div class="forecast-icon" data-icon="sun"></div>
+                <div class="forecast-temps">
+                    <span class="high">26°</span>
+                    <span class="low">18°</span>
+                </div>
+            </div>
+            <div class="forecast-item">
+                <div class="forecast-day">Ven</div>
+                <div class="forecast-icon" data-icon="cloud-sun"></div>
+                <div class="forecast-temps">
+                    <span class="high">23°</span>
+                    <span class="low">15°</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="weather-footer">
+        <p class="weather-note">
+            ℹ️ Données météo simulées pour démonstration
+        </p>
+        <button onclick="refreshWeather()" class="btn-refresh">🔄 Actualiser</button>
+    </div>
+</div>

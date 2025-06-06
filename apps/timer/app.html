@@ -1,0 +1,76 @@
+<div class="timer-app">
+    <div class="timer-header">
+        <h2><span data-icon="timer"></span> Minuteur</h2>
+        <div class="timer-tabs">
+            <button class="tab-btn active" onclick="switchTab('timer')" id="timer-tab">Minuteur</button>
+            <button class="tab-btn" onclick="switchTab('stopwatch')" id="stopwatch-tab">Chronomètre</button>
+        </div>
+    </div>
+    
+    <!-- Section Minuteur -->
+    <div class="timer-section" id="timer-section">
+        <div class="time-display">
+            <div class="time-circle">
+                <div class="time-text" id="timer-display">05:00</div>
+                <div class="time-label">Minutes</div>
+            </div>
+        </div>
+        
+        <div class="time-input">
+            <div class="input-group">
+                <label>Minutes</label>
+                <input type="number" id="minutes-input" min="0" max="59" value="5">
+            </div>
+            <div class="input-group">
+                <label>Secondes</label>
+                <input type="number" id="seconds-input" min="0" max="59" value="0">
+            </div>
+        </div>
+        
+        <div class="timer-controls">
+            <button class="control-btn start" onclick="startTimer()" id="start-timer"><span data-icon="play"></span> Démarrer</button>
+            <button class="control-btn pause" onclick="pauseTimer()" id="pause-timer" style="display: none;"><span data-icon="pause"></span> Pause</button>
+            <button class="control-btn reset" onclick="resetTimer()"><span data-icon="refresh"></span> Reset</button>
+        </div>
+        
+        <div class="preset-times">
+            <h4>Temps prédéfinis</h4>
+            <div class="preset-buttons">
+                <button class="preset-btn" onclick="setPreset(1, 0)">1 min</button>
+                <button class="preset-btn" onclick="setPreset(5, 0)">5 min</button>
+                <button class="preset-btn" onclick="setPreset(10, 0)">10 min</button>
+                <button class="preset-btn" onclick="setPreset(15, 0)">15 min</button>
+                <button class="preset-btn" onclick="setPreset(25, 0)">25 min</button>
+                <button class="preset-btn" onclick="setPreset(30, 0)">30 min</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Section Chronomètre -->
+    <div class="stopwatch-section" id="stopwatch-section" style="display: none;">
+        <div class="time-display">
+            <div class="time-circle">
+                <div class="time-text" id="stopwatch-display">00:00:00</div>
+                <div class="time-label">Chronomètre</div>
+            </div>
+        </div>
+        
+        <div class="timer-controls">
+            <button class="control-btn start" onclick="startStopwatch()" id="start-stopwatch"><span data-icon="play"></span> Démarrer</button>
+            <button class="control-btn pause" onclick="pauseStopwatch()" id="pause-stopwatch" style="display: none;"><span data-icon="pause"></span> Pause</button>
+            <button class="control-btn reset" onclick="resetStopwatch()"><span data-icon="refresh"></span> Reset</button>
+            <button class="control-btn lap" onclick="addLap()" id="lap-btn" style="display: none;"><span data-icon="map-pin"></span> Tour</button>
+        </div>
+        
+        <div class="laps-section">
+            <h4>Tours enregistrés</h4>
+            <div class="laps-list" id="laps-list">
+                <div class="no-laps">Aucun tour enregistré</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="timer-status" id="timer-status">
+        Prêt à démarrer
+    </div>
+</div>

@@ -1,0 +1,466 @@
+/* Bloc-Notes IA - Styles */
+.notepad-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background: var(--c2r-bg);
+    color: var(--c2r-text);
+}
+
+/* Barre d'outils */
+.notepad-toolbar {
+    display: flex;
+    gap: 16px;
+    padding: 12px 16px;
+    background: var(--c2r-bg-secondary);
+    border-bottom: 1px solid var(--c2r-border);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.toolbar-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.toolbar-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: var(--c2r-bg-tertiary);
+    border: 1px solid var(--c2r-border);
+    border-radius: 6px;
+    color: var(--c2r-text);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.toolbar-btn:hover {
+    background: var(--c2r-bg-hover);
+    border-color: var(--c2r-accent);
+}
+
+.toolbar-btn:active {
+    transform: translateY(1px);
+}
+
+.ai-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: #667eea;
+    color: white;
+}
+
+.ai-btn:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.info-btn {
+    background: var(--c2r-bg-card);
+    border-color: var(--c2r-border-light);
+    pointer-events: none;
+}
+
+.toolbar-select,
+.ai-select {
+    padding: 6px 10px;
+    background: var(--c2r-input-bg);
+    border: 1px solid var(--c2r-input-border);
+    border-radius: 4px;
+    color: var(--c2r-text);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.toolbar-select:focus,
+.ai-select:focus {
+    border-color: var(--c2r-accent);
+    outline: none;
+}
+
+/* Zone d'édition */
+.notepad-content {
+    flex: 1;
+    padding: 16px;
+    overflow: hidden;
+}
+
+#notepad-editor {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--c2r-text);
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: none;
+    padding: 0;
+    margin: 0;
+}
+
+#notepad-editor::placeholder {
+    color: var(--c2r-text-muted);
+    opacity: 0.7;
+}
+
+#notepad-editor:focus {
+    outline: none;
+}
+
+/* Barre de statut */
+.notepad-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background: var(--c2r-bg-secondary);
+    border-top: 1px solid var(--c2r-border);
+    font-size: 12px;
+    color: var(--c2r-text-muted);
+}
+
+.status-left {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.separator {
+    opacity: 0.5;
+}
+
+/* Modal de fichiers */
+.file-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-modal.show {
+    display: flex;
+}
+
+.file-modal .modal-content {
+    background: var(--c2r-bg-card);
+    border: 1px solid var(--c2r-border);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--c2r-border-light);
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: var(--c2r-text);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--c2r-text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.close-btn:hover {
+    background: var(--c2r-bg-hover);
+    color: var(--c2r-text);
+}
+
+.file-list {
+    flex: 1;
+    padding: 16px 20px;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    background: var(--c2r-bg);
+    border: 1px solid var(--c2r-border-light);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.file-item:hover {
+    background: var(--c2r-bg-hover);
+    border-color: var(--c2r-accent);
+}
+
+.file-item.selected {
+    background: var(--c2r-accent);
+    color: white;
+    border-color: var(--c2r-accent);
+}
+
+.file-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-name {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.file-date {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.file-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.file-action-btn {
+    padding: 4px 8px;
+    background: var(--c2r-bg-tertiary);
+    border: 1px solid var(--c2r-border);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+    transition: all 0.2s ease;
+}
+
+.file-action-btn:hover {
+    background: var(--c2r-bg-hover);
+}
+
+.file-action-btn.delete {
+    color: var(--c2r-error);
+    border-color: var(--c2r-error);
+}
+
+.modal-footer {
+    padding: 16px 20px;
+    border-top: 1px solid var(--c2r-border-light);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+#filename-input {
+    flex: 1;
+    padding: 8px 12px;
+    background: var(--c2r-input-bg);
+    border: 1px solid var(--c2r-input-border);
+    border-radius: 4px;
+    color: var(--c2r-text);
+    font-size: 14px;
+}
+
+#filename-input:focus {
+    border-color: var(--c2r-accent);
+    outline: none;
+}
+
+.btn-primary {
+    padding: 8px 16px;
+    background: var(--c2r-accent);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: var(--c2r-accent-hover);
+}
+
+.btn-secondary {
+    padding: 8px 16px;
+    background: var(--c2r-bg-tertiary);
+    color: var(--c2r-text);
+    border: 1px solid var(--c2r-border);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--c2r-bg-hover);
+}
+
+/* Notification IA */
+.ai-notification {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    width: 90%;
+    max-width: 600px;
+}
+
+.ai-notification.show {
+    display: block;
+}
+
+.ai-content {
+    background: var(--c2r-bg-card);
+    border: 1px solid var(--c2r-border);
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.ai-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.ai-icon {
+    font-size: 20px;
+}
+
+.ai-title {
+    font-weight: 600;
+    flex: 1;
+}
+
+.ai-header .close-btn {
+    color: white;
+    opacity: 0.8;
+}
+
+.ai-header .close-btn:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.ai-result {
+    padding: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: var(--c2r-bg);
+    border: 1px solid var(--c2r-border-light);
+    margin: 16px;
+    border-radius: 8px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.ai-actions {
+    display: flex;
+    gap: 12px;
+    padding: 16px 20px;
+    justify-content: flex-end;
+    background: var(--c2r-bg-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .notepad-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    
+    .toolbar-group {
+        justify-content: center;
+    }
+    
+    .notepad-status {
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
+    
+    .file-modal .modal-content {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    .ai-notification {
+        width: 95%;
+        margin: 10px;
+    }
+}
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.ai-notification.show .ai-content {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+/* États de sauvegarde */
+.save-status.saved {
+    color: var(--c2r-success);
+}
+
+.save-status.saving {
+    color: var(--c2r-warning);
+}
+
+.save-status.error {
+    color: var(--c2r-error);
+}
+
+/* Mode sombre spécifique */
+.theme-dark .notepad-app {
+    background: var(--c2r-bg);
+}
+
+.theme-dark #notepad-editor {
+    color: #e2e8f0;
+}
+
+.theme-dark .ai-result {
+    background: var(--c2r-bg-secondary);
+    color: #e2e8f0;
+}

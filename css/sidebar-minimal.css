@@ -1,0 +1,312 @@
+/* C2R OS - Sidebar Minimaliste */
+
+/* Variables pour la sidebar minimaliste */
+:root {
+    --sidebar-minimal-width: 70px;
+    --sidebar-icon-size: 24px;
+    --sidebar-padding: 12px;
+    --tooltip-bg: rgba(0, 0, 0, 0.9);
+    --tooltip-delay: 0.5s;
+}
+
+/* Layout principal avec sidebar minimaliste */
+body.minimal-sidebar {
+    grid-template-columns: var(--sidebar-minimal-width) 1fr;
+}
+
+body.minimal-sidebar.sidebar-right {
+    grid-template-columns: 1fr var(--sidebar-minimal-width);
+}
+
+/* Sidebar minimaliste */
+body.minimal-sidebar .sidebar {
+    width: var(--sidebar-minimal-width);
+    min-width: var(--sidebar-minimal-width);
+}
+
+/* Header sidebar minimaliste */
+body.minimal-sidebar .sidebar-header {
+    padding: var(--sidebar-padding);
+    justify-content: center;
+}
+
+body.minimal-sidebar .logo {
+    display: none;
+}
+
+/* Navigation minimaliste */
+body.minimal-sidebar .nav-link {
+    padding: var(--sidebar-padding);
+    justify-content: center;
+    position: relative;
+    border-radius: 8px;
+    margin: 4px 8px;
+}
+
+body.minimal-sidebar .nav-text {
+    display: none;
+}
+
+body.minimal-sidebar .nav-icon {
+    font-size: var(--sidebar-icon-size);
+    min-width: auto;
+}
+
+/* Indicateur actif minimaliste */
+body.minimal-sidebar .nav-link.active::before {
+    display: none;
+}
+
+body.minimal-sidebar .nav-link.active {
+    background-color: var(--c2r-accent);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Applications dans la sidebar */
+body.minimal-sidebar .sidebar-section {
+    padding: 0 8px;
+}
+
+body.minimal-sidebar .sidebar-section-title {
+    display: none;
+}
+
+body.minimal-sidebar .sidebar-apps {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+body.minimal-sidebar .sidebar-app-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--sidebar-padding);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--c2r-transition);
+    position: relative;
+}
+
+body.minimal-sidebar .sidebar-app-item:hover {
+    background-color: var(--c2r-bg-hover);
+    transform: scale(1.05);
+}
+
+body.minimal-sidebar .sidebar-app-item .app-name {
+    display: none;
+}
+
+body.minimal-sidebar .sidebar-app-item .app-icon {
+    font-size: var(--sidebar-icon-size);
+}
+
+/* Footer minimaliste */
+body.minimal-sidebar .sidebar-footer {
+    padding: var(--sidebar-padding);
+}
+
+body.minimal-sidebar .btn-logout {
+    justify-content: center;
+    padding: var(--sidebar-padding);
+    border-radius: 8px;
+}
+
+body.minimal-sidebar .btn-logout .nav-text {
+    display: none;
+}
+
+body.minimal-sidebar .btn-logout .nav-icon {
+    font-size: var(--sidebar-icon-size);
+}
+
+/* Tooltips */
+.tooltip {
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--tooltip-bg);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-right-color: var(--tooltip-bg);
+}
+
+/* Affichage des tooltips au survol */
+body.minimal-sidebar .nav-link:hover .tooltip,
+body.minimal-sidebar .sidebar-app-item:hover .tooltip,
+body.minimal-sidebar .btn-logout:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: var(--tooltip-delay);
+}
+
+/* Sidebar droite - tooltips à gauche */
+body.minimal-sidebar.sidebar-right .tooltip {
+    left: auto;
+    right: calc(100% + 10px);
+}
+
+body.minimal-sidebar.sidebar-right .tooltip::before {
+    right: auto;
+    left: 100%;
+    border-right-color: transparent;
+    border-left-color: var(--tooltip-bg);
+}
+
+/* Animation d'entrée */
+body.minimal-sidebar .nav-link,
+body.minimal-sidebar .sidebar-app-item,
+body.minimal-sidebar .btn-logout {
+    transition: all 0.2s ease;
+}
+
+body.minimal-sidebar .nav-link:hover,
+body.minimal-sidebar .sidebar-app-item:hover,
+body.minimal-sidebar .btn-logout:hover {
+    transform: scale(1.05);
+}
+
+body.minimal-sidebar .nav-link:active,
+body.minimal-sidebar .sidebar-app-item:active,
+body.minimal-sidebar .btn-logout:active {
+    transform: scale(0.95);
+}
+
+/* Responsive - garder le comportement normal sur mobile */
+@media (max-width: 768px) {
+    body.minimal-sidebar {
+        grid-template-columns: 1fr;
+        grid-template-areas: "main";
+    }
+    
+    body.minimal-sidebar.sidebar-right {
+        grid-template-columns: 1fr;
+        grid-template-areas: "main";
+    }
+    
+    body.minimal-sidebar .sidebar {
+        width: 280px;
+        min-width: 280px;
+    }
+    
+    body.minimal-sidebar .sidebar-header {
+        padding: var(--c2r-spacing-lg);
+        justify-content: space-between;
+    }
+    
+    body.minimal-sidebar .logo {
+        display: none;
+    }
+    
+    body.minimal-sidebar .nav-link {
+        padding: var(--c2r-spacing-md) var(--c2r-spacing-lg);
+        justify-content: flex-start;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    body.minimal-sidebar .nav-text {
+        display: block;
+    }
+    
+    body.minimal-sidebar .nav-icon {
+        font-size: var(--font-size-lg);
+        min-width: 24px;
+    }
+    
+    body.minimal-sidebar .sidebar-section {
+        padding: 0;
+    }
+    
+    body.minimal-sidebar .sidebar-section-title {
+        display: block;
+    }
+    
+    body.minimal-sidebar .sidebar-app-item {
+        justify-content: flex-start;
+        padding: var(--c2r-spacing-sm) var(--c2r-spacing-md);
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    body.minimal-sidebar .sidebar-app-item .app-name {
+        display: block;
+    }
+    
+    body.minimal-sidebar .btn-logout {
+        justify-content: flex-start;
+        padding: var(--c2r-spacing-md);
+        border-radius: var(--c2r-radius);
+    }
+    
+    body.minimal-sidebar .btn-logout .nav-text {
+        display: block;
+    }
+    
+    /* Masquer les tooltips sur mobile */
+    body.minimal-sidebar .tooltip {
+        display: none;
+    }
+}
+
+/* Animation de transition lors du basculement */
+.sidebar-transition {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Bouton de basculement */
+.sidebar-toggle-minimal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    border-radius: var(--c2r-radius);
+    padding: var(--c2r-spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001;
+    transition: var(--c2r-transition);
+    color: var(--c2r-text-secondary);
+    font-size: 1rem;
+}
+
+body.sidebar-right .sidebar .sidebar-toggle-minimal {
+    right: auto;
+    left: 10px;
+}
+
+.sidebar-toggle-minimal:hover {
+    background-color: var(--c2r-bg-hover);
+    color: var(--c2r-text);
+    transform: scale(1.1);
+}
+
+/* Masquer sur mobile */
+@media (max-width: 768px) {
+    .sidebar-toggle-minimal {
+        display: none;
+    }
+}

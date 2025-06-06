@@ -1,5 +1,10 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.6] - 2025-06-12 "InfoToggle"
+
+### ✨ Préférences
+- Possibilité de désactiver tous les pop-ups d'information depuis la page Profil.
+
 ## [1.1.5] - 2025-06-11 "UI Icons"
 
 ### ✨ Harmonisation des icônes

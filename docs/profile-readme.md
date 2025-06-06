@@ -11,3 +11,4 @@ mobile se mettent automatiquement à jour pour refléter ce nouvel ordre. Lors d
 déplacement, l'application en cours de glisse est légèrement agrandie et son
 fond s'assombrit pour mieux la distinguer.
 Un bouton de déconnexion est disponible pour terminer la session.
+Les préférences incluent une option pour masquer toutes les notifications et autres pop-ups d'information.

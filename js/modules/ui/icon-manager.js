@@ -32,6 +32,7 @@
         clipboard: '<i class="icon fa-solid fa-clipboard"></i>',
         add: '<i class="icon fa-solid fa-plus"></i>',
         mail: '<i class="icon fa-solid fa-envelope"></i>',
+        contact: '<i class="icon fa-solid fa-envelope"></i>',
         phone: '<i class="icon fa-solid fa-phone"></i>',
         cart: '<i class="icon fa-solid fa-cart-shopping"></i>',
         play: '<i class="icon fa-solid fa-play"></i>',

@@ -25,6 +25,8 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.
 - La page d'accueil présente des tuiles explicatives pour découvrir le fonctionnement du site.
 - Les applications internes utilisent désormais uniquement les icônes Font Awesome pour un style unifié.
+- Sur mobile, l'application peut s'installer en plein écran grâce au fichier `manifest.webmanifest`.
+- Les icônes PWA ne sont pas incluses dans le dépôt pour éviter d'ajouter des fichiers binaires.
 
 ## Aperçu local
 

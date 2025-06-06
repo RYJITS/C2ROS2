@@ -1,5 +1,11 @@
 # 📝 C2R OS - Journal des modifications
 
+cjadx3-codex/2025-06-06
+## [1.1.6] - 2025-06-12 "UI"
+
+### ✨ Améliorations du bouton de réduction
+- Le bouton de basculement de la sidebar est désormais plus discret et collé au coin supérieur droit en mode desktop.
+=======
 i9mo3r-codex/2025-06-06
 ## [1.1.6] - 2025-06-12 "InfoToggle"
 
@@ -10,6 +16,7 @@ i9mo3r-codex/2025-06-06
 
 ### 📮 Formulaire de contact
 - Ajout d'une page `contact.html` pour envoyer un message depuis le navigateur.
+main
 main
 
 ## [1.1.5] - 2025-06-11 "UI Icons"

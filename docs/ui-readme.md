@@ -10,6 +10,7 @@ L'ajout d'un fichier `manifest.webmanifest` permet d'installer C2R OS en plein �
 Les icônes nécessaires à la PWA sont chargées dynamiquement afin d'éviter tout fichier binaire dans le dépôt.
 
 La page Profil permet de réordonner visuellement les applications installées grâce à SortableJS. Un bouton de déconnexion est également présent sur cette page.
+Un interrupteur permet désormais de désactiver tous les pop-ups d'information depuis les préférences du profil.
 
 La sidebar propose un mode compact activé par un bouton dans son en-tête. L'icône passe d'une croix à un petit carré lorsque la barre est repliée, quelles que soient sa position et son thème. Les icônes de suppression restent rouges comme en mode standard.
 

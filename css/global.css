@@ -602,6 +602,10 @@ tr:last-child td {
     pointer-events: none;
 }
 
+body[data-info-popups='disabled'] .notifications-container {
+    display: none;
+}
+
 .notification {
     background: var(--c2r-bg-card);
     color: var(--c2r-text);

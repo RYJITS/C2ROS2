@@ -12,6 +12,10 @@
     pointer-events: none;
 }
 
+body[data-info-popups='disabled'] .notifications-container {
+    display: none;
+}
+
 .notification {
     background: var(--c2r-bg-card);
     border: 1px solid var(--c2r-border);

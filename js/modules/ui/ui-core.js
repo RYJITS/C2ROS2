@@ -883,11 +883,21 @@ class UICore {
      */
     setInfoPopups(enabled) {
         this.showInfoPopups = enabled;
+        document.body.setAttribute('data-info-popups', enabled ? 'enabled' : 'disabled');
+
         const dailyTip = document.getElementById('daily-tip');
-        if (dailyTip && !enabled) {
-            dailyTip.style.display = 'none';
-        } else if (dailyTip && enabled) {
-            dailyTip.style.display = document.getElementById('welcome-toggle')?.checked ? 'block' : 'none';
+        if (dailyTip) {
+            if (!enabled) {
+                dailyTip.style.display = 'none';
+            } else {
+                const welcomeChecked = document.getElementById('welcome-toggle')?.checked;
+                dailyTip.style.display = welcomeChecked ? 'block' : 'none';
+            }
+        }
+
+        const container = document.getElementById('notifications-container');
+        if (container) {
+            container.style.display = enabled ? 'flex' : 'none';
         }
     }
     

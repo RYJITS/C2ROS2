@@ -1,5 +1,10 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.6] - 2025-06-12 "SidebarTiles"
+
+### ✨ Interface
+- La sidebar PC adopte un style de tuile plus sobre et ne comporte plus de barre de défilement.
+
 ## [1.1.5] - 2025-06-11 "UI Icons"
 
 ### ✨ Harmonisation des icônes

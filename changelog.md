@@ -1,5 +1,15 @@
 # 📝 C2R OS - Journal des modifications
 
+9jl834-codex/2025-06-06
+=======
+kce102-codex/2025-06-06
+## [1.1.6] - 2025-06-12 "SidebarTiles"
+
+### ✨ Interface
+- La sidebar PC adopte un style de tuile plus sobre et ne comporte plus de barre de défilement.
+=======
+cjadx3-codex/2025-06-06
+main
 ## [1.1.6] - 2025-06-12 "UI"
 
 ### ✨ Améliorations du bouton de réduction
@@ -13,6 +23,12 @@
 
 ### 📮 Formulaire de contact
 - Ajout d'une page `contact.html` pour envoyer un message depuis le navigateur.
+9jl834-codex/2025-06-06
+=======
+main
+main
+main
+main
 
 ## [1.1.5] - 2025-06-11 "UI Icons"
 

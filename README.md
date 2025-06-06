@@ -23,6 +23,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - Une option permet de désactiver les pop-ups d'information dans les préférences du profil, ce qui masque toutes les notifications du système.
 - La barre latérale intègre un bouton de réduction discret dans son coin supérieur droit ; l'icône passe d'une croix à un petit carré selon l'état de la barre.
 - La barre latérale utilise un dégradé de gris et une ombre portée pour s'intégrer au thème.
+- En mode PC, la barre latérale adopte un style de tuile plus sobre, sans barre de défilement.
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.
 - La page d'accueil présente des tuiles explicatives pour découvrir le fonctionnement du site.
 - Les applications internes utilisent désormais uniquement les icônes Font Awesome pour un style unifié.

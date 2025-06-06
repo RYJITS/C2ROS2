@@ -14,7 +14,7 @@ Une tuile sur la page d'accueil invite l'utilisateur à installer l'application 
 La page Profil permet de réordonner visuellement les applications installées grâce à SortableJS. Un bouton de déconnexion est également présent sur cette page.
 Un interrupteur permet désormais de désactiver tous les pop-ups d'information depuis les préférences du profil.
 
-La sidebar propose un mode compact activé par un petit bouton discret situé dans le coin supérieur droit. L'icône passe d'une croix à un petit carré lorsque la barre est repliée, quelles que soient sa position et son thème. Les icônes de suppression restent rouges comme en mode standard.
+La sidebar propose un mode compact activé par un petit bouton discret situé dans le coin supérieur droit. L'icône passe d'une croix à un petit carré lorsque la barre est repliée, quelle que soit la position de la barre ou le thème. Le bouton utilise un gris légèrement plus sombre que la sidebar pour rester visible sans attirer l'œil. Les icônes de suppression demeurent rouges comme en mode standard.
 
 La barre latérale bénéficie d'un fond dégradé gris et d'une ombre pour s'intégrer harmonieusement aux thèmes sombre et clair. Le bouton hamburger a été supprimé au profit de cette barre de navigation basse.
 

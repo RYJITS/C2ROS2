@@ -22,7 +22,13 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - Depuis la version 1.1.0, les applications installées peuvent être réordonnées par glisser-déposer dans la page Profil.
 - Un bouton de déconnexion est disponible dans la page Profil.
 a5fgfv-codex/2025-06-06
+a5fgfv-codex/2025-06-06
 - La barre latérale intègre un bouton de réduction : l'icône passe d'une croix à un petit carré suivant l'état de la barre.
+=======
+gifv4p-codex/2025-06-06
+- La barre latérale intègre un bouton de réduction discret dans son coin supérieur droit ; l'icône passe d'une croix à un petit carré selon l'état de la barre.
+- Une option permet de désactiver les pop-ups d'information dans les préférences du profil.
+main
 =======
 nmg7gi-codex/2025-06-06
 - La barre latérale intègre un bouton de réduction discret dans son coin supérieur droit ; l'icône passe d'une croix à un petit carré selon l'état de la barre.

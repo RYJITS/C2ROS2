@@ -1,4 +1,8 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.11] - 2025-06-17 "MobileIconsGrey"
+
+### ✨ Interface mobile
+- Les icônes de la liste déroulante des applications sont grisées pour un rendu minimaliste.
 ## [1.1.8] - 2025-06-14 "BottomNav80"
 
 ### ✨ Interface mobile

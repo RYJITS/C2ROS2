@@ -11,6 +11,7 @@ La barre de recherche du Store se masque automatiquement lors du défilement ver
 En mode mobile, la barre de navigation basse comprend un bouton **Applications**. L'icône est chargée grâce à l'ajout du pictogramme `list` dans `IconManager`.
 Depuis la version 1.1.8, cette barre mesure 80px de haut pour faciliter la navigation tactile.
 Les icônes du menu mobile sont désormais plus petites afin d'optimiser l'espace disponible.
+Les pictogrammes de la liste déroulante adoptent maintenant un gris neutre pour un aspect minimaliste.
 L'ajout d'un fichier `manifest.webmanifest` permet d'installer C2R OS en plein écran sur mobile.
 Les icônes nécessaires à la PWA sont chargées dynamiquement afin d'éviter tout fichier binaire dans le dépôt.
 Une série de tuiles d'accueil explique comment utiliser l'OS :

@@ -99,6 +99,7 @@
     font-size: var(--font-size-sm);
     min-width: 16px;
     text-align: center;
+    color: var(--c2r-text-muted);
 }
 
 .mobile-app-item:last-child {

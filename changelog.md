@@ -1,4 +1,8 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.13] - 2025-06-19 "ContactFinalize"
+
+### 📩 Page de contact finalisée
+- Formulaire amélioré et adresse `contact@c2ros.com`.
 o0f586-codex/2025-06-07
 ## [1.1.8] - 2025-06-14 "ContactLink"
 

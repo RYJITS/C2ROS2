@@ -1,6 +1,7 @@
 # Page de contact
 
-Ce fichier décrit la page `contact.html`.
+La page `contact.html` permet de joindre l'équipe C2R OS.
 
-Cette page propose un formulaire basique permettant d'envoyer un message avec un nom, un email et un champ libre. Le formulaire utilise la méthode POST et peut être relié à un service de traitement. La page reprend les styles globaux de C2R OS.
-Un lien direct vers cette page est présent dans la barre de navigation.
+Elle affiche l'adresse `contact@c2ros.com` et propose un formulaire avec les champs **Nom**, **E-mail** et **Message**. Le formulaire utilise la méthode POST et peut être relié à un service de traitement.
+
+Un lien direct vers cette page figure dans la barre de navigation du site.

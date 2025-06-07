@@ -10,7 +10,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: 60px;
+        height: 80px;
         background-color: var(--c2r-bg-card);
         border-top: 1px solid var(--c2r-border);
         z-index: var(--z-sidebar);
@@ -19,7 +19,7 @@
     }
 
     .bottom-nav .nav-icon {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-md);
     }
 
     .bottom-nav .nav-link {
@@ -45,14 +45,19 @@
 .mobile-apps-dropdown {
     display: none;
     position: fixed;
-    bottom: 60px;
-    left: 0;
-    right: 0;
+    bottom: 80px;
+31dlz4-codex/2025-06-07
+    left: auto;
+    right: 10%;
+    width: 80%;
+
+    left: 10%;
+    right: 10%;
+main
     max-height: 50vh;
     background-color: var(--c2r-bg-card);
-    border-top: 1px solid var(--c2r-border);
-    border-left: 1px solid var(--c2r-border);
-    border-right: 1px solid var(--c2r-border);
+    border: 1px solid var(--c2r-border);
+    border-radius: var(--c2r-radius);
     overflow-y: auto;
     z-index: calc(var(--z-sidebar) + 1);
 }
@@ -96,9 +101,14 @@
 }
 
 .mobile-app-item .app-icon {
-    font-size: var(--font-size-lg);
-    min-width: 20px;
+31dlz4-codex/2025-06-07
+    font-size: var(--font-size-xxs);
+=======
+    font-size: var(--font-size-xs);
+main
+    min-width: 16px;
     text-align: center;
+    color: var(--c2r-text-muted);
 }
 
 .mobile-app-item:last-child {

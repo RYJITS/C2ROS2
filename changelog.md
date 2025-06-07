@@ -1,8 +1,48 @@
 # 📝 C2R OS - Journal des modifications
+o0f586-codex/2025-06-07
 ## [1.1.8] - 2025-06-14 "ContactLink"
 
 ### 📮 Lien vers la page Contact
 - Ajout d'un accès direct à `contact.html` depuis la barre de navigation.
+=======
+8prvob-codex/2025-06-07
+## [1.1.12] - 2025-06-18 "DragVibrate"
+
+### ✨ Interface mobile
+- Vibration courte lors du déplacement des applications dans la page Profil.
+=======
+## [1.1.12] - 2025-06-18 "MobileMenuCompact"
+
+### ✨ Interface mobile
+- Menu des applications repensé : largeur réduite et suppression du bouton de fermeture.
+- Icônes et pictogrammes encore plus petits pour un style minimaliste.
+8prvob-codex/2025-06-07
+main
+=======
+31dlz4-codex/2025-06-07
+- Le menu est désormais aligné à droite sur mobile et ses icônes sont minuscules.
+=======
+ main
+main
+## [1.1.11] - 2025-06-17 "MobileIconsGrey"
+
+### ✨ Interface mobile
+- Les icônes de la liste déroulante des applications sont grisées pour un rendu minimaliste.
+## [1.1.8] - 2025-06-14 "BottomNav80"
+
+### ✨ Interface mobile
+- Barre de navigation mobile agrandie à 80px de haut.
+
+## [1.1.9] - 2025-06-15 "MobileIcons"
+
+### ✨ Interface mobile
+- Icônes du menu mobile alignées sur celles de la page Profil.
+
+## [1.1.10] - 2025-06-16 "MobileIconsSmall"
+
+### ✨ Interface mobile
+- Icônes du menu mobile encore réduites pour économiser de l'espace.
+main
 
 ## [1.1.7] - 2025-06-13 "MobileApps"
 

@@ -23,7 +23,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - Le titre du menu mobile a été retiré et les icônes sont encore plus petites pour gagner de la place.
 - Les icônes de la liste déroulante des applications sont désormais d'un gris neutre pour un rendu minimaliste.
 - La barre de recherche du Store se masque automatiquement lors du défilement vers le bas.
-- Le Store adopte un mode sombre rouge : fond #0d0d12 dégradé, cartes 300×220 px et boutons « + » cerclés. La police Montserrat est utilisée pour cette section.
+- Le Store adopte un mode sombre rouge : fond #0D0D12 avec dégradé radial #15151B, cartes 280×220 px et bouton d’action en bas à droite. La police Montserrat est utilisée pour cette section.
 - Depuis la version 1.1.0, les applications installées peuvent être réordonnées par glisser-déposer dans la page Profil.
 - Un court retour haptique est émis sur smartphone au début et à la fin du déplacement.
 - Un bouton de déconnexion est disponible dans la page Profil.

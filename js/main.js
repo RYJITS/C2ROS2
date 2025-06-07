@@ -277,11 +277,17 @@ function renderFilteredApps(apps) {
 window.handleAppInstall = function(appId) {
     const appCore = window.C2R_SYSTEM?.appCore;
     const uiCore = window.C2R_SYSTEM?.uiCore;
-    
+    const userCore = window.C2R_SYSTEM?.userCore;
+
     if (!appCore || !uiCore) return;
-    
+
     const app = appCore.getApp(appId);
     if (!app) return;
+
+    if (!userCore?.getCurrentUser()) {
+        uiCore.showNotification('Veuillez vous connecter pour installer', 'error');
+        return;
+    }
     
     if (appCore.installApp(appId)) {
         uiCore.showNotification(`${IconManager.getIcon('check')} ${app.name} installée avec succès!`, 'success');

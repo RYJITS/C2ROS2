@@ -10,7 +10,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: 60px;
+        height: 80px;
         background-color: var(--c2r-bg-card);
         border-top: 1px solid var(--c2r-border);
         z-index: var(--z-sidebar);
@@ -45,7 +45,7 @@
 .mobile-apps-dropdown {
     display: none;
     position: fixed;
-    bottom: 60px;
+    bottom: 80px;
     left: 0;
     right: 0;
     max-height: 50vh;

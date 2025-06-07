@@ -1,4 +1,9 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.8] - 2025-06-14 "BottomNav80"
+
+### ✨ Interface mobile
+- Barre de navigation mobile agrandie à 80px de haut.
+
 ## [1.1.7] - 2025-06-13 "MobileApps"
 
 ### ✨ Interface mobile

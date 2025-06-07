@@ -18,6 +18,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - En mode mobile, la poubelle s'affiche désormais en rouge grâce à une règle CSS dédiée.
 - En affichage mobile, un bouton **Applications** apparaît dans la barre de navigation basse.
 - La croix du menu mobile adopte la même couleur neutre que les autres boutons.
+- La barre de navigation mobile mesure maintenant 80px de haut pour une meilleure ergonomie.
 - Le titre du menu mobile a été retiré et les icônes y sont plus petites.
 - Depuis la version 1.1.0, les applications installées peuvent être réordonnées par glisser-déposer dans la page Profil.
 - Un bouton de déconnexion est disponible dans la page Profil.

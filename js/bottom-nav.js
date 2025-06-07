@@ -3,7 +3,6 @@ class BottomNav {
     constructor() {
         this.dropdown = document.getElementById('mobile-apps-dropdown');
         this.appsBtn = document.getElementById('mobile-apps-btn');
-        this.closeBtn = document.getElementById('close-mobile-apps');
         this.init();
     }
 
@@ -13,10 +12,6 @@ class BottomNav {
                 e.preventDefault();
                 this.toggleMenu();
             });
-        }
-
-        if (this.closeBtn) {
-            this.closeBtn.addEventListener('click', () => this.closeMenu());
         }
 
         if (this.dropdown) {

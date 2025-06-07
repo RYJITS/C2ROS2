@@ -4,6 +4,10 @@
 ### ✨ Interface mobile
 - Menu des applications repensé : largeur réduite et suppression du bouton de fermeture.
 - Icônes et pictogrammes encore plus petits pour un style minimaliste.
+31dlz4-codex/2025-06-07
+- Le menu est désormais aligné à droite sur mobile et ses icônes sont minuscules.
+=======
+ main
 ## [1.1.11] - 2025-06-17 "MobileIconsGrey"
 
 ### ✨ Interface mobile

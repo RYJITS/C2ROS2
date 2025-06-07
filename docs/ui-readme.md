@@ -7,6 +7,7 @@ La petite croix fermant la liste déroulante des applications sur mobile adopte 
 Le titre "Applications installées" a été retiré pour gagner de la place et les icônes y sont affichées en plus petit.
 
 En mode mobile, la barre de navigation basse comprend un bouton **Applications**. L'icône est chargée grâce à l'ajout du pictogramme `list` dans `IconManager`.
+Depuis la version 1.1.8, cette barre mesure 80px de haut pour faciliter la navigation tactile.
 L'ajout d'un fichier `manifest.webmanifest` permet d'installer C2R OS en plein écran sur mobile.
 Les icônes nécessaires à la PWA sont chargées dynamiquement afin d'éviter tout fichier binaire dans le dépôt.
 Une tuile sur la page d'accueil invite l'utilisateur à installer l'application en PWA.

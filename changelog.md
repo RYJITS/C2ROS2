@@ -1,4 +1,10 @@
 # 📝 C2R OS - Journal des modifications
+o0f586-codex/2025-06-07
+## [1.1.8] - 2025-06-14 "ContactLink"
+
+### 📮 Lien vers la page Contact
+- Ajout d'un accès direct à `contact.html` depuis la barre de navigation.
+=======
 8prvob-codex/2025-06-07
 ## [1.1.12] - 2025-06-18 "DragVibrate"
 
@@ -36,6 +42,7 @@ main
 
 ### ✨ Interface mobile
 - Icônes du menu mobile encore réduites pour économiser de l'espace.
+main
 
 ## [1.1.7] - 2025-06-13 "MobileApps"
 

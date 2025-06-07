@@ -1,13 +1,23 @@
 # 📝 C2R OS - Journal des modifications
+8prvob-codex/2025-06-07
+## [1.1.12] - 2025-06-18 "DragVibrate"
+
+### ✨ Interface mobile
+- Vibration courte lors du déplacement des applications dans la page Profil.
+=======
 ## [1.1.12] - 2025-06-18 "MobileMenuCompact"
 
 ### ✨ Interface mobile
 - Menu des applications repensé : largeur réduite et suppression du bouton de fermeture.
 - Icônes et pictogrammes encore plus petits pour un style minimaliste.
+8prvob-codex/2025-06-07
+main
+=======
 31dlz4-codex/2025-06-07
 - Le menu est désormais aligné à droite sur mobile et ses icônes sont minuscules.
 =======
  main
+main
 ## [1.1.11] - 2025-06-17 "MobileIconsGrey"
 
 ### ✨ Interface mobile

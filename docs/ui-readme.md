@@ -13,7 +13,11 @@ Depuis la version 1.1.8, cette barre mesure 80px de haut pour faciliter la navig
 Les icônes du menu mobile sont désormais plus petites afin d'optimiser l'espace disponible.
 L'ajout d'un fichier `manifest.webmanifest` permet d'installer C2R OS en plein écran sur mobile.
 Les icônes nécessaires à la PWA sont chargées dynamiquement afin d'éviter tout fichier binaire dans le dépôt.
-Une tuile sur la page d'accueil invite l'utilisateur à installer l'application en PWA.
+Une série de tuiles d'accueil explique comment utiliser l'OS :
+1. **Installez des applications IA et services** avec un lien direct vers le Store.
+2. **Options du profil** pour gérer les notifications, le thème sombre ou la position de la barre de navigation.
+3. **Installer C2R OS** en mode PWA sur smartphone.
+4. **Infos sur les applications** menant au catalogue complet.
 
 La page Profil permet de réordonner visuellement les applications installées grâce à SortableJS. Un bouton de déconnexion est également présent sur cette page.
 Un interrupteur permet désormais de désactiver tous les pop-ups d'information depuis les préférences du profil.

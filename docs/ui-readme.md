@@ -34,3 +34,6 @@ La sidebar propose un mode compact activé par un petit bouton discret situé da
 La barre latérale bénéficie d'un fond dégradé gris et d'une ombre pour s'intégrer harmonieusement aux thèmes sombre et clair. Le bouton hamburger a été supprimé au profit de cette barre de navigation basse.
 
 En affichage **PC**, la sidebar adopte désormais un style de tuile plus sobre sans barre de défilement verticale.
+
+## Nouvelle barre latérale C2R
+La version sombre fixe adopte une largeur de 72 px. Son fond est un dégradé vertical (#0d0d12→#15151b) et la bordure droite utilise #2a2a32. Les icônes centrées changent de couleur au survol (#ff5858). Le logo "C2R" en haut mesure 26 px et la police Montserrat est utilisée pour tout le contenu.

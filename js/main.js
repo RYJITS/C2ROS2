@@ -148,6 +148,23 @@ function setupGlobalEventHandlers() {
 
   // Gestionnaire d'installation PWA
   setupPWAInstall();
+
+  // Masquer la barre de recherche lors du défilement
+  const storePage = document.getElementById('page-store');
+  const searchContainer = storePage?.querySelector('.search-container');
+  if (storePage && searchContainer) {
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+      if (!storePage.classList.contains('active')) return;
+      const st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop && st > 50) {
+        searchContainer.classList.add('hidden');
+      } else {
+        searchContainer.classList.remove('hidden');
+      }
+      lastScrollTop = st <= 0 ? 0 : st;
+    });
+  }
 }
 
 /**

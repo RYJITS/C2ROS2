@@ -9,6 +9,11 @@
 ### ✨ Interface mobile
 - Icônes du menu mobile alignées sur celles de la page Profil.
 
+## [1.1.10] - 2025-06-16 "MobileIconsSmall"
+
+### ✨ Interface mobile
+- Icônes du menu mobile encore réduites pour économiser de l'espace.
+
 ## [1.1.7] - 2025-06-13 "MobileApps"
 
 ### ✨ Interface mobile

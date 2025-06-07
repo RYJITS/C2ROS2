@@ -1,4 +1,9 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.8] - 2025-06-14 "ContactLink"
+
+### 📮 Lien vers la page Contact
+- Ajout d'un accès direct à `contact.html` depuis la barre de navigation.
+
 ## [1.1.7] - 2025-06-13 "MobileApps"
 
 ### ✨ Interface mobile

@@ -14,10 +14,6 @@ class BottomNav {
             });
         }
 
-5z5oda-codex/2025-06-07
-        if (this.closeBtn) {
-            this.closeBtn.addEventListener('click', () => this.closeMenu());
-        }
 
         // Fermer le menu si l'utilisateur appuie sur un autre bouton de navigation
         document.querySelectorAll('.bottom-nav .nav-link').forEach(link => {
@@ -26,8 +22,6 @@ class BottomNav {
             }
         });
 
-=======
-main
         if (this.dropdown) {
             this.dropdown.addEventListener('click', (e) => {
                 if (e.target === this.dropdown) {

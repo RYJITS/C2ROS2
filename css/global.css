@@ -56,6 +56,11 @@ p {
     font-size: var(--font-size-lg);
 }
 
+/* Utilitaire pour cacher un élément */
+.hidden {
+    display: none !important;
+}
+
 /* Boutons */
 .btn {
     display: inline-flex;

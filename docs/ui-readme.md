@@ -6,6 +6,7 @@ Depuis la version actuelle, le Store utilise la méthode `toggleApp(appId)` pour
 La petite croix fermant la liste déroulante des applications sur mobile adopte elle aussi une teinte neutre.
 Le titre "Applications installées" a été retiré pour gagner de la place et les icônes y sont affichées en plus petit.
 
+La barre de recherche du Store se masque automatiquement lors du défilement vers le bas.
 En mode mobile, la barre de navigation basse comprend un bouton **Applications**. L'icône est chargée grâce à l'ajout du pictogramme `list` dans `IconManager`.
 L'ajout d'un fichier `manifest.webmanifest` permet d'installer C2R OS en plein écran sur mobile.
 Les icônes nécessaires à la PWA sont chargées dynamiquement afin d'éviter tout fichier binaire dans le dépôt.

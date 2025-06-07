@@ -19,6 +19,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - En affichage mobile, un bouton **Applications** apparaît dans la barre de navigation basse.
 - La croix du menu mobile adopte la même couleur neutre que les autres boutons.
 - Le titre du menu mobile a été retiré et les icônes y sont plus petites.
+- La barre de recherche du Store se masque automatiquement lors du défilement vers le bas.
 - Depuis la version 1.1.0, les applications installées peuvent être réordonnées par glisser-déposer dans la page Profil.
 - Un bouton de déconnexion est disponible dans la page Profil.
 - La barre latérale intègre un bouton de réduction discret dans son coin supérieur droit ; l'icône passe d'une croix à un petit carré selon l'état de la barre.

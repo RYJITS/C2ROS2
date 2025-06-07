@@ -312,6 +312,10 @@ class UICore {
             this.showNotification('Application installée', 'success');
         }
 
+        if (navigator.vibrate) {
+            navigator.vibrate(100);
+        }
+
         this.refreshApplicationsList();
         if (this.currentPage === 'profile') {
             this.refreshUserProfile();

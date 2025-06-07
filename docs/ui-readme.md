@@ -4,7 +4,8 @@ S'occupe du thème, de la navigation et des notifications. Il adapte l'interface
 
 Depuis la version actuelle, le Store utilise la méthode `toggleApp(appId)` pour installer ou désinstaller une application. L'icône « plus » devient une poubelle rouge, alignée à droite du texte. L'affichage sombre conserve cette couleur et la taille des icônes est réduite pour un meilleur rendu mobile. Une règle CSS dédiée garantit que la poubelle reste rouge sur mobile.
 Lorsqu'un utilisateur tente d'installer une application sans être connecté, une notification indique désormais « Veuillez vous connecter pour installer ».
-La petite croix fermant la liste déroulante des applications sur mobile adopte elle aussi une teinte neutre.
+Un bref retour tactile confirme aussi l'installation ou la désinstallation sur les appareils compatibles.
+La liste déroulante des applications se ferme désormais en appuyant hors du menu ; la petite croix a été supprimée.
 Le titre "Applications installées" a été retiré pour gagner de la place et les icônes y sont affichées en plus petit.
 
 La barre de recherche du Store se masque automatiquement lors du défilement vers le bas.
@@ -12,6 +13,7 @@ En mode mobile, la barre de navigation basse comprend un bouton **Applications**
 Depuis la version 1.1.8, cette barre mesure 80px de haut pour faciliter la navigation tactile.
 Les icônes du menu mobile sont désormais plus petites afin d'optimiser l'espace disponible.
 Les pictogrammes de la liste déroulante adoptent maintenant un gris neutre pour un aspect minimaliste.
+La largeur du menu est réduite et son contenu est centré pour gagner de la place sur petits écrans.
 L'ajout d'un fichier `manifest.webmanifest` permet d'installer C2R OS en plein écran sur mobile.
 Les icônes nécessaires à la PWA sont chargées dynamiquement afin d'éviter tout fichier binaire dans le dépôt.
 Une série de tuiles d'accueil explique comment utiliser l'OS :

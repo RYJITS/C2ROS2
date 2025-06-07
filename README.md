@@ -30,10 +30,10 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - En mode PC, la barre latérale adopte un style de tuile plus sobre, sans barre de défilement.
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.
 - La page d'accueil propose quatre tuiles pour comprendre le fonctionnement de C2R OS :
-  1. **Installez des applications IA et services** — un lien mène directement au Store et les applications installées apparaissent dans la barre de navigation.
-  2. **Options du profil** — accès rapide pour activer ou désactiver les notifications, passer en mode sombre ou déplacer la barre de navigation.
+  1. **Installez des applications IA et services** — la tuile elle-même mène directement au Store et les applications installées apparaissent dans la barre de navigation.
+  2. **Options du profil** — la tuile ouvre directement la page correspondante pour activer ou désactiver les notifications, passer en mode sombre ou déplacer la barre de navigation.
   3. **Installer C2R OS** — un bouton permet d'ajouter l'application sur smartphone en mode PWA.
-  4. **Infos sur les applications** — un lien renvoie au Store pour découvrir les différents types d'apps disponibles.
+  4. **Infos sur les applications** — cette tuile renvoie directement au Store pour découvrir les différents types d'apps disponibles.
 - Les applications internes utilisent désormais uniquement les icônes Font Awesome pour un style unifié.
 - Sur mobile, l'application peut s'installer en plein écran grâce au fichier `manifest.webmanifest`.
 - Les icônes PWA ne sont pas incluses dans le dépôt pour éviter d'ajouter des fichiers binaires.

@@ -51,7 +51,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="contact.html" class="nav-link" aria-label="Contact">
+                <a href="#contact" class="nav-link" data-page="contact" aria-label="Contact">
                     <span class="nav-icon" data-icon="mail"></span>
                     <span class="nav-text">Contact</span>
                 </a>
@@ -308,6 +308,30 @@
                 </details>
             </div>
         </section>
+
+        <!-- Page Contact -->
+        <section id="page-contact" class="page">
+            <div class="page-header">
+                <h1>Contact</h1>
+            </div>
+
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="contact-name">Nom</label>
+                    <input type="text" id="contact-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">E-mail</label>
+                    <input type="email" id="contact-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+            <p class="text-small">Vous pouvez aussi nous écrire à <a href="mailto:contact@c2ros.com">contact@c2ros.com</a>.</p>
+        </section>
     </main>
 
     <!-- Barre de navigation mobile -->
@@ -321,7 +345,7 @@
         <a href="#profile" class="nav-link" data-page="profile" aria-label="Profil">
             <span class="nav-icon" data-icon="profile"></span>
         </a>
-        <a href="contact.html" class="nav-link" aria-label="Contact">
+        <a href="#contact" class="nav-link" data-page="contact" aria-label="Contact">
             <span class="nav-icon" data-icon="mail"></span>
         </a>
         <button class="nav-link" id="mobile-apps-btn" aria-label="Applications">

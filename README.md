@@ -25,6 +25,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - Un bouton de déconnexion est disponible dans la page Profil.
 - La barre latérale intègre un bouton de réduction discret dans son coin supérieur droit ; l'icône passe d'une croix à un petit carré selon l'état de la barre.
 - Une option permet de désactiver les pop-ups d'information dans les préférences du profil, ce qui masque toutes les notifications du système.
+- Si vous tentez d'installer une application sans être connecté, une notification précise désormais « Veuillez vous connecter pour installer ».
 - La barre latérale utilise un dégradé de gris et une ombre portée pour s'intégrer au thème.
 - En mode PC, la barre latérale adopte un style de tuile plus sobre, sans barre de défilement.
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.

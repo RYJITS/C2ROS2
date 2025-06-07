@@ -3,7 +3,6 @@ class BottomNav {
     constructor() {
         this.dropdown = document.getElementById('mobile-apps-dropdown');
         this.appsBtn = document.getElementById('mobile-apps-btn');
-        this.closeBtn = document.getElementById('close-mobile-apps');
         this.init();
     }
 
@@ -15,6 +14,7 @@ class BottomNav {
             });
         }
 
+5z5oda-codex/2025-06-07
         if (this.closeBtn) {
             this.closeBtn.addEventListener('click', () => this.closeMenu());
         }
@@ -26,6 +26,8 @@ class BottomNav {
             }
         });
 
+=======
+main
         if (this.dropdown) {
             this.dropdown.addEventListener('click', (e) => {
                 if (e.target === this.dropdown) {

@@ -114,21 +114,12 @@ class UIMinimalRed {
         dropdown.id = 'mobile-apps-dropdown';
         dropdown.className = 'mobile-apps-dropdown';
         dropdown.innerHTML = `
-            <div class="mobile-apps-header">
-                <button class="close-btn" id="close-mobile-apps" aria-label="Fermer">&times;</button>
-            </div>
             <div class="mobile-apps-list" id="mobile-apps-list">
                 <!-- Applications générées dynamiquement -->
             </div>
         `;
         
         document.body.appendChild(dropdown);
-        
-        // Événement fermeture
-        document.getElementById('close-mobile-apps').addEventListener('click', () => {
-            this.closeMobileAppsMenu();
-        });
-        
         // Fermeture en cliquant à l'extérieur
         dropdown.addEventListener('click', (e) => {
             if (e.target === dropdown) {

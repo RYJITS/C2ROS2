@@ -99,27 +99,27 @@
                     </div>
 
                     <div class="info-tiles">
-                        <div class="card info-tile">
+                        <a href="#store" data-page="store" class="card info-tile">
                             <span data-icon="store"></span>
-                            <h3>Installez des applications</h3>
-                            <p>Parcourez le Store pour ajouter de nouvelles fonctionnalités.</p>
-                        </div>
-                        <div class="card info-tile">
+                            <h3>Installez des applications IA et services</h3>
+                            <p>Explorez le Store pour trouver des intelligences artificielles, des formations ou des services. Les applications installées apparaissent ensuite dans la barre de navigation.</p>
+                        </a>
+                        <a href="#profile" data-page="profile" class="card info-tile">
                             <span data-icon="profile"></span>
-                            <h3>Personnalisez votre profil</h3>
-                            <p>Modifiez vos préférences et gérez vos applications installées.</p>
-                        </div>
-                        <div class="card info-tile">
-                            <span data-icon="admin"></span>
-                            <h3>Configurez le système</h3>
-                            <p>Accédez aux options avancées si vous disposez des droits.</p>
-                        </div>
+                            <h3>Options du profil</h3>
+                            <p>Activez ou désactivez les notifications, changez de thème et déplacez la barre de navigation.</p>
+                        </a>
                         <div class="card info-tile" id="install-tile" style="display:none;">
                             <span data-icon="download"></span>
                             <h3>Installer C2R OS</h3>
-                            <p>Ajoutez l'application à l'écran d'accueil pour un accès direct.</p>
+                            <p>Ajoutez l'application sur votre smartphone en mode PWA pour un accès direct.</p>
                             <button id="install-btn" class="btn btn-primary">Installer</button>
                         </div>
+                        <a href="#store" data-page="store" class="card info-tile">
+                            <span data-icon="info"></span>
+                            <h3>Infos sur les applications</h3>
+                            <p>Découvrez les différents types d'applications disponibles et accédez directement au catalogue.</p>
+                        </a>
                     </div>
 
                     <div id="daily-tip" class="daily-tip">
@@ -321,9 +321,6 @@
     </nav>
 
     <div class="mobile-apps-dropdown" id="mobile-apps-dropdown">
-        <div class="mobile-apps-header">
-            <button class="close-btn" id="close-mobile-apps" aria-label="Fermer">&times;</button>
-        </div>
         <div class="mobile-apps-list" id="mobile-apps-list"></div>
     </div>
 

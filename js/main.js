@@ -446,9 +446,15 @@ function setupDragAndDrop() {
         animation: 150,
         onStart: (evt) => {
             evt.item.classList.add('dragging');
+            if (navigator.vibrate) {
+                navigator.vibrate(30);
+            }
         },
         onEnd: (evt) => {
             evt.item.classList.remove('dragging');
+            if (navigator.vibrate) {
+                navigator.vibrate(50);
+            }
             const order = Array.from(list.querySelectorAll('.app-item'))
                 .map(item => item.dataset.appId);
             window.C2R_SYSTEM?.appCore.reorderApps(order);

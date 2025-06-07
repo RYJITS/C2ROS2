@@ -2,7 +2,7 @@
 
 Ce document décrit le processus complet de gestion des icônes entre l'équipe Design (Figma) et l'équipe Développement (INIA)
 
-Ce mini-OS suit le thème "Minimal Red" : fonds gris sombre (#181818 → #222222) avec un accent rouge (#E53935) et la police "Inter Variable".
+Ce mini-OS suit le thème "Minimal Red" : fonds sombres (#0D0D12 → #15151B) avec un accent rouge (#C53A3A) et la police "Inter Variable".
 
 ## 1. Gestion des icônes
 
@@ -83,7 +83,7 @@ Les fichiers CSS actuels (`css/`) et JS vanilla (`js/`) restent pour l'ancienne 
 - **Tests** : linting ESLint + tests unitaires Jest pour les composants.
 - **Accessibilité** :
   - Fournir un `aria-label` ou `title` explicite pour chaque icône utilisée seule.
-  - Veiller au contraste couleurs (rouge #E53935 sur fond sombre #181818/#222222).
+  - Veiller au contraste couleurs (rouge #C53A3A sur fond sombre #0D0D12/#15151B).
   - Utiliser `role="img"` sur les icônes personnalisées SVG si nécessaire.
   - Vérifier la lisibilité de la police Inter Variable sur tous les supports.
 

@@ -151,8 +151,8 @@ function createFullHTML(html, css) {
         
         /* Styles par défaut pour une meilleure présentation */
         body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
-        .btn { padding: 8px 16px; background: #E53935; color: white; border: none; border-radius: 4px; cursor: pointer; }
-        .btn:hover { background: #F74B45; }
+        .btn { padding: 8px 16px; background: #C53A3A; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .btn:hover { background: #FF5858; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
         .form-group input, .form-group textarea { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }

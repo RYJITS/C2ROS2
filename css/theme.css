@@ -2,9 +2,9 @@
 
 :root {
     /* Couleurs principales */
-    --c2r-accent: #E53935;
-    --c2r-accent-hover: #F74B45;
-    --c2r-accent-light: #FF7669;
+    --c2r-accent: #C53A3A;
+    --c2r-accent-hover: #FF5858;
+    --c2r-accent-light: #FF5858;
 
     /* Alias pour la coloration des icônes */
     --primary-color: var(--c2r-accent);
@@ -55,24 +55,24 @@
 
 /* Thème sombre (par défaut) */
 .theme-dark {
-    --c2r-bg: #181818;
-    --c2r-bg-secondary: #1F1F1F;
-    --c2r-bg-tertiary: #222222;
-    --c2r-bg-card: #1F1F1F;
-    --c2r-bg-hover: #222222;
-    --c2r-bg-active: #2a2a2a;
-    
-    --c2r-text: #F5F5F5;
-    --c2r-text-secondary: #B0B0B0;
-    --c2r-text-muted: #999999;
-    --c2r-text-disabled: #666666;
-    
-    --c2r-border: #333333;
-    --c2r-border-light: #444444;
+    --c2r-bg: #0D0D12;
+    --c2r-bg-secondary: #15151B;
+    --c2r-bg-tertiary: #15151B;
+    --c2r-bg-card: #15151B;
+    --c2r-bg-hover: #26262F;
+    --c2r-bg-active: #26262F;
+
+    --c2r-text: #FFFFFF;
+    --c2r-text-secondary: #B7B7C0;
+    --c2r-text-muted: #5E5E66;
+    --c2r-text-disabled: #5E5E66;
+
+    --c2r-border: #2A2A32;
+    --c2r-border-light: #2A2A32;
     --c2r-border-focus: var(--c2r-accent);
     
-    --c2r-input-bg: #1a1a1a;
-    --c2r-input-border: #333333;
+    --c2r-input-bg: #15151B;
+    --c2r-input-border: #2A2A32;
     --c2r-input-focus: var(--c2r-accent);
     
     --c2r-success: #22c55e;

@@ -1,4 +1,9 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.12] - 2025-06-18 "MobileMenuCompact"
+
+### ✨ Interface mobile
+- Menu des applications repensé : largeur réduite et suppression du bouton de fermeture.
+- Icônes et pictogrammes encore plus petits pour un style minimaliste.
 ## [1.1.11] - 2025-06-17 "MobileIconsGrey"
 
 ### ✨ Interface mobile

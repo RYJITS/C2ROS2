@@ -1,4 +1,8 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.12] - 2025-06-18 "DragVibrate"
+
+### ✨ Interface mobile
+- Vibration courte lors du déplacement des applications dans la page Profil.
 ## [1.1.11] - 2025-06-17 "MobileIconsGrey"
 
 ### ✨ Interface mobile

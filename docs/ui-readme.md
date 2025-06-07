@@ -20,8 +20,8 @@ Une série de tuiles d'accueil explique comment utiliser l'OS :
 3. **Installer C2R OS** en mode PWA sur smartphone.
 4. **Infos sur les applications** — cette tuile renvoie directement au catalogue complet du Store.
 
-La page Profil permet de réordonner visuellement les applications installées grâce à SortableJS. Un bouton de déconnexion est également présent sur cette page.
-Un interrupteur permet désormais de désactiver tous les pop-ups d'information depuis les préférences du profil.
+ La page Profil permet de réordonner visuellement les applications installées grâce à SortableJS. Un bouton de déconnexion est également présent sur cette page. Sur smartphone, une vibration courte marque le début et la fin du déplacement.
+ Un interrupteur permet désormais de désactiver tous les pop-ups d'information depuis les préférences du profil.
 
 La sidebar propose un mode compact activé par un petit bouton discret situé dans le coin supérieur droit. L'icône passe d'une croix à un petit carré lorsque la barre est repliée, quelle que soit la position de la barre ou le thème. Le bouton utilise un gris légèrement plus sombre que la sidebar pour rester visible sans attirer l'œil. Les icônes de suppression demeurent rouges comme en mode standard.
 

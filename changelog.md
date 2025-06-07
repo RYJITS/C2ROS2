@@ -4,6 +4,11 @@
 ### ✨ Interface mobile
 - Barre de navigation mobile agrandie à 80px de haut.
 
+## [1.1.9] - 2025-06-15 "MobileIcons"
+
+### ✨ Interface mobile
+- Icônes du menu mobile alignées sur celles de la page Profil.
+
 ## [1.1.7] - 2025-06-13 "MobileApps"
 
 ### ✨ Interface mobile

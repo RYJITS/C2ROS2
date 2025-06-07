@@ -96,7 +96,7 @@
 }
 
 .mobile-app-item .app-icon {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-md);
     min-width: 20px;
     text-align: center;
 }

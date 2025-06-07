@@ -46,8 +46,14 @@
     display: none;
     position: fixed;
     bottom: 80px;
+31dlz4-codex/2025-06-07
+    left: auto;
+    right: 10%;
+    width: 80%;
+
     left: 10%;
     right: 10%;
+main
     max-height: 50vh;
     background-color: var(--c2r-bg-card);
     border: 1px solid var(--c2r-border);
@@ -95,7 +101,11 @@
 }
 
 .mobile-app-item .app-icon {
+31dlz4-codex/2025-06-07
+    font-size: var(--font-size-xxs);
+=======
     font-size: var(--font-size-xs);
+main
     min-width: 16px;
     text-align: center;
     color: var(--c2r-text-muted);

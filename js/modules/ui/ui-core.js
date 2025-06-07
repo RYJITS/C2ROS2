@@ -281,7 +281,7 @@ class UICore {
                     </div>
                 </div>
                 <div class="app-meta text-small text-muted">
-                    <span>Catégorie: ${app.category}</span>
+                    <span class="badge-category">${app.category}</span>
                     <span>Date: ${app.version}</span>
                     <span>Taille: ${app.size}</span>
                 </div>

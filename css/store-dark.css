@@ -1,0 +1,114 @@
+/* Styles dark mode pour le Store C2R */
+
+body.theme-dark {
+    background: radial-gradient(circle at top left, #0d0d12, #15151b);
+    font-family: 'Montserrat', 'Inter', sans-serif;
+}
+
+#page-store {
+    color: #ffffff;
+    font-family: 'Montserrat', 'Inter', sans-serif;
+}
+
+#page-store .apps-grid {
+    justify-content: center;
+}
+
+#page-store .app-card {
+    width: 300px;
+    height: 220px;
+    background: #1a1a21;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    transition: all 180ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+}
+
+#page-store .app-card:hover {
+    background: linear-gradient(#1e1e26, #23232b);
+}
+
+#page-store .app-icon .icon {
+    font-size: 48px;
+    color: #c53a3a;
+    transition: all 180ms ease-in-out;
+}
+
+#page-store .app-card:hover .app-icon .icon {
+    color: #ff5858;
+}
+
+#page-store .app-card:active .app-icon .icon {
+    color: rgba(255, 88, 88, 0.15);
+}
+
+#page-store .badge-category {
+    background-color: #26262f;
+    color: #b7b7c0;
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+#page-store .app-actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#page-store .app-toggle-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #2a2a32;
+    background: #15151b;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 180ms ease-in-out;
+}
+
+#page-store .app-toggle-btn .icon {
+    font-size: 18px;
+    color: #c53a3a;
+    transition: all 180ms ease-in-out;
+}
+
+#page-store .app-toggle-btn:hover {
+    background: radial-gradient(circle at center, #c53a3a, #ff5858);
+    transform: translateY(-2px) scale(1.05);
+}
+
+#page-store .app-toggle-btn:hover .icon {
+    color: #ffffff;
+}
+
+#page-store .app-toggle-btn:active {
+    background: #ff5858;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.55);
+}
+
+#page-store .app-toggle-btn:active .icon {
+    color: #ffffff;
+}
+
+#page-store .search-container input,
+#page-store select {
+    background: #121218;
+    border: 1px solid #2a2a32;
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: 'Montserrat', 'Inter', sans-serif;
+}
+
+#page-store .search-container input::placeholder {
+    color: #5e5e66;
+}
+
+#page-store .search-icon .icon {
+    color: #b7b7c0;
+    transition: all 180ms ease-in-out;
+}

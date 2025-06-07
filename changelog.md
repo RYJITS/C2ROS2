@@ -1,16 +1,14 @@
 # 📝 C2R OS - Journal des modifications
-nirix6-codex/2025-06-07
+
 ## [1.1.13] - 2025-06-19 "ContactFinalize"
 
 ### 📩 Page de contact finalisée
 - Formulaire amélioré et adresse `contact@c2ros.com`.
-o0f586-codex/2025-06-07
-=======
- main
+
 ## [1.1.8] - 2025-06-14 "ContactLink"
 
-### 📮 Lien vers la page Contact
-- Ajout d'un accès direct à `contact.html` depuis la barre de navigation.
+### 📮 Lien vers la section Contact
+- Ajout d'un accès direct à la section Contact depuis la barre de navigation.
 ## [1.1.12] - 2025-06-18 "DragVibrate"
 
 ### ✨ Interface mobile
@@ -59,7 +57,7 @@ o0f586-codex/2025-06-07
 - Possibilité de désactiver tous les pop-ups d'information depuis la page Profil.
 
 ### 📮 Formulaire de contact
-- Ajout d'une page `contact.html` pour envoyer un message depuis le navigateur.
+- Ajout d'une section Contact pour envoyer un message depuis le navigateur.
 - Une tuile d'accueil propose désormais l'installation de C2R OS en PWA.
 ## [1.1.6] - 2025-06-12 "UI"
 
@@ -73,7 +71,7 @@ o0f586-codex/2025-06-07
 ## [1.1.6] - 2025-06-12 "Contact"
 
 ### 📮 Formulaire de contact
-- Ajout d'une page `contact.html` pour envoyer un message depuis le navigateur.
+- Ajout d'une section Contact pour envoyer un message depuis le navigateur.
 
 ## [1.1.5] - 2025-06-11 "UI Icons"
 

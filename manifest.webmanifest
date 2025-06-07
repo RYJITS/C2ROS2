@@ -3,6 +3,6 @@
   "short_name": "C2R",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#181818",
-  "theme_color": "#181818"
+  "background_color": "#0D0D12",
+  "theme_color": "#0D0D12"
 }

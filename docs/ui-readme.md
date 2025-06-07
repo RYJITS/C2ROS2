@@ -2,6 +2,20 @@
 
 S'occupe du thème, de la navigation et des notifications. Il adapte l'interface aux différents écrans et applique les préférences de l'utilisateur. C'est lui qui met à jour la sidebar et les pages lors des interactions.
 
+## Palette de couleurs
+
+| Rôle | Code |
+|------|------|
+| Rouge principal (accent) | `#C53A3A` |
+| Rouge hover / actif | `#FF5858` |
+| Blanc (texte inversé, icônes actives) | `#FFFFFF` |
+| Noir profond (fond corps) | `#0D0D12` |
+| Noir/gris foncé (zones, cartes) | `#15151B` |
+| Gris moyen (bordures, séparateurs) | `#2A2A32` |
+| Gris badge / conteneur sélectionné | `#26262F` |
+| Gris clair (texte secondaire) | `#B7B7C0` |
+| Gris placeholder (inputs) | `#5E5E66` |
+
 Depuis la version actuelle, le Store utilise la méthode `toggleApp(appId)` pour installer ou désinstaller une application. L'icône « plus » devient une poubelle rouge, alignée à droite du texte. L'affichage sombre conserve cette couleur et la taille des icônes est réduite pour un meilleur rendu mobile. Une règle CSS dédiée garantit que la poubelle reste rouge sur mobile.
 Lorsqu'un utilisateur tente d'installer une application sans être connecté, une notification indique désormais « Veuillez vous connecter pour installer ».
 Un bref retour tactile confirme aussi l'installation ou la désinstallation sur les appareils compatibles.

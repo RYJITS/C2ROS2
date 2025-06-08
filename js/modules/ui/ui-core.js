@@ -912,6 +912,10 @@ class UICore {
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('overlay');
 
+        if (window.innerWidth <= this.config.ui.responsiveBreakpoint) {
+            return;
+        }
+
         if (sidebar && overlay) {
             const isOpen = sidebar.classList.contains('open');
 
@@ -930,9 +934,13 @@ class UICore {
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('overlay');
 
+        if (window.innerWidth <= this.config.ui.responsiveBreakpoint) {
+            return;
+        }
+
         sidebar?.classList.add('open');
         overlay?.classList.add('show');
-        
+
         this.sidebarOpen = true;
     }
     
@@ -971,7 +979,9 @@ class UICore {
         // Ctrl+/ pour basculer la sidebar
         if (e.ctrlKey && e.key === '/') {
             e.preventDefault();
-            this.toggleSidebar();
+            if (window.innerWidth > this.config.ui.responsiveBreakpoint) {
+                this.toggleSidebar();
+            }
         }
     }
     

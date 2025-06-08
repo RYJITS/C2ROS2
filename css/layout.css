@@ -568,27 +568,19 @@ body.sidebar-right .sidebar {
     }
     
     .sidebar {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 280px;
-        height: 100vh;
-        z-index: var(--z-sidebar);
-        transition: left var(--c2r-transition);
+        display: none;
     }
     
     .sidebar.open {
-        left: 0;
+        display: none;
     }
-    
+
     body.sidebar-right .sidebar {
-        left: auto;
-        right: -100%;
-        transition: right var(--c2r-transition);
+        display: none;
     }
-    
+
     body.sidebar-right .sidebar.open {
-        right: 0;
+        display: none;
     }
     
     .sidebar-toggle {

@@ -78,7 +78,10 @@ function selectSquare(square) {
 }
 
 function aiMove() {
-    if (!aiEndpoint) return;
+    if (!aiEndpoint) {
+        localAiMove();
+        return;
+    }
     fetch(aiEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -89,9 +92,22 @@ function aiMove() {
             if (data && data.move) {
                 chess.move(data.move);
                 updateBoard();
+            } else {
+                localAiMove();
             }
         })
-        .catch(err => console.error('Erreur IA', err));
+        .catch(err => {
+            console.error('Erreur IA', err);
+            localAiMove();
+        });
+}
+
+function localAiMove() {
+    const moves = chess.moves();
+    if (moves.length === 0) return;
+    const move = moves[Math.floor(Math.random() * moves.length)];
+    chess.move(move);
+    updateBoard();
 }
 
 // Chargement initial

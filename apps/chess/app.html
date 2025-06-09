@@ -1,6 +1,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/1.0.0/chess.min.js"></script>
 <div class="chess-app">
     <div class="chess-config">
+        <label for="ai-select">Moteur IA :</label>
+        <select id="ai-select" onchange="updateAiEngine()">
+            <option value="">Robot local</option>
+            <option value="lichess">Stockfish (Lichess)</option>
+            <option value="stockfish">Stockfish (Exemple)</option>
+            <option value="lc0">LCZero</option>
+        </select>
         <label for="ai-endpoint">URL de l'API IA :</label>
         <input type="text" id="ai-endpoint" placeholder="https://exemple.com/api/chess" />
         <button onclick="saveAiEndpoint()">Enregistrer</button>

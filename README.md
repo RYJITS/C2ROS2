@@ -33,7 +33,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - Une vibration confirme désormais l'installation ou la désinstallation d'une application sur les appareils compatibles.
 - La barre latérale utilise un dégradé de gris et une ombre portée pour s'intégrer au thème.
 - En mode PC, la barre latérale adopte un style de tuile plus sobre, sans barre de défilement.
-- En mode mobile, la barre latérale disparaît et seule la navigation basse reste visible.
+- En mode mobile, la barre latérale est désormais totalement masquée pour laisser la place à la navigation basse.
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.
 - La page d'accueil propose quatre tuiles pour comprendre le fonctionnement de C2R OS :
   1. **Installez des applications IA et services** — la tuile elle-même mène directement au Store et les applications installées apparaissent dans la barre de navigation.

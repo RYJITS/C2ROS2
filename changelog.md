@@ -1,5 +1,10 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.15] - 2025-06-21 "StoreFix"
+
+### 🐛 Correctif
+- La page Store n'apparaît plus sur toutes les pages : un style CSS empêchait son masquage.
+
 ## [1.1.14] - 2025-06-20 "SidebarOffMobile"
 
 ### ✨ Interface mobile

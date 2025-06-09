@@ -35,6 +35,7 @@
         phone: '<i class="icon fa-solid fa-phone"></i>',
         cart: '<i class="icon fa-solid fa-cart-shopping"></i>',
         play: '<i class="icon fa-solid fa-play"></i>',
+        chess: '<i class="icon fa-solid fa-chess-board"></i>',
         pause: '<i class="icon fa-solid fa-pause"></i>',
         checkcircle: '<i class="icon fa-solid fa-circle-check"></i>',
         sun: '<i class="icon fa-solid fa-sun"></i>',

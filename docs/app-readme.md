@@ -7,3 +7,4 @@ Le module est utilisé par `UICore.toggleApp()` pour installer ou désinstaller 
 Depuis la version 1.1.0, chaque application possède un type (application, information, service ou formation) afin de faciliter le filtrage dans le Store.
 
 La formation **ChatGPT** fait partie des applications intégrées. Elle présente désormais un cours en dix pages avec quiz final pour apprendre à rédiger de bons prompts.
+Un jeu d'échecs connecté à une API IA fait aussi partie du catalogue.

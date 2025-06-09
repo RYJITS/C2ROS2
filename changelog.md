@@ -1,5 +1,10 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.14] - 2025-06-20 "SidebarOffMobile"
+
+### ✨ Interface mobile
+- La barre latérale est à présent totalement masquée sur les petits écrans.
+
 ## [1.1.13] - 2025-06-19 "ContactFinalize"
 
 ### 📩 Page de contact finalisée

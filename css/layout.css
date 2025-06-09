@@ -568,19 +568,19 @@ body.sidebar-right .sidebar {
     }
     
     .sidebar {
-        display: none;
+        display: none !important;
     }
-    
+
     .sidebar.open {
-        display: none;
+        display: none !important;
     }
 
     body.sidebar-right .sidebar {
-        display: none;
+        display: none !important;
     }
 
     body.sidebar-right .sidebar.open {
-        display: none;
+        display: none !important;
     }
     
     .sidebar-toggle {

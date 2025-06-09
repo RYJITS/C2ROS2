@@ -24,7 +24,7 @@ Le titre "Applications installées" a été retiré pour gagner de la place et l
 
 La barre de recherche du Store se masque automatiquement lors du défilement vers le bas.
 Le Store utilise désormais un thème sombre rouge : fond #0D0D12 avec un dégradé radial #15151B, cartes 280×220 px et bouton d’action positionné en bas à droite. Tout le texte emploie la police Montserrat.
-Les tuiles du Store affichent désormais l'icône au-dessus du texte, centrée et séparée par un dégradé gris. Sur mobile, elles s'étendent sur toute la largeur avec une légère marge.
+Les tuiles du Store affichent désormais l'icône au-dessus du texte sur un fond rouge très transparent, centrée et séparée par un dégradé gris. Sur mobile, elles s'étendent sur toute la largeur avec une légère marge.
 La page Store reste masquée tant qu'elle ne porte pas la classe `active`, évitant son affichage sur les autres pages.
 En mode mobile, la barre de navigation basse comprend un bouton **Applications**. L'icône est chargée grâce à l'ajout du pictogramme `list` dans `IconManager`.
 Depuis la version 1.1.8, cette barre mesure 80px de haut pour faciliter la navigation tactile.

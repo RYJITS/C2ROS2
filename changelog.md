@@ -1,5 +1,10 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.17] - 2025-06-23 "IconBG"
+
+### ✨ Interface Store
+- Icône des tuiles sur fond rouge très transparent pour un rendu minimaliste.
+
 ## [1.1.16] - 2025-06-22 "ChessAI"
 
 ### ✨ Application intégrée

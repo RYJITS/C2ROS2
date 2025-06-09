@@ -27,7 +27,7 @@ Carte application
 }
 .card:hover { background:linear-gradient(#1E1E26,#23232B); }
 ```
-– Icône : carré 48 px, display:flex; align:center; justify:center;
+– Icône : carré 48 px, display:flex; align:center; justify:center; fond rouge transparent (rgba(197,58,58,0.1)) avec coins arrondis.
 – Titre : 18 px, 700, couleur #FFFFFF, margin-top:12px;
 – Description : 14 px, #B7B7C0.
 – Badge catégorie : font-size:12px; background:#26262F; color:#B7B7C0; border-radius:4px; padding:2px 6px;

@@ -242,12 +242,11 @@ function renderFilteredApps(apps) {
     
     appsGrid.innerHTML = apps.map(app => `
         <div class="app-card">
-            <div class="app-header">
-                <div class="app-icon">${app.icon}</div>
-                <div class="app-info">
-                    <h3>${app.name}</h3>
-                    <p>${app.description}</p>
-                </div>
+            <div class="app-icon">${app.icon}</div>
+            <div class="separator"></div>
+            <div class="app-info">
+                <h3>${app.name}</h3>
+                <p>${app.description}</p>
             </div>
             <div class="app-meta text-small text-muted">
                 <span>Catégorie: ${app.category}</span>

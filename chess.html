@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu d'échecs</title>
+    <link rel="stylesheet" href="apps/chess/app.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/1.0.0/chess.min.js"></script>
+    <script src="apps/chess/app.js" defer></script>
+</head>
+<body>
+    <div class="chess-app">
+        <div class="chess-config">
+            <label for="ai-select">Moteur IA :</label>
+            <select id="ai-select" onchange="updateAiEngine()">
+                <option value="">Robot local</option>
+                <option value="lichess">Stockfish (Lichess)</option>
+                <option value="stockfish">Stockfish (Exemple)</option>
+                <option value="lc0">LCZero</option>
+            </select>
+            <label for="ai-endpoint">URL de l'API IA :</label>
+            <input type="text" id="ai-endpoint" placeholder="https://exemple.com/api/chess" />
+            <button onclick="saveAiEndpoint()">Enregistrer</button>
+        </div>
+        <div id="chess-status" class="chess-status">Votre coup</div>
+        <table id="chess-board" class="chess-board"></table>
+    </div>
+</body>
+</html>

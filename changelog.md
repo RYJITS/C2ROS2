@@ -1,5 +1,10 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.16] - 2025-06-22 "ChessAI"
+
+### ✨ Application intégrée
+- Ajout du jeu **Échecs IA** pour affronter une intelligence artificielle via API.
+
 ## [1.1.15] - 2025-06-21 "StoreFix"
 
 ### 🐛 Correctif

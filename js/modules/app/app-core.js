@@ -162,7 +162,22 @@ class AppCore {
                 tags: ['chatgpt', 'formation', 'ia'],
                 builtin: true,
                 path: './apps/chatgpt-training/'
-            }
+            },
+            {
+                id: 'chess',
+                name: 'Échecs IA',
+                description: 'Jouez contre une intelligence artificielle',
+                icon: IconManager.getIcon('chess'),
+                category: 'Jeu',
+                type: 'application',
+                version: '1.0.0',
+                author: 'C2R Team',
+                size: '60 KB',
+                permissions: ['network', 'storage'],
+                tags: ['jeu', 'échecs', 'ia'],
+                builtin: true,
+                path: './apps/chess/'
+            },
         ];
         
         builtinApps.forEach(app => {

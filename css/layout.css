@@ -299,7 +299,7 @@ body.sidebar-right .sidebar {
 
 .apps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: var(--c2r-spacing-lg);
     margin-top: var(--c2r-spacing-xl);
 }

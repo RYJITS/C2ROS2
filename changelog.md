@@ -1,5 +1,11 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.17] - 2025-06-23 "StoreTilesMobile"
+
+### 📅 Interface mobile
+- Les tuiles du Store s'adaptent maintenant mieux à la largeur des petits écrans.
+
+
 ## [1.1.16] - 2025-06-22 "ChessAI"
 
 ### ✨ Application intégrée

@@ -168,6 +168,10 @@ body.theme-dark {
 }
 
 @media (max-width: 768px) {
+    #page-store .apps-grid {
+        grid-template-columns: 1fr;
+    }
+
     #page-store .app-card {
         margin: 0 8px;
     }

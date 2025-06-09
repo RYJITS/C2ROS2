@@ -1,5 +1,12 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.18] - 2025-06-24 "ChessEngineSelect"
+
+### ✨ Application Échecs
+- Ajout d'un menu déroulant pour choisir un moteur IA (Stockfish, LCZero…).
+- L'URL de l'API se remplit automatiquement et peut être modifiée manuellement.
+- Sans API choisie, un robot local joue les coups.
+
 ## [1.1.17] - 2025-06-23 "StoreTilesMobile"
 
 ### 📅 Interface mobile

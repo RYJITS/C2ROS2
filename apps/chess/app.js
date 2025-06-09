@@ -2,11 +2,24 @@
 let chess = null;
 let selectedSquare = null;
 let aiEndpoint = '';
+const aiEndpoints = {
+    '': '',
+    'lichess': 'https://lichess.org/api/cloud-eval',
+    'stockfish': 'https://example.com/api/stockfish',
+    'lc0': 'https://example.com/api/lc0'
+};
 
 function initChess() {
-    const saved = localStorage.getItem('c2r_chess_ai');
-    if (saved) {
-        aiEndpoint = saved;
+    const savedEngine = localStorage.getItem('c2r_chess_engine');
+    const savedEndpoint = localStorage.getItem('c2r_chess_ai');
+    if (savedEngine) {
+        document.getElementById('ai-select').value = savedEngine;
+    }
+    if (savedEndpoint) {
+        aiEndpoint = savedEndpoint;
+        document.getElementById('ai-endpoint').value = aiEndpoint;
+    } else if (savedEngine) {
+        aiEndpoint = aiEndpoints[savedEngine] || '';
         document.getElementById('ai-endpoint').value = aiEndpoint;
     }
     chess = new Chess();
@@ -16,6 +29,14 @@ function initChess() {
 
 function saveAiEndpoint() {
     aiEndpoint = document.getElementById('ai-endpoint').value;
+    localStorage.setItem('c2r_chess_ai', aiEndpoint);
+}
+
+function updateAiEngine() {
+    const engine = document.getElementById('ai-select').value;
+    localStorage.setItem('c2r_chess_engine', engine);
+    aiEndpoint = aiEndpoints[engine] || '';
+    document.getElementById('ai-endpoint').value = aiEndpoint;
     localStorage.setItem('c2r_chess_ai', aiEndpoint);
 }
 

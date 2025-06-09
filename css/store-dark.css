@@ -8,9 +8,13 @@ body.theme-dark {
 #page-store {
     color: #ffffff;
     font-family: 'Montserrat', 'Inter', sans-serif;
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 40px 64px;
+}
+
+#page-store.active {
+    display: flex;
 }
 
 #page-store .store-controls {

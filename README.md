@@ -24,8 +24,8 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - Les icônes de la liste déroulante des applications sont désormais d'un gris neutre pour un rendu minimaliste.
 - La barre de recherche du Store se masque automatiquement lors du défilement vers le bas.
 - Le Store adopte un mode sombre rouge : fond #0D0D12 avec dégradé radial #15151B, cartes 280×220 px et bouton d’action en bas à droite. La police Montserrat est utilisée pour cette section.
-- Les tuiles du Store affichent l'icône centrée au-dessus du texte, séparée par un dégradé gris. En mode mobile, elles prennent toute la largeur avec une petite marge.
-- Les tuiles du Store s'ajustent desormais automatiquement a la largeur des smartphones.
+ - Les tuiles du Store affichent l'icône centrée au-dessus du texte, séparée par un dégradé gris. En mode mobile, elles prennent toute la largeur avec une petite marge.
+ - La grille du Store affiche deux colonnes dès 600 px et revient à une seule colonne sur mobile.
 - Depuis la version 1.1.0, les applications installées peuvent être réordonnées par glisser-déposer dans la page Profil.
 - Un court retour haptique est émis sur smartphone au début et à la fin du déplacement.
 - Un bouton de déconnexion est disponible dans la page Profil.

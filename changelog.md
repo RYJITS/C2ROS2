@@ -1,4 +1,16 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.20] - 2025-06-26 "ChessDesign"
+
+### ✨ Échiquier amélioré
+- Les cases sont plus grandes et la sélection est mise en évidence.
+- L'IA joue automatiquement après votre coup.
+
+## [1.1.19] - 2025-06-25 "ChessQuickPage"
+
+### ✨ Accès direct au jeu d'échecs
+- Ajout de la page `chess.html` prête à jouer.
+- Une tuile "Jouer aux échecs" ouvre cette page depuis l'accueil.
+
 
 ## [1.1.18] - 2025-06-24 "ChessEngineSelect"
 

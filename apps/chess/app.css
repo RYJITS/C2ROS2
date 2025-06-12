@@ -1,21 +1,26 @@
 .chess-board {
     border-collapse: collapse;
+    border: 2px solid #333;
     margin-top: 10px;
 }
 .chess-board td {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     text-align: center;
     vertical-align: middle;
-    font-size: 24px;
+    font-size: 32px;
     cursor: pointer;
+    border: 1px solid #333;
 }
 .chess-board .white {
-    background-color: #eee;
+    background-color: #f0d9b5;
 }
 .chess-board .black {
-    background-color: #666;
+    background-color: #b58863;
     color: #fff;
+}
+.chess-board td.selected {
+    outline: 3px solid #ff0000;
 }
 .chess-status {
     margin-top: 10px;

@@ -64,6 +64,7 @@ function updateBoard() {
         const square = cell.dataset.square;
         const piece = chess.get(square);
         cell.textContent = piece ? pieceToChar(piece) : '';
+        cell.classList.remove('selected');
     }
     document.getElementById('chess-status').textContent = chess.turn() === 'w' ? 'Votre coup' : 'Coup de l\'IA';
 }
@@ -78,23 +79,29 @@ function pieceToChar(piece) {
 
 function selectSquare(square) {
     if (chess.turn() === 'b') return; // attendre IA
+    const board = document.getElementById('chess-board');
     if (selectedSquare) {
-        const move = { from: selectedSquare, to: square };
-        const result = chess.move(move);
-        if (result) {
-            selectedSquare = null;
-            updateBoard();
-            if (!chess.game_over()) {
-                aiMove();
+        const prev = board.querySelector(`[data-square="${selectedSquare}"]`);
+        if (prev) prev.classList.remove('selected');
+        if (selectedSquare !== square) {
+            const move = { from: selectedSquare, to: square };
+            const result = chess.move(move);
+            if (result) {
+                selectedSquare = null;
+                updateBoard();
+                if (!chess.game_over()) {
+                    aiMove();
+                }
+                return;
             }
-        } else {
-            selectedSquare = null;
         }
-    } else {
-        const piece = chess.get(square);
-        if (piece && piece.color === 'w') {
-            selectedSquare = square;
-        }
+        selectedSquare = null;
+    }
+    const piece = chess.get(square);
+    if (piece && piece.color === 'w') {
+        selectedSquare = square;
+        const cell = board.querySelector(`[data-square="${square}"]`);
+        if (cell) cell.classList.add('selected');
     }
 }
 
@@ -132,4 +139,4 @@ function localAiMove() {
 }
 
 // Chargement initial
-initChess();
+document.addEventListener('DOMContentLoaded', initChess);

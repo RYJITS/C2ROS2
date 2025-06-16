@@ -311,8 +311,25 @@ body.sidebar-right .sidebar {
     padding: var(--c2r-spacing-lg);
     transition: var(--c2r-transition);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: var(--c2r-spacing-md);
+    text-align: left;
+}
+
+.app-top {
+    width: 100%;
+    padding: var(--c2r-spacing-sm) var(--c2r-spacing-md);
+    background-color: rgba(197, 58, 58, 0.15);
+    color: var(--c2r-text-muted);
+    border-radius: var(--c2r-radius) var(--c2r-radius) 0 0;
+}
+
+.app-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    gap: var(--c2r-spacing-sm);
 }
 
 .app-card:hover {

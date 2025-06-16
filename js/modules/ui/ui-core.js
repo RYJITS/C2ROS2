@@ -273,16 +273,19 @@ class UICore {
         
         appsGrid.innerHTML = apps.map(app => `
             <div class="app-card">
-                <div class="app-icon">${app.icon}</div>
-                <div class="separator"></div>
-                <div class="app-info">
-                    <h3>${app.name}</h3>
-                    <p>${app.description}</p>
+                <div class="app-top">
+                    <div class="app-icon">${app.icon}</div>
                 </div>
-                <div class="app-meta text-small text-muted">
-                    <span class="badge-category">${app.category}</span>
-                    <span>Date: ${app.version}</span>
-                    <span>Taille: ${app.size}</span>
+                <div class="app-content">
+                    <div class="app-info">
+                        <h3>${app.name}</h3>
+                        <p>${app.description}</p>
+                    </div>
+                    <div class="app-meta text-small text-muted">
+                        <span class="badge-category">${app.category}</span>
+                        <span>Date: ${app.version}</span>
+                        <span>Taille: ${app.size}</span>
+                    </div>
                 </div>
                 <div class="app-actions">
                     <button class="app-toggle-btn ${appCore.isInstalled(app.id) ? 'installed' : ''}"

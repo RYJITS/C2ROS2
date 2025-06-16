@@ -35,17 +35,34 @@ main
 
 #page-store .app-card {
     width: 100%;
-    min-height: 220px;
+    min-height: 160px;
     position: relative;
     background: #1a1a21;
     border: 1px solid #2a2a32;
     border-radius: 16px;
-    padding: 24px 24px 56px;
+    padding: 16px 24px;
     transition: background 180ms ease;
     display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    text-align: left;
+}
+
+#page-store .app-top {
+    width: 100%;
+    padding: 4px 8px;
+    background-color: rgba(197, 58, 58, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px 12px 0 0;
+}
+
+#page-store .app-content {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex: 1;
+    padding-left: 16px;
+    gap: 8px;
+    justify-content: center;
 }
 
 #page-store .separator {

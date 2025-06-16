@@ -2,11 +2,24 @@
 let chess = null;
 let selectedSquare = null;
 let aiEndpoint = '';
+const aiEndpoints = {
+    '': '',
+    'lichess': 'https://lichess.org/api/cloud-eval',
+    'stockfish': 'https://example.com/api/stockfish',
+    'lc0': 'https://example.com/api/lc0'
+};
 
 function initChess() {
-    const saved = localStorage.getItem('c2r_chess_ai');
-    if (saved) {
-        aiEndpoint = saved;
+    const savedEngine = localStorage.getItem('c2r_chess_engine');
+    const savedEndpoint = localStorage.getItem('c2r_chess_ai');
+    if (savedEngine) {
+        document.getElementById('ai-select').value = savedEngine;
+    }
+    if (savedEndpoint) {
+        aiEndpoint = savedEndpoint;
+        document.getElementById('ai-endpoint').value = aiEndpoint;
+    } else if (savedEngine) {
+        aiEndpoint = aiEndpoints[savedEngine] || '';
         document.getElementById('ai-endpoint').value = aiEndpoint;
     }
     chess = new Chess();
@@ -16,6 +29,14 @@ function initChess() {
 
 function saveAiEndpoint() {
     aiEndpoint = document.getElementById('ai-endpoint').value;
+    localStorage.setItem('c2r_chess_ai', aiEndpoint);
+}
+
+function updateAiEngine() {
+    const engine = document.getElementById('ai-select').value;
+    localStorage.setItem('c2r_chess_engine', engine);
+    aiEndpoint = aiEndpoints[engine] || '';
+    document.getElementById('ai-endpoint').value = aiEndpoint;
     localStorage.setItem('c2r_chess_ai', aiEndpoint);
 }
 
@@ -43,6 +64,7 @@ function updateBoard() {
         const square = cell.dataset.square;
         const piece = chess.get(square);
         cell.textContent = piece ? pieceToChar(piece) : '';
+        cell.classList.remove('selected');
     }
     document.getElementById('chess-status').textContent = chess.turn() === 'w' ? 'Votre coup' : 'Coup de l\'IA';
 }
@@ -57,28 +79,37 @@ function pieceToChar(piece) {
 
 function selectSquare(square) {
     if (chess.turn() === 'b') return; // attendre IA
+    const board = document.getElementById('chess-board');
     if (selectedSquare) {
-        const move = { from: selectedSquare, to: square };
-        const result = chess.move(move);
-        if (result) {
-            selectedSquare = null;
-            updateBoard();
-            if (!chess.game_over()) {
-                aiMove();
+        const prev = board.querySelector(`[data-square="${selectedSquare}"]`);
+        if (prev) prev.classList.remove('selected');
+        if (selectedSquare !== square) {
+            const move = { from: selectedSquare, to: square };
+            const result = chess.move(move);
+            if (result) {
+                selectedSquare = null;
+                updateBoard();
+                if (!chess.game_over()) {
+                    aiMove();
+                }
+                return;
             }
-        } else {
-            selectedSquare = null;
         }
-    } else {
-        const piece = chess.get(square);
-        if (piece && piece.color === 'w') {
-            selectedSquare = square;
-        }
+        selectedSquare = null;
+    }
+    const piece = chess.get(square);
+    if (piece && piece.color === 'w') {
+        selectedSquare = square;
+        const cell = board.querySelector(`[data-square="${square}"]`);
+        if (cell) cell.classList.add('selected');
     }
 }
 
 function aiMove() {
-    if (!aiEndpoint) return;
+    if (!aiEndpoint) {
+        localAiMove();
+        return;
+    }
     fetch(aiEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -89,10 +120,23 @@ function aiMove() {
             if (data && data.move) {
                 chess.move(data.move);
                 updateBoard();
+            } else {
+                localAiMove();
             }
         })
-        .catch(err => console.error('Erreur IA', err));
+        .catch(err => {
+            console.error('Erreur IA', err);
+            localAiMove();
+        });
+}
+
+function localAiMove() {
+    const moves = chess.moves();
+    if (moves.length === 0) return;
+    const move = moves[Math.floor(Math.random() * moves.length)];
+    chess.move(move);
+    updateBoard();
 }
 
 // Chargement initial
-initChess();
+document.addEventListener('DOMContentLoaded', initChess);

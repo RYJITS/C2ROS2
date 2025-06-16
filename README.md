@@ -39,7 +39,6 @@ main
 - Depuis la version 1.1.0, les applications installées peuvent être réordonnées par glisser-déposer dans la page Profil.
 - Un court retour haptique est émis sur smartphone au début et à la fin du déplacement.
 - Un bouton de déconnexion est disponible dans la page Profil.
-- La barre latérale intègre un bouton de réduction discret dans son coin supérieur droit ; l'icône passe d'une croix à un petit carré selon l'état de la barre.
 - Une option permet de désactiver les pop-ups d'information dans les préférences du profil, ce qui masque toutes les notifications du système.
 - Si vous tentez d'installer une application sans être connecté, une notification précise désormais « Veuillez vous connecter pour installer ».
 - Une vibration confirme désormais l'installation ou la désinstallation d'une application sur les appareils compatibles.

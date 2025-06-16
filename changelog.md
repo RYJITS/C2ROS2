@@ -1,4 +1,9 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.21] - 2025-06-30 "NoSidebarToggle"
+
+### 🔧 Suppression du mode compact
+- La barre latérale ne peut plus être réduite en mode bureau. Le logo C2R reste
+  visible en haut de la barre.
 ## [1.1.20] - 2025-06-26 "ChessDesign"
 
 ### ✨ Échiquier amélioré

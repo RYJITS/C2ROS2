@@ -39,6 +39,10 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.
 - Le jeu d'échecs propose un menu pour choisir un moteur IA (Stockfish, LCZero…) et renseigner l'URL de l'API. Sans configuration, un robot local joue aléatoirement.
 - Une page autonome `chess.html` affiche directement l'échiquier prêt à jouer dès l'ouverture.
+codex/2025-06-12
+- Une tuile "Jouer aux échecs" sur la page d'accueil ouvre cette page autonome dans un nouvel onglet.
+=======
+main
 - La page d'accueil propose quatre tuiles pour comprendre le fonctionnement de C2R OS :
   1. **Installez des applications IA et services** — la tuile elle-même mène directement au Store et les applications installées apparaissent dans la barre de navigation.
   2. **Options du profil** — la tuile ouvre directement la page correspondante pour activer ou désactiver les notifications, passer en mode sombre ou déplacer la barre de navigation.
@@ -71,3 +75,10 @@ Vous pouvez ensuite exécuter les tests avec :
 ```bash
 npm test
 ```
+
+## Jeu d'échecs
+
+Deux méthodes pour jouer immédiatement :
+1. Lancez un petit serveur local (`python3 -m http.server 8000`) puis ouvrez `chess.html`.
+2. Depuis `index.html`, cliquez sur la tuile « Jouer aux échecs » pour ouvrir le plateau dans un nouvel onglet.
+Les pièces apparaissent déjà en place et il suffit de sélectionner une case pour déplacer vos blancs.

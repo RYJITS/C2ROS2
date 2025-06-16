@@ -13,14 +13,14 @@ Grille des cartes
 ```css
 .grid {
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
   gap:32px;
 }
 ```
 Carte application
 ```css
 .card {
-  width:280px; height:220px; position:relative;
+  width:100%; height:220px; position:relative;
   background:#1A1A21; border:1px solid #2A2A32; border-radius:16px;
   padding:24px 24px 56px;  /* place pour le bouton */
   transition:background 180ms ease;

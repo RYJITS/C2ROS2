@@ -242,21 +242,24 @@ function renderFilteredApps(apps) {
     
     appsGrid.innerHTML = apps.map(app => `
         <div class="app-card">
-            <div class="app-icon">${app.icon}</div>
-            <div class="separator"></div>
-            <div class="app-info">
-                <h3>${app.name}</h3>
-                <p>${app.description}</p>
+            <div class="app-top">
+                <div class="app-icon">${app.icon}</div>
             </div>
-            <div class="app-meta text-small text-muted">
-                <span>Catégorie: ${app.category}</span>
-                <span>Type: ${app.type || 'application'}</span>
-                <span>Version: ${app.version}</span>
-                <span>Taille: ${app.size}</span>
-                <span>Auteur: ${app.author}</span>
-            </div>
-            <div class="app-permissions text-small">
-                <strong>Permissions:</strong> ${app.permissions.join(', ') || 'Aucune'}
+            <div class="app-content">
+                <div class="app-info">
+                    <h3>${app.name}</h3>
+                    <p>${app.description}</p>
+                </div>
+                <div class="app-meta text-small text-muted">
+                    <span>Catégorie: ${app.category}</span>
+                    <span>Type: ${app.type || 'application'}</span>
+                    <span>Version: ${app.version}</span>
+                    <span>Taille: ${app.size}</span>
+                    <span>Auteur: ${app.author}</span>
+                </div>
+                <div class="app-permissions text-small">
+                    <strong>Permissions:</strong> ${app.permissions.join(', ') || 'Aucune'}
+                </div>
             </div>
             <div class="app-actions">
                 <button class="app-toggle-btn ${appCore.isInstalled(app.id) ? 'installed' : ''}"

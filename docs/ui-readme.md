@@ -26,6 +26,7 @@ La barre de recherche du Store se masque automatiquement lors du défilement ver
 xf4rjg-codex/2025-06-12
 Le Store utilise désormais un thème sombre rouge : fond #0D0D12 avec un dégradé radial #15151B, cartes 220×220 px et bouton d’action positionné en bas à droite. Tout le texte emploie la police Montserrat.
 Les tuiles du Store affichent l'icône au-dessus du texte, centrée et séparée par un dégradé gris. Sur mobile, elles s'étendent sur toute la largeur avec une légère marge. La grille ajuste automatiquement ses colonnes (auto-fit minmax 220px) : deux colonnes dès 600 px de large puis une seule en dessous.
+Depuis la dernière mise à jour, elles sont présentées en orientation paysage avec une bande supérieure rouge translucide accueillant l'icône.
 =======
 Le Store utilise désormais un thème sombre rouge : fond #0D0D12 avec un dégradé radial #15151B, cartes 280×220 px et bouton d’action positionné en bas à droite. Tout le texte emploie la police Montserrat.
 fgyfdn-codex/2025-06-09

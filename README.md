@@ -25,8 +25,9 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - La barre de recherche du Store se masque automatiquement lors du défilement vers le bas.
 xf4rjg-codex/2025-06-12
  - Le Store adopte un mode sombre rouge : fond #0D0D12 avec dégradé radial #15151B, cartes 220×220 px et bouton d’action en bas à droite. La police Montserrat est utilisée pour cette section.
-  - Les tuiles du Store affichent l'icône centrée au-dessus du texte, séparée par un dégradé gris. En mode mobile, elles prennent toute la largeur avec une petite marge.
-  - La grille du Store ajuste ses colonnes automatiquement (auto-fit minmax 220px) et passe à deux colonnes dès 600 px avant de revenir à une seule sur mobile.
+- Les tuiles du Store affichent l'icône centrée au-dessus du texte, séparée par un dégradé gris. En mode mobile, elles prennent toute la largeur avec une petite marge.
+- La grille du Store ajuste ses colonnes automatiquement (auto-fit minmax 220px) et passe à deux colonnes dès 600 px avant de revenir à une seule sur mobile.
+- Les tuiles passent en orientation paysage avec une zone supérieure rouge translucide contenant l'icône.
 =======
 - Le Store adopte un mode sombre rouge : fond #0D0D12 avec dégradé radial #15151B, cartes 280×220 px et bouton d’action en bas à droite. La police Montserrat est utilisée pour cette section.
 fgyfdn-codex/2025-06-09

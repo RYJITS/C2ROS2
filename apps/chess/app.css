@@ -1,30 +1,19 @@
-.chess-board {
-    border-collapse: collapse;
-    border: 2px solid #333;
-    margin-top: 10px;
+/* Chess app styles */
+#chessboard {
+  border-collapse: collapse;
 }
-.chess-board td {
-    width: 60px;
-    height: 60px;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 32px;
-    cursor: pointer;
-    border: 1px solid #333;
+
+#chessboard td {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 30px;
 }
-.chess-board .white {
-    background-color: #f0d9b5;
+
+#chessboard tr:nth-child(odd) td:nth-child(even) {
+  background-color: #eee;
 }
-.chess-board .black {
-    background-color: #b58863;
-    color: #fff;
-}
-.chess-board td.selected {
-    outline: 3px solid #ff0000;
-}
-.chess-status {
-    margin-top: 10px;
-}
-.chess-config {
-    margin-bottom: 10px;
+
+#chessboard tr:nth-child(even) td:nth-child(odd) {
+  background-color: #eee;
 }

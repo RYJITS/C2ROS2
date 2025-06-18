@@ -1,5 +1,11 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.24] - 2025-07-03 "SidebarFlat"
+
+### 🎨 Barre latérale simplifiée
+- Suppression du logo C2R et des effets de dégradé, bordure et ombre.
+- La colonne latérale conserve une couleur unie et un style minimal.
+
 ## [1.1.23] - 2025-07-02 "CleanMinimal"
 
 ### 🔥 Nettoyage des scripts inutilisés

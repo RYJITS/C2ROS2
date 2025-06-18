@@ -48,11 +48,11 @@ Une série de tuiles d'accueil explique comment utiliser l'OS :
  Un interrupteur permet désormais de désactiver tous les pop-ups d'information depuis les préférences du profil.
 
 
-La barre latérale bénéficie d'un fond dégradé gris et d'une ombre pour s'intégrer harmonieusement aux thèmes sombre et clair. Le bouton hamburger a été supprimé au profit de cette barre de navigation basse.
+La barre latérale affiche un fond uni sans ombre pour s'intégrer aux thèmes sombre ou clair. Le bouton hamburger a été supprimé au profit de cette barre de navigation basse.
 
 En affichage **PC**, la sidebar adopte désormais un style de tuile plus sobre sans barre de défilement verticale.
 
 Les textes des éléments disparaissent pour ne laisser que les icônes. Au passage de la souris, celles-ci se colorent en rouge et une info‑bulle identique apparaît pour chaque icône, qu'elle provienne du menu principal ou des applications.
 
 ## Nouvelle barre latérale C2R
-La version sombre fixe adopte une largeur de 72 px. Son fond est un dégradé vertical (#0d0d12→#15151b) et la bordure droite utilise #2a2a32. Les icônes centrées changent de couleur au survol (#ff5858). Le logo "C2R" en haut mesure 26 px et la police Montserrat est utilisée pour tout le contenu.
+La version sombre fixe adopte une largeur de 72 px. Son fond est uni (#0d0d12) sans bordure droite. Les icônes centrées changent de couleur au survol (#ff5858). Le logo "C2R" a été retiré et la police Montserrat est utilisée pour tout le contenu.

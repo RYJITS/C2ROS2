@@ -31,7 +31,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - Une option permet de désactiver les pop-ups d'information dans les préférences du profil, ce qui masque toutes les notifications du système.
 - Si vous tentez d'installer une application sans être connecté, une notification précise désormais « Veuillez vous connecter pour installer ».
 - Une vibration confirme désormais l'installation ou la désinstallation d'une application sur les appareils compatibles.
-- La barre latérale utilise un dégradé de gris et une ombre portée pour s'intégrer au thème.
+- La barre latérale adopte désormais un fond uni sans ombre pour un rendu minimal.
 - En mode PC, la barre latérale adopte un style de tuile plus sobre, sans barre de défilement.
 - En mode bureau, elle ne comporte plus de texte : les icônes deviennent rouges au survol et une infobulle explique leur fonction.
 - En mode mobile, la barre latérale est désormais totalement masquée pour laisser la place à la navigation basse.

@@ -2,8 +2,7 @@
 .sidebar.sidebar-c2r {
     width: 72px;
     min-width: 72px;
-    background: linear-gradient(#0d0d12, #15151b);
-    border-right: 1px solid #2a2a32;
+    background-color: #0d0d12;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -14,13 +13,6 @@
     -webkit-font-smoothing: antialiased;
 }
 
-.sidebar.sidebar-c2r .logo {
-    font-size: 26px;
-    font-weight: 700;
-    color: #c53a3a;
-    margin-top: 24px;
-    text-align: center;
-}
 
 .sidebar.sidebar-c2r hr {
     border: none;
@@ -43,11 +35,10 @@
 .sidebar.sidebar-c2r .nav-link {
     width: 48px;
     height: 48px;
-    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 180ms ease-in-out, color 180ms ease-in-out, transform 180ms ease-in-out;
+    transition: background 180ms ease-in-out, color 180ms ease-in-out;
 }
 
 .sidebar.sidebar-c2r .nav-text {
@@ -60,17 +51,14 @@
     stroke-width: 2px;
 }
 
-.sidebar.sidebar-c2r .nav-link:hover .nav-icon {
-    transform: scale(1.05);
-}
+
 
 .sidebar.sidebar-c2r .nav-link:hover {
-    background: radial-gradient(circle at center, #2e2e38, #3a3a45);
+    background-color: #2e2e38;
 }
 
 .sidebar.sidebar-c2r .nav-link.active {
     background-color: #26262f;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .sidebar.sidebar-c2r .nav-link.active .nav-icon,
@@ -87,16 +75,14 @@
 .sidebar.sidebar-c2r .btn-logout {
     width: 48px;
     height: 48px;
-    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 180ms ease-in-out, color 180ms ease-in-out, transform 180ms ease-in-out;
+    transition: background 180ms ease-in-out, color 180ms ease-in-out;
     color: #b7b7c0;
 }
 
 .sidebar.sidebar-c2r .btn-logout:hover {
-    background: radial-gradient(circle at center, #2e2e38, #3a3a45);
+    background-color: #2e2e38;
     color: #ff5858;
-    transform: scale(1.05);
 }

@@ -23,20 +23,8 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - Le titre du menu mobile a été retiré et les icônes sont encore plus petites pour gagner de la place.
 - Les icônes de la liste déroulante des applications sont désormais d'un gris neutre pour un rendu minimaliste.
 - La barre de recherche du Store se masque automatiquement lors du défilement vers le bas.
-xf4rjg-codex/2025-06-12
- - Le Store adopte un mode sombre rouge : fond #0D0D12 avec dégradé radial #15151B, cartes 220×220 px et bouton d’action en bas à droite. La police Montserrat est utilisée pour cette section.
-- Les tuiles du Store affichent l'icône centrée au-dessus du texte, séparée par un dégradé gris. En mode mobile, elles prennent toute la largeur avec une petite marge.
-- La grille du Store ajuste ses colonnes automatiquement (auto-fit minmax 220px) et passe à deux colonnes dès 600 px avant de revenir à une seule sur mobile.
-- Les tuiles passent en orientation paysage avec une zone supérieure rouge translucide contenant l'icône.
-=======
-- Le Store adopte un mode sombre rouge : fond #0D0D12 avec dégradé radial #15151B, cartes 280×220 px et bouton d’action en bas à droite. La police Montserrat est utilisée pour cette section.
-fgyfdn-codex/2025-06-09
-- Les tuiles du Store affichent l'icône centrée au-dessus du texte sur un léger fond rouge transparent, séparée par un dégradé gris. En mode mobile, elles prennent toute la largeur avec une petite marge.
-=======
- - Les tuiles du Store affichent l'icône centrée au-dessus du texte, séparée par un dégradé gris. En mode mobile, elles prennent toute la largeur avec une petite marge.
- - La grille du Store a été revue pour être plus souple sur petits écrans.
-main
-main
+- Le Store adopte un mode sombre rouge (fond #0D0D12 avec dégradé #15151B).
+- Les tuiles du Store reprennent désormais le format des cartes d'accueil : icône au-dessus du texte et grille responsive (auto-fit minmax 240px).
 - Depuis la version 1.1.0, les applications installées peuvent être réordonnées par glisser-déposer dans la page Profil.
 - Un court retour haptique est émis sur smartphone au début et à la fin du déplacement.
 - Un bouton de déconnexion est disponible dans la page Profil.
@@ -49,10 +37,7 @@ main
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.
 - Le jeu d'échecs propose un menu pour choisir un moteur IA (Stockfish, LCZero…) et renseigner l'URL de l'API. Sans configuration, un robot local joue aléatoirement.
 - Une page autonome `chess.html` affiche directement l'échiquier prêt à jouer dès l'ouverture.
-codex/2025-06-12
 - Une tuile "Jouer aux échecs" sur la page d'accueil ouvre cette page autonome dans un nouvel onglet.
-=======
-main
 - La page d'accueil propose quatre tuiles pour comprendre le fonctionnement de C2R OS :
   1. **Installez des applications IA et services** — la tuile elle-même mène directement au Store et les applications installées apparaissent dans la barre de navigation.
   2. **Options du profil** — la tuile ouvre directement la page correspondante pour activer ou désactiver les notifications, passer en mode sombre ou déplacer la barre de navigation.

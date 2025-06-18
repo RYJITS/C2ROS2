@@ -33,6 +33,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - Une vibration confirme désormais l'installation ou la désinstallation d'une application sur les appareils compatibles.
 - La barre latérale utilise un dégradé de gris et une ombre portée pour s'intégrer au thème.
 - En mode PC, la barre latérale adopte un style de tuile plus sobre, sans barre de défilement.
+- En mode bureau, elle ne comporte plus de texte : les icônes deviennent rouges au survol et une infobulle explique leur fonction.
 - En mode mobile, la barre latérale est désormais totalement masquée pour laisser la place à la navigation basse.
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.
 - Le jeu d'échecs propose un menu pour choisir un moteur IA (Stockfish, LCZero…) et renseigner l'URL de l'API. Sans configuration, un robot local joue aléatoirement.

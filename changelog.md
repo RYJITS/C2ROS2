@@ -1,4 +1,8 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.22] - 2025-07-01 "StoreTileAlign"
+
+### ♻️ Tuiles du Store uniformisées
+- La grille du Store reprend le format des cartes d'accueil pour un rendu cohérent.
 ## [1.1.21] - 2025-06-30 "NoSidebarToggle"
 
 ### 🔧 Suppression du mode compact

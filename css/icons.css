@@ -128,6 +128,10 @@
     color: var(--text-secondary);
 }
 
+.sidebar-app-item:hover .icon {
+    color: #ff5858;
+}
+
 .minimal-sidebar .sidebar-app-item .icon {
     font-size: 1.2rem;
     margin-right: 0;

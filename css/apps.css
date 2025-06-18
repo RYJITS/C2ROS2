@@ -37,6 +37,10 @@
     color: var(--c2r-text);
 }
 
+.sidebar-app-item:hover .app-icon {
+    color: #ff5858;
+}
+
 .sidebar-app-item .app-icon {
     font-size: var(--font-size-md);
     min-width: 20px;

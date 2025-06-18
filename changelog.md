@@ -1,4 +1,10 @@
 # 📝 C2R OS - Journal des modifications
+
+## [1.1.23] - 2025-07-02 "CleanMinimal"
+
+### 🔥 Nettoyage des scripts inutilisés
+- Les fichiers `sidebar-minimal.js` et `ui-minimal-red.js` ont été supprimés car ils n'étaient plus chargés par `index.html`.
+
 ## [1.1.22] - 2025-07-01 "StoreTileAlign"
 
 ### ♻️ Tuiles du Store uniformisées

@@ -3,6 +3,10 @@
 
 ### ♻️ Tuiles du Store uniformisées
 - La grille du Store reprend le format des cartes d'accueil pour un rendu cohérent.
+## [1.1.23] - 2025-07-02 "RemoveRunner"
+
+### 🔧 Nettoyage
+- Suppression du composant obsolète `app-runner` et du CSS associé.
 ## [1.1.21] - 2025-06-30 "NoSidebarToggle"
 
 ### 🔧 Suppression du mode compact

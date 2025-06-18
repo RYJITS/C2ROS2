@@ -13,3 +13,5 @@ situé dessous permet de saisir l'URL de l'API. Sans configuration, un robot
 local joue hors ligne.
 Une page `chess.html` permet de jouer instantanément, accessible aussi via la tuile "Jouer aux échecs" sur la page d'accueil. L'échiquier s'affiche dès l'ouverture avec un design amélioré.
 Une nouvelle application **Notes Vocales** enregistre la voix de l'utilisateur puis utilise Whisper pour la convertir automatiquement en texte.
+
+Depuis juillet 2025, les applications s'ouvrent dans des modales générées par `UICore`. Le conteneur obsolète `.app-runner` a été supprimé pour éviter l'apparition d'une tuile « Application » inutile.

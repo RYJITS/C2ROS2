@@ -554,46 +554,6 @@ tr:last-child td {
     font-weight: var(--font-weight-medium);
 }
 
-/* Zone d'exécution des applications */
-.app-runner {
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    max-width: 800px;
-    height: 70%;
-    background-color: var(--c2r-bg-card);
-    border: 1px solid var(--c2r-border);
-    border-radius: var(--c2r-radius);
-    box-shadow: var(--c2r-shadow-lg);
-    z-index: 500;
-    display: flex;
-    flex-direction: column;
-}
-
-.app-header {
-    padding: var(--c2r-spacing-md);
-    border-bottom: 1px solid var(--c2r-border-light);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--c2r-bg-secondary);
-    border-radius: var(--c2r-radius) var(--c2r-radius) 0 0;
-}
-
-.app-header h3 {
-    margin: 0;
-    color: var(--c2r-text);
-    font-size: var(--font-size-md);
-}
-
-.app-content {
-    flex: 1;
-    padding: var(--c2r-spacing-lg);
-    overflow: auto;
-    background-color: var(--c2r-bg);
-}
 
 /* Notifications */
 .notifications-container {
@@ -652,13 +612,6 @@ body[data-info-popups='disabled'] .notifications-container {
         display: none;
     }
     
-    .app-runner {
-        top: 5%;
-        left: 5%;
-        transform: none;
-        width: 90%;
-        height: 85%;
-    }
     
     .modal-content {
         margin: 20px;

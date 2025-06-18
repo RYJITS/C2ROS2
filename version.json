@@ -17,7 +17,8 @@
     "Système de préférences",
     "Interface responsive",
     "Mode sombre/clair",
-    "Applications intégrées"
+    "Applications intégrées",
+    "Notes vocales avec Whisper"
   ],
   "changelog_link": "./changelog.md"
 }

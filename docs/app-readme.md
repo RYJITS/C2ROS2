@@ -12,3 +12,4 @@ Un jeu d'échecs est également proposé. Il peut se connecter à une API IA gr�
 situé dessous permet de saisir l'URL de l'API. Sans configuration, un robot
 local joue hors ligne.
 Une page `chess.html` permet de jouer instantanément, accessible aussi via la tuile "Jouer aux échecs" sur la page d'accueil. L'échiquier s'affiche dès l'ouverture avec un design amélioré.
+Une nouvelle application **Notes Vocales** enregistre la voix de l'utilisateur puis utilise Whisper pour la convertir automatiquement en texte.

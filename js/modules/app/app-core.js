@@ -44,6 +44,21 @@ class AppCore {
                 path: './apps/notepad/'
             },
             {
+                id: 'voicenotes',
+                name: 'Notes Vocales',
+                description: 'Prise de notes avec transcription vocale Whisper',
+                icon: IconManager.getIcon('microphone'),
+                category: 'Productivité',
+                type: 'application',
+                version: '1.0.0',
+                author: 'C2R Team',
+                size: '40 KB',
+                permissions: ['microphone', 'storage', 'network'],
+                tags: ['audio', 'notes', 'whisper'],
+                builtin: true,
+                path: './apps/voicenotes/'
+            },
+            {
                 id: 'todolist',
                 name: 'To-Do Liste',
                 description: 'Gestionnaire de tâches et rappels intelligent',

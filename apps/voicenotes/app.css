@@ -1,0 +1,14 @@
+.voicenotes-app {
+    padding: 16px;
+}
+.voicenotes-app textarea {
+    width: 100%;
+    height: 200px;
+    resize: vertical;
+}
+.voicenotes-app .controls {
+    margin-top: 8px;
+}
+.voicenotes-app button {
+    margin-right: 8px;
+}

@@ -16,7 +16,7 @@ S'occupe du thème, de la navigation et des notifications. Il adapte l'interface
 | Gris clair (texte secondaire) | `#B7B7C0` |
 | Gris placeholder (inputs) | `#5E5E66` |
 
-Depuis la version actuelle, le Store utilise la méthode `toggleApp(appId)` pour installer ou désinstaller une application. L'icône « plus » devient une poubelle rouge, alignée à droite du texte. L'affichage sombre conserve cette couleur et la taille des icônes est réduite pour un meilleur rendu mobile. Une règle CSS dédiée garantit que la poubelle reste rouge sur mobile.
+Depuis la version actuelle, le Store utilise la méthode `toggleApp(appId)` pour installer ou désinstaller une application. L'icône « plus » devient une poubelle rouge, alignée en bas à droite de chaque tuile. L'affichage sombre conserve cette couleur et la taille des icônes est réduite pour un meilleur rendu mobile. Une règle CSS dédiée garantit que la poubelle reste rouge sur mobile.
 Lorsqu'un utilisateur tente d'installer une application sans être connecté, une notification indique désormais « Veuillez vous connecter pour installer ».
 Un bref retour tactile confirme aussi l'installation ou la désinstallation sur les appareils compatibles.
 La liste déroulante des applications se ferme désormais en appuyant hors du menu ; la petite croix a été supprimée.
@@ -25,7 +25,7 @@ Le titre "Applications installées" a été retiré pour gagner de la place et l
 La barre de recherche du Store se masque automatiquement lors du défilement vers le bas.
 Le Store adopte un thème sombre rouge (fond `#0D0D12` avec dégradé `#15151B`).
 Les tuiles reprennent le format des cartes d'accueil : icône au-dessus du texte, disposition verticale et grille responsive (auto-fit `minmax(240px, 1fr)`).
-Sur mobile, chaque tuile s'étend sur la largeur disponible avec une petite marge.
+Sur mobile, chaque tuile occupe désormais toute la largeur de l'écran.
 La page Store reste masquée tant qu'elle ne porte pas la classe `active`, évitant son affichage sur les autres pages.
 En mode mobile, la barre de navigation basse comprend un bouton **Applications**. L'icône est chargée grâce à l'ajout du pictogramme `list` dans `IconManager`.
 Depuis la version 1.1.8, cette barre mesure 80px de haut pour faciliter la navigation tactile.

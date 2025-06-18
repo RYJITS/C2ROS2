@@ -52,7 +52,7 @@ La barre latérale bénéficie d'un fond dégradé gris et d'une ombre pour s'in
 
 En affichage **PC**, la sidebar adopte désormais un style de tuile plus sobre sans barre de défilement verticale.
 
-Les textes des éléments disparaissent pour ne laisser que les icônes. Au passage de la souris, celles-ci se colorent en rouge et une info‑bulle identique apparaît pour chaque icône, qu'elle provienne du menu principal ou des applications.
+Les textes des éléments disparaissent pour ne laisser que les icônes. Au passage de la souris, celles-ci se colorent en rouge et une info‑bulle identique apparaît pour chaque icône, qu'elle provienne du menu principal ou des applications. La règle `.sidebar-app-item:hover .app-icon` applique désormais explicitement la couleur `#ff5858` aux icônes des applications.
 
 ## Nouvelle barre latérale C2R
 La version sombre fixe adopte une largeur de 72 px. Son fond est un dégradé vertical (#0d0d12→#15151b) et la bordure droite utilise #2a2a32. Les icônes centrées changent de couleur au survol (#ff5858). Le logo "C2R" en haut mesure 26 px et la police Montserrat est utilisée pour tout le contenu.

@@ -25,6 +25,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - La barre de recherche du Store se masque automatiquement lors du défilement vers le bas.
 - Le Store adopte un mode sombre rouge (fond #0D0D12 avec dégradé #15151B).
 - Les tuiles du Store reprennent désormais le format des cartes d'accueil : icône au-dessus du texte et disposition en liste.
+- Toutes ces tuiles sont maintenant regroupées dans une grande carte afin de mieux structurer la page Store.
 - Sur mobile, chaque tuile occupe toute la largeur de l'écran avec une petite marge latérale.
 - Depuis la version 1.1.0, les applications installées peuvent être réordonnées par glisser-déposer dans la page Profil.
 - Un court retour haptique est émis sur smartphone au début et à la fin du déplacement.

@@ -1,5 +1,12 @@
 # 📝 C2R OS - Journal des modifications
 
+4zpesh-codex/2025-06-19
+## [1.1.25] - 2025-07-04 "IconManagerTest"
+
+### ✅ Vérification d'injection
+- Ajout du test `tests/icon-manager.test.js` pour valider l'injection des icônes.
+
+=======
 s19smf-codex/2025-06-19
 ## [1.1.25] - 2025-07-04 "StoreButton"
 
@@ -11,6 +18,7 @@ s19smf-codex/2025-06-19
 ### ✨ En-tête épuré
 - Suppression de la bordure inférieure de la barre latérale pour retirer la séparation au-dessus de l'icône Accueil.
 main
+ main
 
 ## [1.1.24] - 2025-07-03 "SidebarFlat"
 

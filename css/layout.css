@@ -106,7 +106,7 @@ body.sidebar-right .sidebar {
     background-color: white;
 }
 
-.nav-icon {
+.app-icon {
     font-size: var(--font-size-lg);
     min-width: 24px;
     text-align: center;

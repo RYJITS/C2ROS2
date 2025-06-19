@@ -13,13 +13,15 @@
 }
 
 /* Icônes de navigation */
-.nav-icon .icon {
+.nav-link .app-icon .icon,
+.btn-logout .app-icon .icon {
     font-size: 1.1rem;
     margin-right: 0.5rem;
 }
 
 /* Icônes dans la sidebar minimaliste */
-.minimal-sidebar .nav-icon .icon {
+.minimal-sidebar .nav-link .app-icon .icon,
+.minimal-sidebar .btn-logout .app-icon .icon {
     font-size: 1.3rem;
     margin-right: 0;
 }
@@ -183,18 +185,11 @@
     .app-icon .icon {
         font-size: 1.8rem;
     }
-
-    .app-card .icon {
-        font-size: 2rem;
-    }
-
-    .app-actions .app-toggle-btn .icon {
-        font-size: 1.3rem;
-    }
-
-    .nav-icon .icon {
+    .nav-link .app-icon .icon,
+    .btn-logout .app-icon .icon {
         font-size: 1rem;
     }
+
 
     /* Couleur rouge de la poubelle en mode mobile */
     .app-toggle-btn.installed .icon,
@@ -262,7 +257,7 @@
 }
 
 .icon-button .icon,
-.nav-icon .icon {
+.app-icon .icon {
     transition: color 0.2s ease;
 }
 

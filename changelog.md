@@ -1,5 +1,12 @@
 # 📝 C2R OS - Journal des modifications
 
+3o5ohn-codex/2025-06-19
+## [1.1.25] - 2025-07-04 "NavIcons"
+
+### 🎨 Icônes de navigation
+- Les icônes Accueil, Store, Profil et Contact reprennent le style des applications.
+- Aucun fond n'est appliqué lors du survol.
+=======
 d5es0y-codex/2025-06-19
 ## [1.1.25] - 2025-07-04 "ProfileCleanup"
 
@@ -25,6 +32,7 @@ s19smf-codex/2025-06-19
 - Suppression de la bordure inférieure de la barre latérale pour retirer la séparation au-dessus de l'icône Accueil.
 main
  main
+main
 main
 
 ## [1.1.24] - 2025-07-03 "SidebarFlat"

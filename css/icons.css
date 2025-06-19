@@ -13,10 +13,17 @@
 }
 
 /* Icônes de navigation */
+3o5ohn-codex/2025-06-19
+.nav-icon .icon {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+=======
 .nav-link .app-icon .icon,
 .btn-logout .app-icon .icon {
     font-size: 1.1rem;
     margin-right: 0.5rem;
+main
 }
 
 /* Icônes dans la sidebar minimaliste */
@@ -185,9 +192,23 @@
     .app-icon .icon {
         font-size: 1.8rem;
     }
+3o5ohn-codex/2025-06-19
+
+    .app-card .icon {
+        font-size: 2rem;
+    }
+
+    .app-actions .app-toggle-btn .icon {
+        font-size: 1.3rem;
+    }
+
+    .nav-icon .icon {
+        font-size: 1.8rem;
+=======
     .nav-link .app-icon .icon,
     .btn-logout .app-icon .icon {
         font-size: 1rem;
+main
     }
 
 

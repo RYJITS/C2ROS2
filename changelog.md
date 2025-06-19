@@ -1,40 +1,28 @@
 # 📝 C2R OS - Journal des modifications
 
-3o5ohn-codex/2025-06-19
 ## [1.1.25] - 2025-07-04 "NavIcons"
 
 ### 🎨 Icônes de navigation
 - Les icônes Accueil, Store, Profil et Contact reprennent le style des applications.
 - Aucun fond n'est appliqué lors du survol.
-=======
-d5es0y-codex/2025-06-19
 ## [1.1.25] - 2025-07-04 "ProfileCleanup"
 
 ### 🧹 Interface Profil
 - Suppression du titre "Applications installées" dans la page Profil pour un affichage plus épuré.
-=======
-4zpesh-codex/2025-06-19
 ## [1.1.25] - 2025-07-04 "IconManagerTest"
 
 ### ✅ Vérification d'injection
 - Ajout du test `tests/icon-manager.test.js` pour valider l'injection des icônes.
 
-=======
-s19smf-codex/2025-06-19
 ## [1.1.25] - 2025-07-04 "StoreButton"
 
 ### 🎨 Bouton du Store
 - Le bouton d'installation ne possède plus d'arrière-plan et se situe à présent sur la droite de chaque tuile.
-=======
 ## [1.1.25] - 2025-07-04 "NoHeaderLine"
 
 ### ✨ En-tête épuré
 - Suppression de la bordure inférieure de la barre latérale pour retirer la séparation au-dessus de l'icône Accueil.
 - Suppression du titre "Applications" dans la barre latérale pour un design plus minimaliste.
-main
- main
-main
-main
 
 ## [1.1.24] - 2025-07-03 "SidebarFlat"
 

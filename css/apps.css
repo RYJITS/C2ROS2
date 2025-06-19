@@ -25,7 +25,7 @@
 }
 
 .sidebar-app-item:hover {
-    background-color: var(--c2r-bg-hover);
+    background-color: transparent;
     color: var(--c2r-text);
 }
 
@@ -277,5 +277,5 @@
 }
 
 .theme-dark .sidebar-app-item:hover {
-    background-color: var(--c2r-bg-hover);
+    background-color: transparent;
 }

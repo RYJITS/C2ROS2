@@ -77,13 +77,13 @@ function updateConnectionStatus(isConnected) {
         if (isConnected) {
             btn.style.display = 'flex';
             btn.innerHTML = `
-                <span class="nav-icon">${IconManager.getIcon('signout')}</span>
+                <span class="app-icon">${IconManager.getIcon('signout')}</span>
                 <span class="nav-text">Déconnexion</span>
             `;
         } else {
             btn.style.display = 'flex';
             btn.innerHTML = `
-                <span class="nav-icon">${IconManager.getIcon('signout')}</span>
+                <span class="app-icon">${IconManager.getIcon('signout')}</span>
                 <span class="nav-text">Se connecter</span>
             `;
             btn.onclick = () => showAuthModal('login');

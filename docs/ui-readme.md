@@ -25,7 +25,7 @@ Le titre "Applications" dans la barre latérale a également été supprimé pou
 
 La barre de recherche du Store se masque automatiquement lors du défilement vers le bas.
 Le Store adopte un thème sombre rouge (fond `#0D0D12` avec dégradé `#15151B`).
-Les tuiles reprennent le format des cartes d'accueil : icône au-dessus du texte, disposition verticale et grille responsive (auto-fit `minmax(240px, 1fr)`).
+Les tuiles reprennent le format des cartes d'accueil : icône au-dessus du texte et disposition en liste verticale.
 Sur mobile, chaque tuile occupe désormais toute la largeur de l'écran.
 La page Store reste masquée tant qu'elle ne porte pas la classe `active`, évitant son affichage sur les autres pages.
 En mode mobile, la barre de navigation basse comprend un bouton **Applications**. L'icône est chargée grâce à l'ajout du pictogramme `list` dans `IconManager`.

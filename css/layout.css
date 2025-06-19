@@ -34,7 +34,7 @@ body.sidebar-right .sidebar {
 
 .sidebar-header {
     padding: var(--c2r-spacing-lg);
-    border-bottom: 1px solid var(--c2r-border);
+    /* Suppression de la ligne de séparation sous l'en-tête */
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -1,5 +1,10 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.25] - 2025-07-04 "ProfileCleanup"
+
+### 🧹 Interface Profil
+- Suppression du titre "Applications installées" dans la page Profil pour un affichage plus épuré.
+
 ## [1.1.24] - 2025-07-03 "SidebarFlat"
 
 ### 🎨 Barre latérale simplifiée

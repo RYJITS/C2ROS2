@@ -23,6 +23,14 @@ body.theme-dark {
     margin-left: auto;
 }
 
+#page-store .store-container {
+    background-color: var(--c2r-bg-card);
+    border: 1px solid var(--c2r-border);
+    border-radius: var(--c2r-radius);
+    box-shadow: var(--c2r-shadow-lg);
+    padding: var(--c2r-spacing-lg);
+}
+
 #page-store .apps-grid {
     display: flex;
     flex-direction: column;

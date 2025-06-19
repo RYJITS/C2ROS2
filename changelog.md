@@ -50,7 +50,7 @@ main
 ## [1.1.22] - 2025-07-01 "StoreTileAlign"
 
 ### ♻️ Tuiles du Store uniformisées
-- La grille du Store reprend le format des cartes d'accueil pour un rendu cohérent.
+- La mise en page du Store n'utilise plus de grille afin d'afficher les tuiles en liste verticale.
 ## [1.1.23] - 2025-07-02 "RemoveRunner"
 
 ### 🔧 Nettoyage

@@ -3,8 +3,18 @@ const path = require('path');
 
 describe('UserCore.generateUserId', () => {
   beforeAll(() => {
-    const script = fs.readFileSync(path.resolve(__dirname, '../js/modules/user/user-core.js'), 'utf8');
-    window.eval(script);
+    // Charger la configuration avant le module UserCore
+    const configScript = fs.readFileSync(
+      path.resolve(__dirname, '../js/modules/core/config.js'),
+      'utf8'
+    );
+    window.eval(configScript);
+
+    const userCoreScript = fs.readFileSync(
+      path.resolve(__dirname, '../js/modules/user/user-core.js'),
+      'utf8'
+    );
+    window.eval(userCoreScript);
   });
 
   test('génère des identifiants uniques', () => {

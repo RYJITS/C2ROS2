@@ -16,7 +16,7 @@ S'occupe du thème, de la navigation et des notifications. Il adapte l'interface
 | Gris clair (texte secondaire) | `#B7B7C0` |
 | Gris placeholder (inputs) | `#5E5E66` |
 
-Depuis la version actuelle, le Store utilise la méthode `toggleApp(appId)` pour installer ou désinstaller une application. L'icône « plus » devient une poubelle rouge, alignée en bas à droite de chaque tuile. L'affichage sombre conserve cette couleur et la taille des icônes est réduite pour un meilleur rendu mobile. Une règle CSS dédiée garantit que la poubelle reste rouge sur mobile.
+Depuis la version actuelle, le Store utilise la méthode `toggleApp(appId)` pour installer ou désinstaller une application. L'icône « plus » devient une poubelle rouge, positionnée sur la droite de chaque tuile sans aucun arrière‑plan. L'affichage sombre conserve cette couleur et la taille des icônes est réduite pour un meilleur rendu mobile. Une règle CSS dédiée garantit que la poubelle reste rouge sur mobile.
 Lorsqu'un utilisateur tente d'installer une application sans être connecté, une notification indique désormais « Veuillez vous connecter pour installer ».
 Un bref retour tactile confirme aussi l'installation ou la désinstallation sur les appareils compatibles.
 La liste déroulante des applications se ferme désormais en appuyant hors du menu ; la petite croix a été supprimée.
@@ -53,7 +53,12 @@ La barre latérale affiche un fond uni sans ombre pour s'intégrer aux thèmes s
 En affichage **PC**, la sidebar adopte désormais un style de tuile plus sobre sans barre de défilement verticale.
 
 Les textes des éléments disparaissent pour ne laisser que les icônes. Au passage de la souris, celles-ci se colorent en rouge et une info‑bulle identique apparaît pour chaque icône, qu'elle provienne du menu principal ou des applications. La règle `.sidebar-app-item:hover .app-icon` applique désormais explicitement la couleur `#ff5858` aux icônes des applications.
+3o5ohn-codex/2025-06-19
 - Les icônes Accueil, Store, Profil et Contact adoptent la même taille et la même couleur que celles des applications, sans fond au survol.
+=======
+Les icônes de la navigation utilisent désormais la même classe `app-icon` que celles des applications.
+main
 
 ## Nouvelle barre latérale C2R
 La version sombre fixe adopte une largeur de 72 px. Son fond est uni (#0d0d12) sans bordure droite. Les icônes centrées changent de couleur au survol (#ff5858). Le logo "C2R" a été retiré et la police Montserrat est utilisée pour tout le contenu.
+Le survol n'affiche plus de fond gris : seules les icônes passent en rouge.

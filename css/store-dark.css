@@ -204,4 +204,8 @@ body.theme-dark {
     #page-store .apps-grid {
         flex-direction: column;
     }
+
+    #page-store .app-card {
+        margin: 0 var(--c2r-spacing-sm);
+    }
 }

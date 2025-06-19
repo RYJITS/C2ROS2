@@ -1,5 +1,11 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.25] - 2025-07-04 "NavIcons"
+
+### 🎨 Icônes de navigation
+- Les icônes Accueil, Store, Profil et Contact reprennent le style des applications.
+- Aucun fond n'est appliqué lors du survol.
+
 ## [1.1.24] - 2025-07-03 "SidebarFlat"
 
 ### 🎨 Barre latérale simplifiée

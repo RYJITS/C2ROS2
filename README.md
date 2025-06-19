@@ -35,6 +35,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - En mode PC, la barre latérale adopte un style de tuile plus sobre, sans barre de défilement.
 - En mode bureau, elle ne comporte plus de texte : les icônes deviennent rouges au survol et une infobulle explique leur fonction.
 - En mode mobile, la barre latérale est désormais totalement masquée pour laisser la place à la navigation basse.
+- Les icônes Accueil, Store, Profil et Contact reprennent le même design que celles des applications et ne prennent plus de fond au survol.
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.
 - Le jeu d'échecs propose un menu pour choisir un moteur IA (Stockfish, LCZero…) et renseigner l'URL de l'API. Sans configuration, un robot local joue aléatoirement.
 - Une page autonome `chess.html` affiche directement l'échiquier prêt à jouer dès l'ouverture.

@@ -14,8 +14,9 @@
 
 /* Icônes de navigation */
 .nav-icon .icon {
-    font-size: 1.1rem;
+    font-size: 2rem;
     margin-right: 0.5rem;
+    color: var(--primary-color);
 }
 
 /* Icônes dans la sidebar minimaliste */
@@ -193,7 +194,7 @@
     }
 
     .nav-icon .icon {
-        font-size: 1rem;
+        font-size: 1.8rem;
     }
 
     /* Couleur rouge de la poubelle en mode mobile */

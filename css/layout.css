@@ -87,7 +87,6 @@ body.sidebar-right .sidebar {
 }
 
 .nav-link:hover {
-    background-color: var(--c2r-bg-hover);
     color: var(--c2r-text);
 }
 

@@ -1,5 +1,10 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.25] - 2025-07-04 "NoHeaderLine"
+
+### ✨ En-tête épuré
+- Suppression de la bordure inférieure de la barre latérale pour retirer la séparation au-dessus de l'icône Accueil.
+
 ## [1.1.24] - 2025-07-03 "SidebarFlat"
 
 ### 🎨 Barre latérale simplifiée

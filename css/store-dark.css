@@ -122,14 +122,19 @@ body.theme-dark {
 #page-store .app-actions {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    margin-top: auto;
-    width: 100%;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    margin-top: 0;
+    width: auto;
 }
 
 #page-store .app-toggle-btn {
     border: none;
     background: none;
+    background-color: transparent;
     box-shadow: none;
     color: #c53a3a;
     padding: 0;
@@ -147,6 +152,7 @@ body.theme-dark {
 
 #page-store .app-toggle-btn:hover {
     transform: translateY(-2px) scale(1.05);
+    background-color: transparent;
 }
 
 #page-store .app-toggle-btn:hover .icon {

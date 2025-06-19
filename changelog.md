@@ -1,5 +1,10 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.25] - 2025-07-04 "StoreButton"
+
+### 🎨 Bouton du Store
+- Le bouton d'installation ne possède plus d'arrière-plan et se situe à présent sur la droite de chaque tuile.
+
 ## [1.1.24] - 2025-07-03 "SidebarFlat"
 
 ### 🎨 Barre latérale simplifiée

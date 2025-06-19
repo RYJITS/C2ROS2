@@ -68,9 +68,6 @@ body.minimal-sidebar .sidebar-section {
     padding: 0 8px;
 }
 
-body.minimal-sidebar .sidebar-section-title {
-    display: none;
-}
 
 body.minimal-sidebar .sidebar-apps {
     display: flex;
@@ -238,9 +235,6 @@ body.minimal-sidebar .btn-logout:active {
         padding: 0;
     }
     
-    body.minimal-sidebar .sidebar-section-title {
-        display: block;
-    }
     
     body.minimal-sidebar .sidebar-app-item {
         justify-content: flex-start;

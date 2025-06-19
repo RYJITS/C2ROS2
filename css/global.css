@@ -513,12 +513,6 @@ tr:last-child td {
     z-index: 100;
 }
 
-.installed-apps-sidebar h4 {
-    margin: 0 0 var(--c2r-spacing-md) 0;
-    color: var(--c2r-text);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-}
 
 .installed-apps-list {
     display: flex;

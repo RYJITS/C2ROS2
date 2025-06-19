@@ -6,14 +6,6 @@
     border-top: 1px solid var(--c2r-border);
 }
 
-.sidebar-section-title {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-    color: var(--c2r-text-muted);
-    margin: 0 0 var(--c2r-spacing-sm) 0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
 
 .sidebar-apps {
     display: flex;

@@ -23,6 +23,7 @@ s19smf-codex/2025-06-19
 
 ### ✨ En-tête épuré
 - Suppression de la bordure inférieure de la barre latérale pour retirer la séparation au-dessus de l'icône Accueil.
+- Suppression du titre "Applications" dans la barre latérale pour un design plus minimaliste.
 main
  main
 main

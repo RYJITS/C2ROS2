@@ -56,3 +56,4 @@ Les textes des éléments disparaissent pour ne laisser que les icônes. Au pass
 
 ## Nouvelle barre latérale C2R
 La version sombre fixe adopte une largeur de 72 px. Son fond est uni (#0d0d12) sans bordure droite. Les icônes centrées changent de couleur au survol (#ff5858). Le logo "C2R" a été retiré et la police Montserrat est utilisée pour tout le contenu.
+Le survol n'affiche plus de fond gris : seules les icônes passent en rouge.

@@ -33,6 +33,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - Une vibration confirme désormais l'installation ou la désinstallation d'une application sur les appareils compatibles.
 - La barre latérale adopte désormais un fond uni sans ombre pour un rendu minimal.
 - En mode PC, la barre latérale adopte un style de tuile plus sobre, sans barre de défilement.
+- Le titre "Applications" n'apparaît plus dans la barre latérale pour gagner en clarté.
 - En mode bureau, elle ne comporte plus de texte : les icônes deviennent rouges au survol et une infobulle explique leur fonction.
 - En mode mobile, la barre latérale est désormais totalement masquée pour laisser la place à la navigation basse.
 - Les icônes Accueil, Store, Profil et Contact reprennent le même design que celles des applications et ne prennent plus de fond au survol.

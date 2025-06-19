@@ -21,6 +21,7 @@ Lorsqu'un utilisateur tente d'installer une application sans être connecté, un
 Un bref retour tactile confirme aussi l'installation ou la désinstallation sur les appareils compatibles.
 La liste déroulante des applications se ferme désormais en appuyant hors du menu ; la petite croix a été supprimée.
 Le titre "Applications installées" a été retiré pour gagner de la place et les icônes y sont affichées en plus petit.
+Le titre "Applications" dans la barre latérale a également été supprimé pour un affichage épuré.
 
 La barre de recherche du Store se masque automatiquement lors du défilement vers le bas.
 Le Store adopte un thème sombre rouge (fond `#0D0D12` avec dégradé `#15151B`).

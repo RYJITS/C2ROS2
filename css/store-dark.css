@@ -124,9 +124,9 @@ body.theme-dark {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 50%;
+    bottom: 16px;
     right: 16px;
-    transform: translateY(-50%);
+    transform: none;
     margin-top: 0;
     width: auto;
 }

@@ -45,7 +45,7 @@
     display: none;
 }
 
-.sidebar.sidebar-c2r .nav-icon {
+.sidebar.sidebar-c2r .app-icon {
     font-size: 26px;
     color: #b7b7c0;
     stroke-width: 2px;
@@ -53,16 +53,13 @@
 
 
 
-.sidebar.sidebar-c2r .nav-link:hover {
-    background-color: #2e2e38;
-}
 
 .sidebar.sidebar-c2r .nav-link.active {
     background-color: #26262f;
 }
 
-.sidebar.sidebar-c2r .nav-link.active .nav-icon,
-.sidebar.sidebar-c2r .nav-link:hover .nav-icon {
+.sidebar.sidebar-c2r .nav-link.active .app-icon,
+.sidebar.sidebar-c2r .nav-link:hover .app-icon {
     color: #ff5858;
 }
 

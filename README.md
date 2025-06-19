@@ -12,8 +12,8 @@ Les icônes Font Awesome sont chargées via CDN. Le fichier `index.html` référ
 
 Le Store propose un bouton unique pour installer ou désinstaller une application. Les icônes restent alignées à droite et conservent leur couleur en mode sombre. Un bouton **Applications** apparaît sur mobile et les applications installées peuvent être réordonnées par glisser-déposer. Le filtre par type (applications, informations, services, formations) permet désormais de trier le catalogue.
 
-- Le Store propose un bouton unique pour installer ou désinstaller une application : l'icône « plus » devient une poubelle rouge, placée en bas à droite des tuiles sans fond circulaire.
-- Les icônes d'installation sont alignées à droite des tuiles pour plus de clarté.
+- Le Store propose un bouton unique pour installer ou désinstaller une application : l'icône « plus » devient une poubelle rouge, positionnée sur la droite de chaque tuile sans aucun arrière-plan.
+- Les icônes d'installation sont centrées sur la droite des tuiles pour plus de clarté et ne possèdent aucun fond.
 - En mode sombre, la poubelle reste rouge et la taille des icônes est réduite pour le mobile.
 - En mode mobile, la poubelle s'affiche désormais en rouge grâce à une règle CSS dédiée.
 - En affichage mobile, un bouton **Applications** apparaît dans la barre de navigation basse.
@@ -72,6 +72,9 @@ Vous pouvez ensuite exécuter les tests avec :
 ```bash
 npm test
 ```
+
+Les tests couvrent la gestion des icônes via `IconManager`.
+
 
 ## Jeu d'échecs
 

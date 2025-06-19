@@ -47,7 +47,7 @@ body.minimal-sidebar .nav-text {
     display: none;
 }
 
-body.minimal-sidebar .nav-icon {
+body.minimal-sidebar .app-icon {
     font-size: var(--sidebar-icon-size);
     min-width: auto;
 }
@@ -117,7 +117,7 @@ body.minimal-sidebar .btn-logout .nav-text {
     display: none;
 }
 
-body.minimal-sidebar .btn-logout .nav-icon {
+body.minimal-sidebar .btn-logout .app-icon {
     font-size: var(--sidebar-icon-size);
 }
 
@@ -229,7 +229,7 @@ body.minimal-sidebar .btn-logout:active {
         display: block;
     }
     
-    body.minimal-sidebar .nav-icon {
+    body.minimal-sidebar .app-icon {
         font-size: var(--font-size-lg);
         min-width: 24px;
     }

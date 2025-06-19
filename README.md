@@ -73,6 +73,9 @@ Vous pouvez ensuite exécuter les tests avec :
 npm test
 ```
 
+Les tests couvrent la gestion des icônes via `IconManager`.
+
+
 ## Jeu d'échecs
 
 Deux méthodes pour jouer immédiatement :

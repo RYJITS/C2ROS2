@@ -41,8 +41,8 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - En mode mobile, la barre latérale est désormais totalement masquée pour laisser la place à la navigation basse.
 - Les icônes Accueil, Store, Profil et Contact reprennent le même design que celles des applications et ne prennent plus de fond au survol.
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.
-- Le jeu d'échecs propose un menu pour choisir un moteur IA (Stockfish, LCZero…) et renseigner l'URL de l'API. Sans configuration, un robot local joue aléatoirement.
-- Une page autonome `chess.html` affiche directement l'échiquier prêt à jouer dès l'ouverture.
+ - Le jeu d'échecs utilise **chessboard.js** pour l'interface et **chess.js** pour les règles. Un menu permet de choisir un moteur IA et de renseigner son URL. Sans configuration, un robot local joue aléatoirement.
+ - Une page autonome `chess.html` affiche directement l'échiquier interactif dès l'ouverture.
 - Une tuile "Jouer aux échecs" sur la page d'accueil ouvre cette page autonome dans un nouvel onglet.
 - La page d'accueil propose quatre tuiles pour comprendre le fonctionnement de C2R OS :
   1. **Installez des applications IA et services** — la tuile elle-même mène directement au Store et les applications installées apparaissent dans la barre de navigation.
@@ -86,4 +86,4 @@ Les tests couvrent la gestion des icônes via `IconManager`.
 Deux méthodes pour jouer immédiatement :
 1. Lancez un petit serveur local (`python3 -m http.server 8000`) puis ouvrez `chess.html`.
 2. Depuis `index.html`, cliquez sur la tuile « Jouer aux échecs » pour ouvrir le plateau dans un nouvel onglet.
-Les pièces apparaissent déjà en place et il suffit de sélectionner une case pour déplacer vos blancs.
+L'échiquier est généré par **chessboard.js** et la logique provient de **chess.js**.

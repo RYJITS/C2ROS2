@@ -28,6 +28,9 @@ Le Store adopte un thème sombre rouge (fond `#0D0D12` avec dégradé `#15151B`)
 Les tuiles reprennent le format des cartes d'accueil : icône au-dessus du texte et disposition en liste verticale.
 Les applications sont désormais regroupées dans une grande carte qui contient toutes ces tuiles.
 Sur mobile, chaque tuile occupe toute la largeur de l'écran avec une petite marge latérale.
+La page Store n'a plus de marge latérale en mode mobile afin d'exploiter toute la largeur disponible.
+Le contenu principal n'a plus de marge horizontale sur mobile pour permettre au Store d'occuper la largeur totale de l'écran.
+La barre de recherche et les filtres du Store s'étendent désormais sur toute la largeur en mode mobile.
 La page Store reste masquée tant qu'elle ne porte pas la classe `active`, évitant son affichage sur les autres pages.
 En mode mobile, la barre de navigation basse comprend un bouton **Applications**. L'icône est chargée grâce à l'ajout du pictogramme `list` dans `IconManager`.
 Depuis la version 1.1.8, cette barre mesure 80px de haut pour faciliter la navigation tactile.
@@ -57,6 +60,7 @@ En affichage **PC**, la sidebar adopte désormais un style de tuile plus sobre s
 Les textes des éléments disparaissent pour ne laisser que les icônes. Au passage de la souris, celles-ci se colorent en rouge et une info‑bulle identique apparaît pour chaque icône, qu'elle provienne du menu principal ou des applications. La règle `.sidebar-app-item:hover .app-icon` applique désormais explicitement la couleur `#ff5858` aux icônes des applications.
 - Les icônes Accueil, Store, Profil et Contact adoptent la même taille et la même couleur que celles des applications, sans fond au survol.
 Les icônes de la navigation utilisent désormais la même classe `app-icon` que celles des applications.
+- Tous les fichiers Markdown ont été vérifiés et ne comportent plus de marqueurs de conflit Git.
 
 ## Nouvelle barre latérale C2R
 La version sombre fixe adopte une largeur de 72 px. Son fond est uni (#0d0d12) sans bordure droite. Les icônes centrées changent de couleur au survol (#ff5858). Le logo "C2R" a été retiré et la police Montserrat est utilisée pour tout le contenu.

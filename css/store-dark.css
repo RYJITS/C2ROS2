@@ -199,6 +199,17 @@ body.theme-dark {
 
 
 @media (max-width: 768px) {
+    #page-store {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #page-store .store-controls {
+        margin-left: 0;
+    }
+    #page-store .search-container,
+    #page-store select {
+        width: 100%;
+    }
     #page-store .apps-grid {
         grid-template-columns: 1fr;
     }
@@ -209,6 +220,17 @@ body.theme-dark {
 }
 
 @media (max-width: 600px) {
+    #page-store {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #page-store .store-controls {
+        margin-left: 0;
+    }
+    #page-store .search-container,
+    #page-store select {
+        width: 100%;
+    }
     #page-store .apps-grid {
         grid-template-columns: 1fr;
     }

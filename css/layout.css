@@ -604,7 +604,7 @@ body.sidebar-right .sidebar {
     
     
     .main-content {
-        padding: calc(80px + var(--c2r-spacing-md)) var(--c2r-spacing-md) calc(80px + var(--c2r-spacing-md));
+        padding: calc(80px + var(--c2r-spacing-md)) 0 calc(80px + var(--c2r-spacing-md));
     }
     
     .page-header {
@@ -647,7 +647,7 @@ body.sidebar-right .sidebar {
 
 @media (max-width: 480px) {
     .main-content {
-        padding: calc(80px + var(--c2r-spacing-sm)) var(--c2r-spacing-sm) calc(80px + var(--c2r-spacing-sm));
+        padding: calc(80px + var(--c2r-spacing-sm)) 0 calc(80px + var(--c2r-spacing-sm));
     }
     
     .welcome-card {

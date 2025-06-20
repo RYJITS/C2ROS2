@@ -1,56 +1,62 @@
-console.log('Chess app loaded');
+let board = null;
+let game = null;
+let aiEndpoint = '';
 
-const chessboard = document.getElementById('chessboard');
-
-const pieces = {
-  'pawn': '♟',
-  'rook': '♜',
-  'knight': '♞',
-  'bishop': '♝',
-  'queen': '♛',
-  'king': '♚'
-};
-
-function generateChessboard() {
-  for (let i = 0; i < 8; i++) {
-    const row = document.createElement('tr');
-    for (let j = 0; j < 8; j++) {
-      const cell = document.createElement('td');
-      row.appendChild(cell);
-    }
-    chessboard.appendChild(row);
-  }
+function onDragStart (source, piece) {
+  if (game.game_over()) return false;
+  if (game.turn() === 'w' && piece.startsWith('b')) return false;
+  if (game.turn() === 'b' && piece.startsWith('w')) return false;
 }
 
-function placePieces() {
-  const rows = chessboard.querySelectorAll('tr');
-
-  // Place black pieces
-  rows[0].children[0].textContent = pieces['rook'];
-  rows[0].children[1].textContent = pieces['knight'];
-  rows[0].children[2].textContent = pieces['bishop'];
-  rows[0].children[3].textContent = pieces['queen'];
-  rows[0].children[4].textContent = pieces['king'];
-  rows[0].children[5].textContent = pieces['bishop'];
-  rows[0].children[6].textContent = pieces['knight'];
-  rows[0].children[7].textContent = pieces['rook'];
-  for (let i = 0; i < 8; i++) {
-    rows[1].children[i].textContent = pieces['pawn'];
-  }
-
-  // Place white pieces
-  rows[7].children[0].textContent = pieces['rook'];
-  rows[7].children[1].textContent = pieces['knight'];
-  rows[7].children[2].textContent = pieces['bishop'];
-  rows[7].children[3].textContent = pieces['queen'];
-  rows[7].children[4].textContent = pieces['king'];
-  rows[7].children[5].textContent = pieces['bishop'];
-  rows[7].children[6].textContent = pieces['knight'];
-  rows[7].children[7].textContent = pieces['rook'];
-  for (let i = 0; i < 8; i++) {
-    rows[6].children[i].textContent = pieces['pawn'];
-  }
+function onDrop (source, target) {
+  const move = game.move({from: source, to: target, promotion: 'q'});
+  if (move === null) return 'snapback';
 }
 
-generateChessboard();
-placePieces();
+function onSnapEnd () {
+  board.position(game.fen());
+  updateStatus();
+  setTimeout(makeAiMove, 300);
+}
+
+function makeAiMove () {
+  if (game.turn() !== 'b') return;
+  const moves = game.moves();
+  if (moves.length === 0) return;
+  const move = moves[Math.floor(Math.random() * moves.length)];
+  game.move(move);
+  board.position(game.fen());
+  updateStatus();
+}
+
+function updateStatus () {
+  const statusEl = document.getElementById('chess-status');
+  let status = '';
+  if (game.in_checkmate()) status = 'Échec et mat';
+  else if (game.in_draw()) status = 'Match nul';
+  else status = game.turn() === 'w' ? 'À vous de jouer' : 'Coup des noirs';
+  if (statusEl) statusEl.textContent = status;
+}
+
+function initGame () {
+  game = new Chess();
+  board = Chessboard('board', {
+    draggable: true,
+    position: 'start',
+    onDragStart: onDragStart,
+    onDrop: onDrop,
+    onSnapEnd: onSnapEnd
+  });
+  updateStatus();
+}
+
+document.addEventListener('DOMContentLoaded', initGame);
+
+function saveAiEndpoint () {
+  const input = document.getElementById('ai-endpoint');
+  if (input) aiEndpoint = input.value;
+}
+
+function updateAiEngine () {
+  // Fonction prête pour intégrer d'autres moteurs IA
+}

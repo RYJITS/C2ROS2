@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+  <meta charset="UTF-8">
   <title>Chess</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/chessboard.min.css">
   <link rel="stylesheet" href="app.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/1.0.0/chess.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/chessboard.min.js"></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
   <h1>Chess</h1>
-  <table id="chessboard">
-  </table>
-  <script src="app.js"></script>
+  <div id="board" style="width: 400px"></div>
+  <div id="chess-status" class="chess-status"></div>
 </body>
 </html>

@@ -6,7 +6,7 @@ describe('updateChangelogTile', () => {
     document.body.innerHTML = '<ul id="changelog-list"></ul>';
     window.fetch = jest.fn(() => Promise.resolve({
       json: () => Promise.resolve([
-        { datetime: '2025-07-09 12:00', description: 'test' }
+        { datetime: '2025-07-10 12:00', description: 'test' }
       ])
     }));
 

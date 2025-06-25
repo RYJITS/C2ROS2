@@ -1,4 +1,9 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.31] - 2025-07-10 "UpdateDate"
+
+### 🔮 Mise à jour de la date de version
+- Actualisation de la date affichée sur la page d'accueil
+
 ## [1.1.30] - 2025-07-09 "HomeHistory"
 
 ### 🆕 Historique des modifications

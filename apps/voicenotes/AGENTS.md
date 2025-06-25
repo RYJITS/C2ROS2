@@ -6,3 +6,6 @@
 - La fonction d'enregistrement doit vérifier la disponibilité du microphone et
   gérer les erreurs d'autorisation.
 - Les pistes audio doivent être libérées dès la fin de l'enregistrement.
+- L'initialisation est déclenchée immédiatement si le DOM est déjà prêt afin
+  que le bouton **Enregistrer** fonctionne dans les applications chargées
+  dynamiquement.

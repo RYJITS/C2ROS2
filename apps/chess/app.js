@@ -1,6 +1,20 @@
-let board = null;
 let game = null;
 let aiEndpoint = '';
+let dragSource = null;
+const unicodePieces = {
+  'P': '\u2659',
+  'R': '\u2656',
+  'N': '\u2658',
+  'B': '\u2657',
+  'Q': '\u2655',
+  'K': '\u2654',
+  'p': '\u265F',
+  'r': '\u265C',
+  'n': '\u265E',
+  'b': '\u265D',
+  'q': '\u265B',
+  'k': '\u265A'
+};
 
 function onDragStart (source, piece) {
   if (game.game_over()) return false;
@@ -14,7 +28,7 @@ function onDrop (source, target) {
 }
 
 function onSnapEnd () {
-  board.position(game.fen());
+  renderBoard();
   updateStatus();
   setTimeout(makeAiMove, 300);
 }
@@ -25,7 +39,7 @@ function makeAiMove () {
   if (moves.length === 0) return;
   const move = moves[Math.floor(Math.random() * moves.length)];
   game.move(move);
-  board.position(game.fen());
+  renderBoard();
   updateStatus();
 }
 
@@ -38,43 +52,70 @@ function updateStatus () {
   if (statusEl) statusEl.textContent = status;
 }
 
+function createBoard () {
+  const boardEl = document.getElementById('board');
+  boardEl.innerHTML = '';
+  boardEl.style.display = 'grid';
+  boardEl.style.gridTemplateColumns = 'repeat(8, 1fr)';
+  for (let r = 0; r < 8; r++) {
+    for (let c = 0; c < 8; c++) {
+      const coord = game.toCoord(r, c);
+      const square = document.createElement('div');
+      square.className = 'square ' + ((r + c) % 2 ? 'dark' : 'light');
+      square.dataset.coord = coord;
+      square.addEventListener('dragover', e => e.preventDefault());
+      square.addEventListener('drop', e => {
+        e.preventDefault();
+        const target = square.dataset.coord;
+        const res = onDrop(dragSource, target);
+        if (res === 'snapback') renderBoard();
+        else { renderBoard(); onSnapEnd(); }
+      });
+      boardEl.appendChild(square);
+    }
+  }
+}
+
+function renderBoard () {
+  const boardEl = document.getElementById('board');
+  for (let r = 0; r < 8; r++) {
+    for (let c = 0; c < 8; c++) {
+      const coord = game.toCoord(r, c);
+      const square = boardEl.querySelector(`[data-coord="${coord}"]`);
+      const piece = game.get(coord);
+      square.textContent = piece ? unicodePieces[piece] : '';
+      if (piece) {
+        square.firstChild?.remove();
+        const span = document.createElement('span');
+        span.textContent = unicodePieces[piece];
+        span.className = 'piece';
+        span.draggable = true;
+        span.dataset.piece = (piece === piece.toUpperCase() ? 'w' : 'b') + piece.toLowerCase();
+        span.addEventListener('dragstart', e => {
+          const source = square.dataset.coord;
+          if (onDragStart(source, span.dataset.piece) === false) {
+            e.preventDefault();
+            return;
+          }
+          dragSource = source;
+        });
+        square.appendChild(span);
+      } else {
+        square.innerHTML = '';
+      }
+    }
+  }
+}
+
 function initGame () {
-  game = new Chess();
-  board = Chessboard('board', {
-    draggable: true,
-    position: 'start',
-    onDragStart: onDragStart,
-    onDrop: onDrop,
-    onSnapEnd: onSnapEnd
-  });
+  game = new SimpleChess();
+  createBoard();
+  renderBoard();
   updateStatus();
 }
 
-async function loadScript (src) {
-  return new Promise((resolve, reject) => {
-    const existing = document.querySelector(`script[src="${src}"]`);
-    if (existing) {
-      existing.addEventListener('load', resolve);
-      if (existing.complete) resolve();
-      return;
-    }
-    const script = document.createElement('script');
-    script.src = src;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
-}
-
-async function loadDependencies () {
-  const promises = [];
-  if (typeof Chess === 'undefined') {
-    promises.push(loadScript('https://cdnjs.cloudflare.com/ajax/libs/chess.js/1.0.0/chess.min.js'));
-  }
-  if (typeof Chessboard === 'undefined') {
-    promises.push(loadScript('https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/chessboard.min.js'));
-  }
-  await Promise.all(promises);
+function loadDependencies () {
+  return Promise.resolve();
 }
 
 document.addEventListener('DOMContentLoaded', async () => {

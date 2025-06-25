@@ -7,8 +7,8 @@ Le module est utilisé par `UICore.toggleApp()` pour installer ou désinstaller 
 Depuis la version 1.1.0, chaque application possède un type (application, information, service ou formation) afin de faciliter le filtrage dans le Store.
 
 La formation **ChatGPT** fait partie des applications intégrées. Elle présente désormais un cours en dix pages avec quiz final pour apprendre à rédiger de bons prompts.
-Un jeu d'échecs est également proposé. L'interface repose sur **chessboard.js**
-et la logique sur **chess.js**. Un menu déroulant liste plusieurs moteurs IA
+Un jeu d'échecs est également proposé. L'affichage et les règles sont gérés par le script local `simple-chess.js`.
+Un menu déroulant liste plusieurs moteurs IA
 (Stockfish, LCZero…). Le champ situé dessous permet de saisir l'URL de l'API.
 Sans configuration, un robot local joue hors ligne.
 L'application s'installe via le Store et se lance dans une modale dédiée.

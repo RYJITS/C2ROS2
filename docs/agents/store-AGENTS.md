@@ -7,3 +7,4 @@ Directives pour gérer la page du Store :
 - Autoriser le filtrage par type d'application (service, formation, outil...).
 - Mettre ce fichier à jour à chaque ajout ou modification d'application.
 - Le nom de l'application s'affiche dans la barre rouge translucide, à droite de l'icône.
+- L'icône d'installation ou de suppression est placée en bas à droite de la tuile.

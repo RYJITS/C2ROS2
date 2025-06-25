@@ -120,4 +120,9 @@ async function transcribeWithWhisper(blob) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', initVoiceNotes);
+// Initialiser l'application dès que possible
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initVoiceNotes);
+} else {
+    initVoiceNotes();
+}

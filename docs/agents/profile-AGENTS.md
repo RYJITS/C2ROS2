@@ -9,3 +9,4 @@ Consignes pour la gestion de la page Profil :
 - Ajouter un bouton "Mise à jour" permettant de rafraîchir l'application en mode PWA.
 - Afficher une notification visuelle sur ce bouton lorsqu'une nouvelle version est disponible.
 - Vérifier régulièrement `version.json` sans cache pour détecter les mises à jour.
+- Les notifications sur mobile émettent une courte vibration pour alerter l'utilisateur.

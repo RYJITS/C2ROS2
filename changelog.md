@@ -1,4 +1,8 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.30] - 2025-07-09 "NotificationVibration"
+
+### 📳 Retour tactile sur notifications
+- En mode mobile, chaque notification provoque une courte vibration du smartphone.
 ## [1.1.29] - 2025-07-08 "WindowButtons"
 
 ### ✨ Harmonisation des contrôles

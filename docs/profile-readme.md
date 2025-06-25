@@ -13,4 +13,4 @@ fond s'assombrit pour mieux la distinguer. Sur smartphone, une courte vibration
 signale le début et la fin du déplacement.
 Un bouton de déconnexion est disponible pour terminer la session.
 Les préférences incluent plusieurs options : activer ou désactiver les notifications, choisir le mode sombre et déplacer la barre de navigation.
-Un bouton "Mise à jour" permet de rafraîchir l'application lorsqu'elle est installée en PWA.
+Un bouton "Mise à jour" permet de rafraîchir l'application lorsqu'elle est installée en PWA. Une pastille apparaît sur ce bouton pour prévenir l'utilisateur lorsqu'une nouvelle version est détectée. Le fichier `version.json` est récupéré sans cache afin de signaler immédiatement la disponibilité d'une mise à jour.

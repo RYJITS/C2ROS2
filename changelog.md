@@ -5,6 +5,11 @@
 ### 🚀 Mise à jour de version
 - Mise à jour de la version et de la date d'actualisation sur la page d'accueil.
 
+## [1.1.29] - 2025-07-08 "ProfileUpdate"
+
+### ✨ Notification de mise à jour
+- Le bouton "Mise à jour" de la page Profil affiche une pastille lorsque `version.json` indique une nouvelle version.
+
 ## [1.1.27] - 2025-07-06 "ChessRemoval"
 
 ### 🔥 Suppression de la page Échecs

@@ -156,6 +156,18 @@ p {
     min-height: 48px;
 }
 
+/* Indicateur de mise à jour pour les boutons */
+.btn.update-available::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--c2r-warning);
+    border-radius: 50%;
+}
+
 /* Formulaires */
 input,
 textarea,

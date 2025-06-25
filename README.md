@@ -19,6 +19,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - En affichage mobile, un bouton **Applications** apparaît dans la barre de navigation basse.
 - Si vous êtes connecté en administrateur, une icône supplémentaire donne accès à la gestion des comptes.
 - Depuis ce panneau, l'administrateur peut ajouter ou supprimer des utilisateurs, consulter leur nom d'utilisateur et le hash de leur mot de passe. Les logs système sont visibles dans les options avancées.
+- Un administrateur peut se connecter temporairement sous l'identité d'un autre utilisateur depuis ce tableau.
 - La croix du menu mobile adopte la même couleur neutre que les autres boutons.
 - En mode mobile, la liste des applications se referme si l'on touche un autre bouton de la barre.
 - La barre de navigation mobile mesure maintenant 80px de haut pour une meilleure ergonomie.

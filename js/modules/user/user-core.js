@@ -11,6 +11,7 @@ class UserCore {
         this.currentUser = null;
         this.users = new Map();
         this.sessions = new Map();
+        this.previousUser = null;
         
         this.init();
     }
@@ -248,6 +249,49 @@ class UserCore {
         }
         
         return deleted;
+    }
+
+    /**
+     * Se connecter en tant qu'utilisateur (admin uniquement)
+     * @param {string} userId - ID utilisateur cible
+     * @returns {Object|null} Utilisateur connecté ou null
+     */
+    impersonateUser(userId) {
+        if (!this.isAdmin()) {
+            throw new Error('Accès refusé - Admin requis');
+        }
+
+        const user = this.users.get(userId);
+        if (!user) {
+            throw new Error('Utilisateur non trouvé');
+        }
+
+        this.previousUser = this.currentUser;
+
+        user.lastLogin = new Date().toISOString();
+        user.stats.loginCount++;
+        user.stats.lastActivity = new Date().toISOString();
+
+        this.createSession(user);
+        this.currentUser = user;
+        this.saveUsers();
+        this.saveSessions();
+        this.saveCurrentUser();
+
+        console.log('Connexion admin en tant que:', user.email);
+        return user;
+    }
+
+    /**
+     * Revenir à l'utilisateur précédent après impersonation
+     */
+    stopImpersonation() {
+        if (this.previousUser) {
+            this.endSession(this.currentUser.id);
+            this.currentUser = this.previousUser;
+            this.previousUser = null;
+            this.saveCurrentUser();
+        }
     }
     
     /**

@@ -194,6 +194,13 @@ class UICore {
                 this.savePreferences();
             });
         }
+
+        const backAdminBtn = document.getElementById('back-admin-btn');
+        if (backAdminBtn) {
+            backAdminBtn.addEventListener('click', () => {
+                this.stopImpersonation();
+            });
+        }
     }
     
     /**
@@ -431,6 +438,11 @@ class UICore {
                                     ${IconManager.getIcon('uninstall')} Supprimer
                                 </button>` : ''
                             }
+                            ${user.id !== userCore.getCurrentUser().id ?
+                                `<button class="btn btn-small btn-info" onclick="window.C2R_SYSTEM.uiCore.impersonateUser('${user.id}')" aria-label="Se connecter en tant que ${user.email}">
+                                    ${IconManager.getIcon('login')} Connexion
+                                </button>` : ''
+                            }
                         </td>
                     </tr>
                 `).join('');
@@ -593,9 +605,14 @@ class UICore {
             } else {
                 adminElements.forEach(el => el.style.display = 'none');
             }
-            
+
             userElements.forEach(el => el.style.display = 'block');
-            
+
+            const backBtn = document.getElementById('back-admin-btn');
+            if (backBtn) {
+                backBtn.style.display = window.C2R_SYSTEM?.userCore.previousUser ? 'inline-block' : 'none';
+            }
+
             // Appliquer les préférences
             this.applyPreferences(user.preferences);
             
@@ -607,6 +624,9 @@ class UICore {
             adminElements.forEach(el => el.style.display = 'none');
             userElements.forEach(el => el.style.display = 'none');
             this.clearSidebarApps();
+
+            const backBtn = document.getElementById('back-admin-btn');
+            if (backBtn) backBtn.style.display = 'none';
         }
         
         // Rafraîchir la page actuelle
@@ -907,6 +927,45 @@ class UICore {
         if (container) {
             container.style.display = enabled ? 'flex' : 'none';
         }
+    }
+
+    /**
+     * Se connecter en tant qu'utilisateur (admin uniquement)
+     * @param {string} userId - ID utilisateur
+     */
+    impersonateUser(userId) {
+        const userCore = window.C2R_SYSTEM?.userCore;
+        if (!userCore || !userCore.isAdmin()) return;
+
+        try {
+            const user = userCore.impersonateUser(userId);
+            if (user) {
+                this.showNotification(`Connecté en tant que ${user.email}`, 'success');
+                this.updateUserInterface(user);
+                this.navigateToPage('home');
+                const backBtn = document.getElementById('back-admin-btn');
+                if (backBtn) backBtn.style.display = 'inline-block';
+            }
+        } catch (error) {
+            console.error('Erreur connexion utilisateur:', error);
+            this.showNotification('Erreur lors de la connexion', 'error');
+        }
+    }
+
+    /**
+     * Revenir au compte administrateur après impersonation
+     */
+    stopImpersonation() {
+        const userCore = window.C2R_SYSTEM?.userCore;
+        if (!userCore || !userCore.previousUser) return;
+
+        userCore.stopImpersonation();
+        const user = userCore.getCurrentUser();
+        this.showNotification('Retour au compte administrateur', 'info');
+        this.updateUserInterface(user);
+        const backBtn = document.getElementById('back-admin-btn');
+        if (backBtn) backBtn.style.display = 'none';
+        this.navigateToPage('admin');
     }
 
     /**

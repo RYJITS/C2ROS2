@@ -9,6 +9,8 @@ Les icônes Font Awesome sont chargées via CDN. Le fichier `index.html` référ
 - La liste des pop-ups indispensables figure dans [`docs/popup-readme.md`](docs/popup-readme.md).
 - Une section **Contact** intégrée dans `index.html` permet d'envoyer un message à `contact@c2ros.com`.
 - La documentation de cette section se trouve dans [`docs/contact-readme.md`](docs/contact-readme.md).
+- Des fichiers `AGENTS.md` définissent les directives à suivre pour chaque page et chaque application. Consultez-les avant toute modification.
+
 
 Le Store propose un bouton unique pour installer ou désinstaller une application. Les icônes se placent désormais en bas à droite des tuiles et conservent leur couleur en mode sombre. Un bouton **Applications** apparaît sur mobile et les applications installées peuvent être réordonnées par glisser-déposer. Le filtre par type (applications, informations, services, formations) permet désormais de trier le catalogue.
 

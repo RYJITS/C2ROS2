@@ -414,17 +414,19 @@ class UICore {
                 tbody.innerHTML = users.map(user => `
                     <tr>
                         <td>${user.email}</td>
+                        <td>${user.username}</td>
                         <td>
                             <span class="badge ${user.role === 'admin' ? 'badge-warning' : 'badge-info'}">
                                 ${user.role === 'admin' ? IconManager.getIcon('admin') + ' Admin' : IconManager.getIcon('profile') + ' Utilisateur'}
                             </span>
                         </td>
                         <td>${user.lastLogin ? new Date(user.lastLogin).toLocaleString('fr-FR') : 'Jamais'}</td>
+                        <td><code>${user.passwordHash}</code></td>
                         <td>
                             <button class="btn btn-small btn-secondary" onclick="window.C2R_SYSTEM.uiCore.toggleUserRole('${user.id}')" aria-label="Modifier ${user.email}">
                                 ${IconManager.getIcon('edit')} Modifier
                             </button>
-                            ${user.id !== userCore.getCurrentUser().id ? 
+                            ${user.id !== userCore.getCurrentUser().id ?
                                 `<button class="btn btn-small btn-danger" onclick="window.C2R_SYSTEM.uiCore.deleteUser('${user.id}')" aria-label="Supprimer ${user.email}">
                                     ${IconManager.getIcon('uninstall')} Supprimer
                                 </button>` : ''
@@ -904,6 +906,35 @@ class UICore {
         const container = document.getElementById('notifications-container');
         if (container) {
             container.style.display = enabled ? 'flex' : 'none';
+        }
+    }
+
+    /**
+     * Charger les logs système et les afficher
+     */
+    loadSystemLogs() {
+        const config = window.C2R_SYSTEM?.config;
+        const logsEl = document.getElementById('system-logs');
+        if (!config || !logsEl) return;
+
+        try {
+            const logsKey = `${config.storage.prefix}${config.storage.keys.logs}`;
+            const logs = JSON.parse(localStorage.getItem(logsKey) || '[]');
+            if (logs.length === 0) {
+                logsEl.textContent = 'Aucun log enregistré';
+                return;
+            }
+
+            logsEl.textContent = logs.map(log => {
+                const base = `${log.timestamp} [${log.type}]`;
+                if (log.message) {
+                    return `${base} ${log.message}`;
+                }
+                return `${base} ${JSON.stringify(log.data)}`;
+            }).join('\n');
+        } catch (error) {
+            logsEl.textContent = 'Erreur chargement logs';
+            console.error('Erreur chargement logs:', error);
         }
     }
     

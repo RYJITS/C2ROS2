@@ -1,4 +1,8 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.30] - 2025-07-09 "HomeHistory"
+
+### 🆕 Historique des modifications
+- Ajout d'une tuile sur la page d'accueil affichant les trois dernières mises à jour.
 ## [1.1.29] - 2025-07-08 "WindowButtons"
 
 ### ✨ Harmonisation des contrôles

@@ -538,6 +538,9 @@ class UICore {
     refreshHomePage() {
         // Mettre à jour le conseil du jour
         this.updateDailyTip();
+
+        // Mettre à jour la liste des modifications récentes
+        this.updateChangelogTile();
         
         // Mettre à jour les informations de version
         const config = window.C2R_SYSTEM?.config;
@@ -927,6 +930,25 @@ class UICore {
         if (container) {
             container.style.display = enabled ? 'flex' : 'none';
         }
+    }
+
+    /**
+     * Mettre à jour la tuile des modifications récentes
+     */
+    updateChangelogTile() {
+        fetch('recent-changes.json')
+            .then(r => r.json())
+            .then(data => {
+                const list = document.getElementById('changelog-list');
+                if (!list) return;
+                list.innerHTML = '';
+                data.slice(0, 3).forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.datetime} – ${item.description}`;
+                    list.appendChild(li);
+                });
+            })
+            .catch(err => console.error('Erreur chargement changelog:', err));
     }
 
     /**

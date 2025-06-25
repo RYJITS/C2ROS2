@@ -63,6 +63,7 @@ function initializeUserInterface() {
     }
 
     displayUpdateTime();
+    checkVersionUpdate();
 }
 
 /**
@@ -573,12 +574,45 @@ function displayUpdateTime() {
  * Mettre à jour l'application PWA
  */
 function handlePWAUpdate() {
+    const uiCore = window.C2R_SYSTEM?.uiCore;
+    if (uiCore) {
+        uiCore.showNotification('Mise à jour en cours...', 'info');
+    }
+
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations()
             .then(regs => regs.forEach(reg => reg.update()))
             .finally(() => location.reload());
     } else {
         location.reload();
+    }
+}
+
+/**
+ * Vérifier si une nouvelle version est disponible
+ */
+function checkVersionUpdate() {
+    fetch('version.json', { cache: 'no-cache' })
+        .then(resp => resp.json())
+        .then(data => {
+            const stored = localStorage.getItem('c2ros_version');
+            if (stored && stored !== data.version) {
+                markUpdateAvailable();
+                window.C2R_SYSTEM?.uiCore?.showNotification('Nouvelle version disponible', 'info');
+            }
+            localStorage.setItem('c2ros_version', data.version);
+        })
+        .catch(err => console.error('Erreur vérification version:', err));
+}
+
+/**
+ * Marquer le bouton de mise à jour comme ayant une nouvelle version
+ */
+function markUpdateAvailable() {
+    const btn = document.getElementById('pwa-update');
+    if (btn) {
+        btn.classList.add('update-available');
+        btn.style.overflow = 'visible';
     }
 }
 

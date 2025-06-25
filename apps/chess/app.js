@@ -50,7 +50,43 @@ function initGame () {
   updateStatus();
 }
 
-document.addEventListener('DOMContentLoaded', initGame);
+async function loadScript (src) {
+  return new Promise((resolve, reject) => {
+    const existing = document.querySelector(`script[src="${src}"]`);
+    if (existing) {
+      existing.addEventListener('load', resolve);
+      if (existing.complete) resolve();
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
+async function loadDependencies () {
+  const promises = [];
+  if (typeof Chess === 'undefined') {
+    promises.push(loadScript('https://cdnjs.cloudflare.com/ajax/libs/chess.js/1.0.0/chess.min.js'));
+  }
+  if (typeof Chessboard === 'undefined') {
+    promises.push(loadScript('https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/chessboard.min.js'));
+  }
+  await Promise.all(promises);
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    await loadDependencies();
+    initGame();
+  } catch (error) {
+    console.error('Erreur chargement dépendances échiquier:', error);
+    const statusEl = document.getElementById('chess-status');
+    if (statusEl) statusEl.textContent = 'Erreur de chargement';
+  }
+});
 
 function saveAiEndpoint () {
   const input = document.getElementById('ai-endpoint');

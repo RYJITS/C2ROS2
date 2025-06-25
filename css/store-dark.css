@@ -29,12 +29,16 @@ body.theme-dark {
     border-radius: var(--c2r-radius);
     box-shadow: var(--c2r-shadow-lg);
     padding: var(--c2r-spacing-lg);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #page-store .apps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: var(--c2r-spacing-lg);
+    justify-content: center;
 }
 
 #page-store .app-card {

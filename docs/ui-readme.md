@@ -19,6 +19,7 @@ S'occupe du thème, de la navigation et des notifications. Il adapte l'interface
 Depuis la version actuelle, le Store utilise la méthode `toggleApp(appId)` pour installer ou désinstaller une application. L'icône « plus » devient une poubelle rouge, positionnée en bas à droite de chaque tuile, centrée et sans aucun arrière‑plan. L'affichage sombre conserve cette couleur et la taille des icônes est réduite pour un meilleur rendu mobile. Une règle CSS dédiée garantit que la poubelle reste rouge sur mobile.
 Lorsqu'un utilisateur tente d'installer une application sans être connecté, une notification indique désormais « Veuillez vous connecter pour installer ».
 Un bref retour tactile confirme aussi l'installation ou la désinstallation sur les appareils compatibles.
+Chaque notification déclenche également une courte vibration sur smartphone pour attirer l'attention.
 La liste déroulante des applications se ferme désormais en appuyant hors du menu ; la petite croix a été supprimée.
 Le titre "Applications installées" a été retiré pour gagner de la place et les icônes y sont affichées en plus petit.
 Le titre "Applications" dans la barre latérale a également été supprimé pour un affichage épuré.

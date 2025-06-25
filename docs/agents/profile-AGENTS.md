@@ -6,3 +6,4 @@ Consignes pour la gestion de la page Profil :
 - Autoriser le réordonnancement des applications par glisser-déposer.
 - Garantir l'accessibilité sur mobile et ordinateur.
 - Mettre ce fichier à jour dès qu'un nouveau réglage est introduit.
+- Ajouter un bouton "Mise à jour" permettant de rafraîchir l'application en mode PWA.

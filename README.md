@@ -39,6 +39,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - Une option permet de désactiver les pop-ups d'information dans les préférences du profil, ce qui masque toutes les notifications du système.
 - Si vous tentez d'installer une application sans être connecté, une notification précise désormais « Veuillez vous connecter pour installer ».
 - Une vibration confirme désormais l'installation ou la désinstallation d'une application sur les appareils compatibles.
+- Chaque notification génère également une courte vibration sur smartphone.
 - La barre latérale adopte désormais un fond uni sans ombre pour un rendu minimal.
 - En mode PC, la barre latérale adopte un style de tuile plus sobre, sans barre de défilement.
 - Le titre "Applications" n'apparaît plus dans la barre latérale pour gagner en clarté.

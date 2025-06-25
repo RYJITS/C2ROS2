@@ -1176,6 +1176,10 @@ class UICore {
         if (this.showInfoPopups === false) return;
         const container = document.getElementById('notifications-container');
         if (!container) return;
+
+        if (navigator.vibrate && window.matchMedia('(hover: none)').matches) {
+            navigator.vibrate(50);
+        }
         
         const notification = document.createElement('div');
         notification.className = `notification notification-${type}`;

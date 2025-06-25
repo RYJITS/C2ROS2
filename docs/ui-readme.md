@@ -29,6 +29,7 @@ Les tuiles reprennent le format des cartes d'accueil : icône au-dessus du text
 Les applications sont désormais regroupées dans une grande carte qui contient toutes ces tuiles.
 Sur mobile, chaque tuile occupe toute la largeur de l'écran avec une petite marge latérale.
 La page Store n'a plus de marge latérale en mode mobile afin d'exploiter toute la largeur disponible.
+La barre de recherche et les filtres s'étendent également sur toute la largeur pour un usage optimisé sur smartphone.
 La page Store reste masquée tant qu'elle ne porte pas la classe `active`, évitant son affichage sur les autres pages.
 En mode mobile, la barre de navigation basse comprend un bouton **Applications**. L'icône est chargée grâce à l'ajout du pictogramme `list` dans `IconManager`.
 Depuis la version 1.1.8, cette barre mesure 80px de haut pour faciliter la navigation tactile.

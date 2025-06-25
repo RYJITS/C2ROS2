@@ -118,7 +118,7 @@ function loadDependencies () {
   return Promise.resolve();
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
+async function startChess() {
   try {
     await loadDependencies();
     initGame();
@@ -127,7 +127,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const statusEl = document.getElementById('chess-status');
     if (statusEl) statusEl.textContent = 'Erreur de chargement';
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startChess);
+} else {
+  startChess();
+}
 
 function saveAiEndpoint () {
   const input = document.getElementById('ai-endpoint');

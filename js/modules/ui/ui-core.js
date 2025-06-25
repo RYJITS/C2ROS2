@@ -1169,6 +1169,11 @@ class UICore {
         `;
         
         container.appendChild(notification);
+
+        // Vibration courte sur mobile
+        if (window.innerWidth <= 768 && navigator.vibrate) {
+            navigator.vibrate(100);
+        }
         
         // Animation d'entrée
         setTimeout(() => {

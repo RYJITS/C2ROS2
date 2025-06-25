@@ -338,6 +338,14 @@ window.handleAppUninstall = function(appId) {
  * Configurer les gestionnaires admin
  */
 function setupAdminHandlers() {
+    // Bouton ajout utilisateur
+    const addUserBtn = document.getElementById('add-user-btn');
+    if (addUserBtn) {
+        addUserBtn.addEventListener('click', () => {
+            showAuthModal('register');
+        });
+    }
+
     // Bouton réinitialisation système
     const resetBtn = document.getElementById('reset-system');
     if (resetBtn) {
@@ -348,6 +356,17 @@ function setupAdminHandlers() {
     const clearCacheBtn = document.getElementById('clear-cache');
     if (clearCacheBtn) {
         clearCacheBtn.addEventListener('click', handleClearCache);
+    }
+
+    // Chargement des logs lors de l'ouverture des options avancées
+    const advancedSection = document.querySelector('.advanced-section');
+    if (advancedSection) {
+        advancedSection.addEventListener('toggle', (e) => {
+            if (e.target.open) {
+                const uiCore = window.C2R_SYSTEM?.uiCore;
+                uiCore?.loadSystemLogs();
+            }
+        });
     }
 }
 

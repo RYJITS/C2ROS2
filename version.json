@@ -1,6 +1,6 @@
 {
-  "version": "1.1.0",
-  "build": "2025-05-27",
+  "version": "1.1.28",
+  "build": "2025-07-07",
   "codename": "Genesis",
   "description": "Premier déploiement du système C2R OS",
   "core_modules": [

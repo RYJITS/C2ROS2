@@ -6,3 +6,4 @@ Ce fichier décrit la conduite à suivre pour maintenir la page d'accueil :
 - Utiliser un design épuré et responsive basé sur HTML, CSS et JavaScript.
 - Veiller à la cohérence visuelle avec les autres pages.
 - Mettre ce fichier à jour dès qu'une nouvelle fonctionnalité est ajoutée.
+- Mettre à jour la version et la date d'actualisation sur la page d'accueil à chaque modification du dépôt.

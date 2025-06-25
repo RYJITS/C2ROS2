@@ -535,9 +535,9 @@ class UICore {
     /**
      * Rafraîchir la page d'accueil
      */
-    refreshHomePage() {
+    async refreshHomePage() {
         // Mettre à jour le conseil du jour
-        this.updateDailyTip();
+        await this.updateDailyTip();
         
         // Mettre à jour les informations de version
         const config = window.C2R_SYSTEM?.config;
@@ -553,17 +553,21 @@ class UICore {
     /**
      * Mettre à jour le conseil du jour
      */
-    updateDailyTip() {
-        const tips = [
-            "Explorez les nouvelles applications disponibles dans le Store pour enrichir votre expérience.",
-            "Vous pouvez réorganiser vos applications installées par glisser-déposer dans la section Profil.",
-            "Le thème sombre peut être activé/désactivé à tout moment dans vos préférences.",
-            "Les administrateurs ont accès à des outils de gestion avancés dans la section Configuration.",
-            "Utilisez la barre de recherche du Store pour trouver rapidement les applications dont vous avez besoin.",
-            "Personnalisez votre expérience en modifiant la position de la barre latérale.",
-            "Vos préférences sont automatiquement sauvegardées à chaque modification."
-        ];
-        
+    async updateDailyTip() {
+        const staticTips = window.C2R_STATIC_TIPS || [];
+        let featureTips = [];
+
+        try {
+            const resp = await fetch('version.json', { cache: 'no-cache' });
+            const data = await resp.json();
+            if (Array.isArray(data.features)) {
+                featureTips = data.features.map(f => `Nouveauté : ${f}.`);
+            }
+        } catch (error) {
+            console.error('Erreur chargement des fonctionnalités :', error);
+        }
+
+        const tips = staticTips.concat(featureTips);
         const randomTip = tips[Math.floor(Math.random() * tips.length)];
         const tipElement = document.querySelector('#daily-tip p');
         if (tipElement) {

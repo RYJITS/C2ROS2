@@ -62,6 +62,13 @@ function initializeUserInterface() {
         }, 1000);
     }
 
+    // Mettre à jour le conseil du jour dès le chargement
+    if (uiCore.updateDailyTip) {
+        uiCore.updateDailyTip().catch(err =>
+            console.error('Erreur mise à jour du conseil :', err)
+        );
+    }
+
     displayUpdateTime();
     checkVersionUpdate();
 }

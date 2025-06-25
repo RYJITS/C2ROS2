@@ -26,6 +26,8 @@ Exemple de prompt :
 ```
 Agis sur le dossier `app/` : ajoute un script Node.js pour vérifier les dépendances. Le code doit être commenté en français et couvert par un test Jest.
 ```
+- Consultez les fichiers `AGENTS.md` pour connaître les directives propres à chaque page et application.
+
 
 ## 4. Tester un merge à blanc
 

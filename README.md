@@ -53,6 +53,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
   2. **Options du profil** — la tuile ouvre directement la page correspondante pour activer ou désactiver les notifications, passer en mode sombre ou déplacer la barre de navigation.
   3. **Installer C2R OS** — un bouton permet d'ajouter l'application sur smartphone en mode PWA.
   4. **Infos sur les applications** — cette tuile renvoie directement au Store pour découvrir les différents types d'apps disponibles.
+ - Une tuile "Conseil du jour" affiche aléatoirement une astuce en fonction des fonctionnalités présentes dans `version.json` et se met à jour à chaque chargement de la page. Les conseils statiques sont définis dans `js/data/daily-tips.js`.
 - Les applications internes utilisent désormais uniquement les icônes Font Awesome pour un style unifié.
 - L'application **Notes Vocales** permet d'enregistrer votre voix et de la transcrire via Whisper.
 - Sur mobile, l'application peut s'installer en plein écran grâce au fichier `manifest.webmanifest`.

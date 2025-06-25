@@ -1,5 +1,11 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.27] - 2025-07-06 "ChessRemoval"
+
+### 🔥 Suppression de la page Échecs
+- La tuile "Jouer aux échecs" disparait de l'accueil.
+- La page autonome `chess.html` est retirée. Le jeu s'installe désormais uniquement via le Store.
+
 ## [1.1.26] - 2025-07-05 "StoreFullWidth"
 
 ### 📱 Optimisation mobile

@@ -614,8 +614,15 @@ body.sidebar-right .sidebar {
     
     .store-controls {
         flex-direction: column;
+        align-items: stretch;
+        margin-left: 0;
+        width: 100%;
     }
-    
+
+    .store-controls > * {
+        width: 100%;
+    }
+
     .search-container {
         min-width: auto;
     }

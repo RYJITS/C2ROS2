@@ -203,6 +203,16 @@ body.theme-dark {
         padding-left: 0;
         padding-right: 0;
     }
+    #page-store .store-controls {
+        flex-direction: column;
+        align-items: stretch;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #page-store .store-controls > * {
+        width: 100%;
+    }
     #page-store .apps-grid {
         grid-template-columns: 1fr;
     }

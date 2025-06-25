@@ -1,5 +1,10 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.26] - 2025-07-05 "StoreFullWidth"
+
+### 📱 Optimisation mobile
+- En mode mobile, la barre de recherche et les filtres du Store occupent à présent toute la largeur de l'écran.
+
 ## [1.1.25] - 2025-07-04 "NavIcons"
 
 ### 🎨 Icônes de navigation

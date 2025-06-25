@@ -564,10 +564,19 @@ function displayBootInfo(system) {
  */
 function displayUpdateTime() {
     const el = document.getElementById('update-time');
-    if (el) {
-        const now = new Date();
-        el.textContent = now.toLocaleString();
-    }
+    if (!el) return;
+
+    fetch('recent-changes.json')
+        .then(r => r.json())
+        .then(data => {
+            if (Array.isArray(data) && data.length > 0) {
+                el.textContent = data[0].datetime;
+            }
+        })
+        .catch(() => {
+            const now = new Date();
+            el.textContent = now.toLocaleString();
+        });
 }
 
 /**

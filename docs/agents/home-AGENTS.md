@@ -9,3 +9,4 @@ Ce fichier décrit la conduite à suivre pour maintenir la page d'accueil :
 - Mettre à jour la version et la date d'actualisation sur la page d'accueil à chaque modification du dépôt.
 - Veiller à ce que la date corresponde à la dernière entrée du fichier `recent-changes.json`.
 - Afficher dans une tuile dédiée les trois dernières modifications avec leur date et heure.
+- La date de mise à jour est chargée dynamiquement via `recent-changes.json`.

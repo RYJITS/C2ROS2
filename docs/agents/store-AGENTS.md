@@ -9,3 +9,4 @@ Directives pour gérer la page du Store :
 - Le nom de l'application s'affiche dans la barre rouge translucide, à droite de l'icône.
 - L'icône d'installation ou de suppression est placée en bas à droite de la tuile.
 - Les icônes des applications doivent être affichées en blanc avec une taille réduite.
+- Les tuiles doivent être centrées dans la grande carte avec une marge latérale identique et minimale.

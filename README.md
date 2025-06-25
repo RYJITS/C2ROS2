@@ -32,6 +32,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - Les tuiles du Store reprennent désormais le format des cartes d'accueil : icône au-dessus du texte et disposition en liste.
 - Toutes ces tuiles sont maintenant regroupées dans une grande carte afin de mieux structurer la page Store.
 - Les tuiles s'alignent automatiquement sur plusieurs colonnes pour occuper toute la largeur disponible.
+- Les tuiles sont centrées dans la grande carte avec une marge identique de chaque côté.
 - Sur mobile, chaque tuile occupe toute la largeur de l'écran avec une petite marge latérale.
 - Depuis la version 1.1.0, les applications installées peuvent être réordonnées par glisser-déposer dans la page Profil.
 - Un court retour haptique est émis sur smartphone au début et à la fin du déplacement.

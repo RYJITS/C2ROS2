@@ -41,7 +41,7 @@ body.theme-dark {
     width: 100%;
     min-height: 160px;
     position: relative;
-    background: #1a1a21;
+    background: transparent;
     border: 1px solid #2a2a32;
     border-radius: 16px;
     padding: 16px 24px;

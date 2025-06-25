@@ -1,5 +1,10 @@
 # 📝 C2R OS - Journal des modifications
 
+## [1.1.28] - 2025-07-07 "VersionBump"
+
+### 🚀 Mise à jour de version
+- Mise à jour de la version et de la date d'actualisation sur la page d'accueil.
+
 ## [1.1.27] - 2025-07-06 "ChessRemoval"
 
 ### 🔥 Suppression de la page Échecs

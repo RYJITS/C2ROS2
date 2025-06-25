@@ -282,10 +282,10 @@ class UICore {
             <div class="app-card">
                 <div class="app-top">
                     <div class="app-icon">${app.icon}</div>
+                    <h3 class="app-title">${app.name}</h3>
                 </div>
                 <div class="app-content">
                     <div class="app-info">
-                        <h3>${app.name}</h3>
                         <p>${app.description}</p>
                     </div>
                     <div class="app-meta text-small text-muted">

@@ -59,6 +59,9 @@ body.theme-dark {
     background-color: rgba(197, 58, 58, 0.15);
     color: rgba(255, 255, 255, 0.8);
     border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 #page-store .app-content {
@@ -99,11 +102,11 @@ body.theme-dark {
     transition: all 180ms ease-in-out;
 }
 
-#page-store .app-info h3 {
+#page-store .app-top .app-title {
     font-size: 18px;
     font-weight: 700;
     color: #ffffff;
-    margin-top: 12px;
+    margin: 0;
 }
 
 #page-store .app-info p {

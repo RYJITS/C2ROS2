@@ -46,7 +46,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
 - En mode mobile, la barre latérale est désormais totalement masquée pour laisser la place à la navigation basse.
 - Les icônes Accueil, Store, Profil et Contact reprennent le même design que celles des applications et ne prennent plus de fond au survol.
 - L'application **Formation ChatGPT** propose désormais un cours en dix pages avec navigation pour une prise en main intuitive.
- - Le jeu d'échecs utilise **chessboard.js** pour l'interface et **chess.js** pour les règles. Un menu permet de choisir un moteur IA et de renseigner son URL. Sans configuration, un robot local joue aléatoirement.
+ - Le jeu d'échecs repose désormais sur le script local `simple-chess.js` qui gère l'affichage et les règles. Un menu permet de choisir un moteur IA et de renseigner son URL. Sans configuration, un robot local joue aléatoirement.
  - Le jeu d'échecs s'installe depuis le Store et se lance dans une modale dédiée.
 - La page d'accueil propose quatre tuiles pour comprendre le fonctionnement de C2R OS :
   1. **Installez des applications IA et services** — la tuile elle-même mène directement au Store et les applications installées apparaissent dans la barre de navigation.
@@ -87,4 +87,4 @@ Les tests couvrent la gestion des icônes via `IconManager`.
 
 ## Jeu d'échecs
 
-Pour jouer, installez l'application depuis le Store. L'échiquier est généré par **chessboard.js** et la logique provient de **chess.js**.
+Pour jouer, installez l'application depuis le Store. L'échiquier est entièrement géré en local via `simple-chess.js`.

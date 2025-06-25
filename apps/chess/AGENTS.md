@@ -3,3 +3,9 @@
 - Concevoir l'interface de façon épurée et responsive.
 - Utiliser HTML, CSS et JavaScript de manière modulaire.
 - Documenter toute nouvelle fonctionnalité directement dans ce fichier.
+
+## Fonctionnalités
+
+- L'interface n'utilise plus de bibliothèques externes. Le jeu repose sur le fichier `simple-chess.js` pour la logique et la gestion de l'échiquier.
+- Les pièces sont affichées à l'aide des caractères Unicode et peuvent être déplacées par glisser-déposer.
+- Un robot local joue aléatoirement lorsque c'est au tour des noirs.

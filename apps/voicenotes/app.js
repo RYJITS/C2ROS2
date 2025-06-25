@@ -6,9 +6,17 @@
 
 let voiceNotes = {
     recorder: null,
+    stream: null,
     chunks: [],
     textarea: null
 };
+
+function releaseMicrophone() {
+    if (voiceNotes.stream) {
+        voiceNotes.stream.getTracks().forEach(t => t.stop());
+        voiceNotes.stream = null;
+    }
+}
 
 function initVoiceNotes() {
     voiceNotes.textarea = document.getElementById('voicenotes-area');
@@ -29,33 +37,52 @@ function initVoiceNotes() {
 async function startRecording() {
     const startBtn = document.getElementById('start-record');
     const stopBtn = document.getElementById('stop-record');
-    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    voiceNotes.recorder = new MediaRecorder(stream);
-    voiceNotes.chunks = [];
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        alert('Microphone non disponible sur ce navigateur.');
+        return;
+    }
+    if (typeof MediaRecorder === 'undefined') {
+        alert("L'enregistrement audio n'est pas pris en charge.");
+        return;
+    }
 
-    voiceNotes.recorder.ondataavailable = e => {
-        if (e.data.size) voiceNotes.chunks.push(e.data);
-    };
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        voiceNotes.stream = stream;
+        voiceNotes.recorder = new MediaRecorder(stream);
+        voiceNotes.chunks = [];
 
-    voiceNotes.recorder.onstop = async () => {
-        const blob = new Blob(voiceNotes.chunks, { type: 'audio/webm' });
-        const text = await transcribeWithWhisper(blob);
-        if (text) {
-            voiceNotes.textarea.value += text + '\n';
-        }
-    };
+        voiceNotes.recorder.ondataavailable = e => {
+            if (e.data.size) voiceNotes.chunks.push(e.data);
+        };
 
-    voiceNotes.recorder.start();
-    startBtn.disabled = true;
-    stopBtn.disabled = false;
+        voiceNotes.recorder.onstop = async () => {
+            const blob = new Blob(voiceNotes.chunks, { type: 'audio/webm' });
+            const text = await transcribeWithWhisper(blob);
+            if (text) {
+                voiceNotes.textarea.value += text + '\n';
+            }
+            releaseMicrophone();
+            voiceNotes.recorder = null;
+        };
+
+        voiceNotes.recorder.start();
+        startBtn.disabled = true;
+        stopBtn.disabled = false;
+    } catch (err) {
+        console.error("Accès au microphone refusé ou impossible", err);
+        alert('Accès au microphone refusé ou impossible.');
+        releaseMicrophone();
+    }
 }
 
 function stopRecording() {
     const startBtn = document.getElementById('start-record');
     const stopBtn = document.getElementById('stop-record');
-    if (voiceNotes.recorder) {
+    if (voiceNotes.recorder && voiceNotes.recorder.state !== 'inactive') {
         voiceNotes.recorder.stop();
     }
+    releaseMicrophone();
     startBtn.disabled = false;
     stopBtn.disabled = true;
 }

@@ -246,6 +246,15 @@ body.sidebar-right .sidebar {
     color: var(--c2r-text-secondary);
 }
 
+.changelog-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--c2r-spacing-md) 0 0 0;
+    text-align: left;
+    color: var(--c2r-text-secondary);
+    font-size: var(--font-size-sm);
+}
+
 .daily-tip {
     background-color: var(--c2r-bg-secondary);
     border: 1px solid var(--c2r-border);

@@ -7,3 +7,4 @@ Ce fichier décrit la conduite à suivre pour maintenir la page d'accueil :
 - Veiller à la cohérence visuelle avec les autres pages.
 - Mettre ce fichier à jour dès qu'une nouvelle fonctionnalité est ajoutée.
 - Mettre à jour la version et la date d'actualisation sur la page d'accueil à chaque modification du dépôt.
+- Afficher dans une tuile dédiée les trois dernières modifications avec leur date et heure.

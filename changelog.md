@@ -22,7 +22,7 @@
 ## [1.1.25] - 2025-07-04 "StoreButton"
 
 ### 🎨 Bouton du Store
-- Le bouton d'installation ne possède plus d'arrière-plan et se situe à présent sur la droite de chaque tuile.
+- Le bouton d'installation ne possède plus d'arrière-plan et se situe désormais en bas à droite de chaque tuile.
 ## [1.1.25] - 2025-07-04 "NoHeaderLine"
 
 ### ✨ En-tête épuré
@@ -210,7 +210,7 @@
 ## [1.0.2] - 2025-06-05 "UX"
 
 ### ✨ Améliorations de l'interface
-- Alignement des icônes "installer" et "poubelle" à droite des tuiles du Store pour plus de cohérence.
+- Alignement des icônes "installer" et "poubelle" en bas à droite des tuiles du Store pour plus de cohérence.
 
 ## [1.0.1] - 2025-06-05 "Docs"
 

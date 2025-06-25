@@ -33,6 +33,7 @@ La page Store reste masquée tant qu'elle ne porte pas la classe `active`, évit
 En mode mobile, la barre de navigation basse comprend un bouton **Applications**. L'icône est chargée grâce à l'ajout du pictogramme `list` dans `IconManager`.
 Depuis la version 1.1.8, cette barre mesure 80px de haut pour faciliter la navigation tactile.
 Lorsque l'on presse un autre bouton de cette barre, la liste d'applications se referme automatiquement.
+Si l'utilisateur connecté possède le rôle *admin*, un bouton supplémentaire apparaît pour ouvrir la page de configuration administrateur.
 La barre latérale est désormais désactivée sur mobile pour laisser toute la place à la navigation basse.
 Les icônes du menu mobile reprennent la même taille que celles utilisées dans la page Profil pour une cohérence visuelle.
 Les icônes du menu mobile sont encore plus petites afin d'optimiser l'espace disponible.

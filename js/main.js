@@ -136,6 +136,12 @@ function setupGlobalEventHandlers() {
     if (userCacheBtn) {
         userCacheBtn.addEventListener('click', handleClearCache);
     }
+
+    // Bouton de mise à jour PWA
+    const pwaUpdateBtn = document.getElementById('pwa-update');
+    if (pwaUpdateBtn) {
+        pwaUpdateBtn.addEventListener('click', handlePWAUpdate);
+    }
     
     // Gestionnaires de drag & drop pour réorganiser les apps
     setupDragAndDrop();
@@ -560,6 +566,19 @@ function displayUpdateTime() {
     if (el) {
         const now = new Date();
         el.textContent = now.toLocaleString();
+    }
+}
+
+/**
+ * Mettre à jour l'application PWA
+ */
+function handlePWAUpdate() {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations()
+            .then(regs => regs.forEach(reg => reg.update()))
+            .finally(() => location.reload());
+    } else {
+        location.reload();
     }
 }
 

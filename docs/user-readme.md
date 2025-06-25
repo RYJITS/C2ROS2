@@ -6,3 +6,4 @@ préférences de chaque utilisateur et assure la persistance des données via
 première connexion.
 
 Depuis le panneau d'administration, un bouton permet désormais d'ajouter un nouvel utilisateur via la fenêtre d'inscription. Les administrateurs peuvent aussi supprimer des comptes existants et consulter le nom d'utilisateur ainsi que le hash des mots de passe enregistrés dans le tableau des utilisateurs.
+Ils disposent également d'une option **Se connecter** pour prendre temporairement l'identité d'un utilisateur et revenir ensuite à leur session initiale.

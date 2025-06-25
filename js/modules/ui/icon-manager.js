@@ -10,6 +10,7 @@
         check: '<i class="icon fa-solid fa-check"></i>',
         list: '<i class="icon fa-solid fa-list"></i>',
         signout: '<i class="icon fa-solid fa-right-from-bracket"></i>',
+        login: '<i class="icon fa-solid fa-right-to-bracket"></i>',
         search: '<i class="icon fa-solid fa-magnifying-glass"></i>',
         idea: '<i class="icon fa-solid fa-lightbulb"></i>',
         refresh: '<i class="icon fa-solid fa-arrows-rotate"></i>',

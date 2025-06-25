@@ -8,4 +8,5 @@ Ce dépôt contient un ensemble d'applications et de pages web modulaires. Les i
 - Chaque application située dans `apps/` doit posséder son propre `AGENTS.md` suivant le même modèle.
 - **Aucun délimiteur de conflit Git** ne doit apparaître dans ces fichiers.
 - Mettez à jour systématiquement les fichiers `AGENTS.md` pour refléter les dernières fonctionnalités et choix techniques.
+- Les boutons de contrôle des fenêtres (fermer, agrandir, réduire) utilisent les symboles « × », « □ » et « − » sans arrière‑plan.
 

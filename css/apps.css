@@ -145,27 +145,27 @@
     justify-content: center;
     font-size: var(--font-size-sm);
     transition: var(--c2r-transition);
+    background: none;
+    color: var(--c2r-text-muted);
     font-family: inherit;
 }
 
 .app-modal-btn.minimize {
-    background: #fbbf24;
-    color: white;
+    background: none;
 }
 
 .app-modal-btn.maximize {
-    background: #10b981;
-    color: white;
+    background: none;
 }
 
 .app-modal-btn.close {
-    background: #ef4444;
-    color: white;
+    background: none;
 }
 
 .app-modal-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: var(--c2r-text);
 }
 
 .app-modal-content {

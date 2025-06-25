@@ -1,6 +1,6 @@
 /**
  * C2R OS - Point d'entrée principal
- * Version: 1.1.28
+ * Version: 1.1.29
  * Description: Système d'exploitation dans le navigateur avec architecture modulaire
  */
 
@@ -959,7 +959,7 @@ window.C2R_DEBUG = {
 
 // Message de bienvenue développeur
 console.log(`
-🎯 C2R OS v1.1.28 "Genesis" - Développement
+🎯 C2R OS v1.1.29 "Genesis" - Développement
 ┌─────────────────────────────────────────┐
 │ 🔧 Mode Debug activé                   │
 │ 💻 Tapez C2R_DEBUG pour les utilitaires│

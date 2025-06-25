@@ -1,4 +1,9 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.29] - 2025-07-08 "WindowButtons"
+
+### ✨ Harmonisation des contrôles
+- Les boutons de fermeture, d'agrandissement et de réduction affichent désormais une croix, un carré et un trait sans couleur de fond.
+
 
 ## [1.1.28] - 2025-07-07 "VersionBump"
 

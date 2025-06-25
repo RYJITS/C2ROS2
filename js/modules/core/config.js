@@ -1,14 +1,14 @@
 /**
  * C2R OS - Configuration centrale
  * Module: CoreConfig
- * Version: 1.1.30
+ * Version: 1.1.31
  * Description: Configuration globale du système C2R OS
  */
 
 class CoreConfig {
     constructor() {
-        this.version = "1.1.30";
-        this.build = "2025-07-09";
+        this.version = "1.1.31";
+        this.build = "2025-07-10";
         this.codename = "Genesis";
         
         // Configuration système

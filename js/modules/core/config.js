@@ -8,7 +8,7 @@
 class CoreConfig {
     constructor() {
         this.version = "1.1.31";
-        this.build = "2025-07-10";
+        this.build = "2025-06-25";
         this.codename = "Genesis";
         
         // Configuration système

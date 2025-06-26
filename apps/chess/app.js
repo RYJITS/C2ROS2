@@ -115,7 +115,17 @@ function initGame () {
 }
 
 function loadDependencies () {
-  return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    if (window.SimpleChess) {
+      resolve();
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'apps/chess/simple-chess.js';
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error('Erreur chargement simple-chess.js'));
+    document.head.appendChild(script);
+  });
 }
 
 async function startChess() {

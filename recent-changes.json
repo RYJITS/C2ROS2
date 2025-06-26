@@ -1,5 +1,10 @@
 [
   {
+    "version": "1.1.32",
+    "datetime": "2025-06-26 12:00",
+    "description": "Ajout de l'application Recherche d'Emploi"
+  },
+  {
     "version": "1.1.31",
     "datetime": "2025-06-25 12:00",
     "description": "Mise à jour de la date sur la page d'accueil"

@@ -1,4 +1,9 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.33] - 2025-07-10 "StoreTop"
+
+### 🖌️ Mise en page du Store
+- La grande carte du Store s'étend désormais jusqu'en haut de l'écran.
+
 ## [1.1.31] - 2025-06-25 "UpdateDate"
 
 ### 🔮 Mise à jour de la date de version

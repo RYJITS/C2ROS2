@@ -11,3 +11,4 @@ Directives pour gérer la page du Store :
 - L'icône d'installation ou de suppression est placée en bas à droite de la tuile.
 - Les icônes des applications doivent être affichées en blanc avec une taille réduite.
 - Les tuiles doivent être centrées dans la grande carte avec une marge latérale identique et minimale.
+- La grande tuile d'arrière-plan remonte jusqu'en haut de l'écran pour un rendu immersif.

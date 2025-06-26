@@ -11,3 +11,5 @@
 - Un robot local joue aléatoirement lorsque c'est au tour des noirs.
 - L'initialisation se déclenche automatiquement même si le script est injecté
   après l'événement `DOMContentLoaded` afin d'éviter l'écran noir.
+- Le fichier `simple-chess.js` est désormais chargé dynamiquement par
+  `loadDependencies()` afin d'éviter l'erreur "Erreur de chargement".

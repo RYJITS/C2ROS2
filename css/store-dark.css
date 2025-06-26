@@ -11,6 +11,8 @@ body.theme-dark {
     display: none;
     flex-direction: column;
     padding: 40px 64px;
+    margin-top: calc(-1 * var(--c2r-spacing-xl));
+    padding-top: calc(40px + var(--c2r-spacing-xl));
 }
 
 #page-store.active {
@@ -209,6 +211,8 @@ body.theme-dark {
     #page-store {
         padding-left: 0;
         padding-right: 0;
+        margin-top: calc(-1 * var(--c2r-spacing-md));
+        padding-top: calc(40px + var(--c2r-spacing-md));
     }
     #page-store .store-controls {
         flex-direction: column;
@@ -233,6 +237,8 @@ body.theme-dark {
     #page-store {
         padding-left: 0;
         padding-right: 0;
+        margin-top: calc(-1 * var(--c2r-spacing-sm));
+        padding-top: calc(40px + var(--c2r-spacing-sm));
     }
     #page-store .apps-grid {
         grid-template-columns: 1fr;

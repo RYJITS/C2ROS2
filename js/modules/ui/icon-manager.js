@@ -39,6 +39,7 @@
         chess: '<i class="icon fa-solid fa-chess-board"></i>',
         pause: '<i class="icon fa-solid fa-pause"></i>',
         microphone: '<i class="icon fa-solid fa-microphone"></i>',
+        briefcase: '<i class="icon fa-solid fa-briefcase"></i>',
         stop: '<i class="icon fa-solid fa-stop"></i>',
         checkcircle: '<i class="icon fa-solid fa-circle-check"></i>',
         sun: '<i class="icon fa-solid fa-sun"></i>',

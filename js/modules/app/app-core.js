@@ -179,6 +179,21 @@ class AppCore {
                 path: './apps/chatgpt-training/'
             },
             {
+                id: 'jobsearch',
+                name: 'Recherche d\'Emploi',
+                description: 'Créez CV et lettres puis trouvez des offres',
+                icon: IconManager.getIcon('briefcase'),
+                category: 'Service',
+                type: 'service',
+                version: '1.0.0',
+                author: 'C2R Team',
+                size: '70 KB',
+                permissions: ['network', 'storage'],
+                tags: ['emploi', 'cv', 'lettre'],
+                builtin: true,
+                path: './apps/jobsearch/'
+            },
+            {
                 id: 'chess',
                 name: 'Échecs IA',
                 description: 'Jouez contre une intelligence artificielle',

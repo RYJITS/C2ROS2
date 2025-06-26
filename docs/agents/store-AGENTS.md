@@ -6,6 +6,7 @@ Directives pour gérer la page du Store :
 - Proposer l'installation et la suppression des apps via un bouton dédié.
 - Autoriser le filtrage par type d'application (service, formation, outil...).
 - Mettre ce fichier à jour à chaque ajout ou modification d'application.
+- La nouvelle application **Recherche d'Emploi** permet de générer CV et lettres grâce à l'API OpenAI.
 - Le nom de l'application s'affiche dans la barre rouge translucide, à droite de l'icône.
 - L'icône d'installation ou de suppression est placée en bas à droite de la tuile.
 - Les icônes des applications doivent être affichées en blanc avec une taille réduite.

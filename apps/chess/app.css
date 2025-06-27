@@ -19,3 +19,24 @@
 
 .light { background: #f0d9b5; }
 .dark { background: #b58863; }
+
+.timers {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.timer {
+  font-weight: bold;
+}
+
+.move-history {
+  margin-top: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+  padding-left: 0;
+}
+
+.move-history li {
+  list-style: none;
+}

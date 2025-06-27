@@ -88,6 +88,13 @@ function createBoard () {
         if (res === 'snapback') renderBoard();
         else { renderBoard(); onSnapEnd(); }
       });
+      square.addEventListener('touchend', e => {
+        e.preventDefault();
+        const target = square.dataset.coord;
+        const res = onDrop(dragSource, target);
+        if (res === 'snapback') renderBoard();
+        else { renderBoard(); onSnapEnd(); }
+      });
       boardEl.appendChild(square);
     }
   }
@@ -115,6 +122,9 @@ function renderBoard () {
             return;
           }
           dragSource = source;
+        });
+        span.addEventListener('touchstart', () => {
+          dragSource = square.dataset.coord;
         });
         square.appendChild(span);
       } else {

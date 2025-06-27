@@ -27,5 +27,4 @@
 
 ## Version avancee
 
-Une version complete en React et Node.js est disponible a la racine du projet dans les dossiers `client` et `server`. Cette application remplace progressivement celle presente ici.
-Cette nouvelle interface embarque le composant `ChessBoard` utilisant `chess.js` pour calculer les coups autorises et animer les deplacements sur un echiquier responsive.
+Une version React/Node.js plus riche est developpee dans les dossiers `client` et `server`. Elle integre le composant `ChessBoard` base sur `chess.js` qui gere roque, prise en passant, promotion via une fenetre modale et signale mat, pat ou nulle. L'echiquier est responsive et les pieces se deplacent au toucher ou par glisser-deposer.

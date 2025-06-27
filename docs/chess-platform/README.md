@@ -26,5 +26,8 @@ Le composant `ChessBoard` gere l'affichage de l'echiquier et les interactions. I
 - Differenciation visuelle des captures
 - Deplacement par glisser-deposer ou simple clic
 - Animation des pieces lors des mouvements
+- Gestion complete des regles : roque, prise en passant, promotion avec choix
+- Detection des fins de partie (mat, pat, nulle par repetition ou 50 coups)
+- Interface tactile mobile avec surbrillance au toucher
 
 Les pieces proviennent du jeu d'icones Lichess et sont stockees dans `client/src/assets/pieces`.

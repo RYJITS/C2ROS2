@@ -94,4 +94,4 @@ Pour jouer, installez l'application depuis le Store. L'échiquier est entièreme
 ## Nouvelle plateforme d'échecs
 
 Une version avancée de la plateforme est en cours de développement dans les dossiers `client` et `server`. Elle s'appuie sur React, Node.js et PostgreSQL. Les instructions de lancement se trouvent dans `docs/chess-platform/README.md`.
-La derniere mise a jour integre le composant React `ChessBoard` dans `client`. Il permet de jouer en ligne avec un echiquier responsive, des animations et un support complet tactile et souris.
+La derniere mise a jour intègre le composant React `ChessBoard` dans `client`. Celui‑ci vérifie tous les coups via `chess.js`, gère roque, prise en passant et promotion avec un choix de pièce. L'échiquier reste responsive et utilisable aussi bien à la souris qu'au toucher.

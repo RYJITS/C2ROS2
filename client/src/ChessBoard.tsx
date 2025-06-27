@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Chess, Square, Move } from 'chess.js';
 import './ChessBoard.css';
 
@@ -6,34 +6,29 @@ export function getLegalMoves(game: Chess, square: Square): Move[] {
   return game.moves({ square, verbose: true }) as Move[];
 }
 
-export function highlightMoves(moves: Move[]): string[] {
+export function highlightLegalMoves(moves: Move[]): string[] {
   return moves.map(m => m.to);
+}
+
+export function isCaptureMove(game: Chess, from: Square, to: Square): boolean {
+  const move = getLegalMoves(game, from).find(m => m.to === to);
+  if (!move) return false;
+  return move.flags.includes('c') || move.flags.includes('e');
 }
 
 export const ChessBoard: React.FC = () => {
   const [game] = useState(new Chess());
   const [selected, setSelected] = useState<Square | null>(null);
   const [boardState, setBoardState] = useState(game.board());
+  const [pendingPromotion, setPendingPromotion] = useState<{from: Square; to: Square} | null>(null);
   const boardRef = useRef<HTMLDivElement>(null);
 
   const onSquareClick = (sq: Square) => {
     if (selected) {
-      const moves = getLegalMoves(game, selected);
-      const move = moves.find(m => m.to === sq);
-      if (move) {
-        animateMove(selected, sq, () => {
-          game.move({ from: selected, to: sq, promotion: 'q' });
-          setBoardState(game.board());
-        });
-        setSelected(null);
-        return;
-      }
+      const success = attemptMove(selected, sq);
+      if (success) return;
     }
-    if (game.get(sq)) {
-      setSelected(sq);
-    } else {
-      setSelected(null);
-    }
+    if (game.get(sq)) setSelected(sq); else setSelected(null);
   };
 
   const animateMove = (from: Square, to: Square, cb: () => void) => {
@@ -57,23 +52,67 @@ export const ChessBoard: React.FC = () => {
     fromEl.addEventListener('transitionend', handle);
   };
 
+  const attemptMove = (from: Square, to: Square): boolean => {
+    const move = getLegalMoves(game, from).find(m => m.to === to);
+    if (!move) {
+      if (game.get(to)) setSelected(to);
+      else setSelected(null);
+      return false;
+    }
+
+    if (move.flags.includes('p')) {
+      setPendingPromotion({ from, to });
+      return true;
+    }
+
+    animateMove(from, to, () => {
+      game.move({ from, to, promotion: 'q' });
+      setBoardState(game.board());
+      checkGameState();
+    });
+    setSelected(null);
+    return true;
+  };
+
+  const promote = (piece: string) => {
+    if (!pendingPromotion) return;
+    const { from, to } = pendingPromotion;
+    game.move({ from, to, promotion: piece as any });
+    setPendingPromotion(null);
+    setBoardState(game.board());
+    checkGameState();
+  };
+
+  const checkGameState = () => {
+    if (game.in_checkmate()) alert('Échec et mat');
+    else if (game.in_stalemate()) alert('Pat');
+    else if (game.in_threefold_repetition()) alert('Nulle par répétition');
+    else if (game.insufficient_material()) alert('Match nul');
+    else if (game.in_draw()) alert('Match nul');
+  };
+
   const renderSquare = (square: Square, piece: any, idx: number) => {
     const isLight = (idx + Math.floor(idx / 8)) % 2 === 0;
     const classNames = ['square', isLight ? 'light' : 'dark'];
-    const moves = selected ? highlightMoves(getLegalMoves(game, selected)) : [];
+    const moves = selected ? highlightLegalMoves(getLegalMoves(game, selected)) : [];
     if (selected === square) classNames.push('selected');
-    if (moves.includes(square)) classNames.push(game.get(square) ? 'capture' : 'move');
+    if (selected && moves.includes(square)) classNames.push(isCaptureMove(game, selected, square) ? 'capture' : 'move');
     return (
       <div
         key={square}
         data-square={square}
         className={classNames.join(' ')}
         onClick={() => onSquareClick(square)}
+        onDrop={e => { e.preventDefault(); if (selected) attemptMove(selected, square); }}
+        onDragOver={e => e.preventDefault()}
+        onTouchEnd={() => onSquareClick(square)}
       >
         {piece && (
           <img
             className="piece"
-            draggable={true}
+            draggable
+            onDragStart={() => setSelected(square)}
+            onTouchStart={() => setSelected(square)}
             src={getPieceSrc(piece.color, piece.type)}
             alt={piece.type}
           />
@@ -96,6 +135,18 @@ export const ChessBoard: React.FC = () => {
           renderSquare(sq, game.get(sq), idx)
         )}
       </div>
+      {pendingPromotion && (
+        <div className="promotion-modal">
+          {['q', 'r', 'b', 'n'].map(p => (
+            <img
+              key={p}
+              src={getPieceSrc(game.turn(), p)}
+              alt={p}
+              onClick={() => promote(p)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

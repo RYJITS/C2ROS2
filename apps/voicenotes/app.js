@@ -1,128 +1,123 @@
-/**
- * Notes Vocales - Application C2R OS
- * Version: 1.0.0
- * Fonctionnalités: prise de notes texte avec reconnaissance vocale Whisper
- */
-
-let voiceNotes = {
-    recorder: null,
-    stream: null,
-    chunks: [],
-    textarea: null
+const noteVocale = {
+  recorder: null,
+  audioCtx: null,
+  analyser: null,
+  dataArray: null,
+  canvas: null,
+  canvasCtx: null,
+  mediaStream: null,
+  textArea: null,
 };
 
-function releaseMicrophone() {
-    if (voiceNotes.stream) {
-        voiceNotes.stream.getTracks().forEach(t => t.stop());
-        voiceNotes.stream = null;
-    }
+async function initNoteVocale() {
+  noteVocale.canvas = document.getElementById('visualiseur');
+  noteVocale.canvasCtx = noteVocale.canvas.getContext('2d');
+  noteVocale.textArea = document.getElementById('texte-transcrit');
+  const btn = document.getElementById('btn-micro');
+  btn.addEventListener('click', toggleRecord);
+  document.getElementById('copier-texte').addEventListener('click', copierTexte);
+  document.querySelectorAll('.actions button[data-action]').forEach(b => {
+    b.addEventListener('click', () => envoyerAction(b.dataset.action));
+  });
+  document.addEventListener('keydown', e => {
+    if (e.ctrlKey && e.key.toLowerCase() === 'r') toggleRecord();
+  });
 }
 
-function initVoiceNotes() {
-    voiceNotes.textarea = document.getElementById('voicenotes-area');
-    const startBtn = document.getElementById('start-record');
-    const stopBtn = document.getElementById('stop-record');
-    const saveBtn = document.getElementById('save-notes');
-
-    const saved = localStorage.getItem('c2r_voice_notes');
-    if (saved) {
-        voiceNotes.textarea.value = saved;
-    }
-
-    startBtn.addEventListener('click', startRecording);
-    stopBtn.addEventListener('click', stopRecording);
-    saveBtn.addEventListener('click', saveNotes);
+async function toggleRecord() {
+  if (noteVocale.recorder && noteVocale.recorder.state === 'recording') {
+    arreterEnregistrement();
+  } else {
+    demarrerEnregistrement();
+  }
 }
 
-async function startRecording() {
-    const startBtn = document.getElementById('start-record');
-    const stopBtn = document.getElementById('stop-record');
-    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-        alert('Microphone non disponible sur ce navigateur.');
-        return;
-    }
-    if (typeof MediaRecorder === 'undefined') {
-        alert("L'enregistrement audio n'est pas pris en charge.");
-        return;
-    }
+async function demarrerEnregistrement() {
+  if (!navigator.mediaDevices?.getUserMedia) {
+    alert('Microphone indisponible');
+    return;
+  }
+  try {
+    noteVocale.mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    noteVocale.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const source = noteVocale.audioCtx.createMediaStreamSource(noteVocale.mediaStream);
+    noteVocale.analyser = noteVocale.audioCtx.createAnalyser();
+    source.connect(noteVocale.analyser);
+    noteVocale.dataArray = new Uint8Array(noteVocale.analyser.frequencyBinCount);
+    dessinerVisualiseur();
 
-    try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        voiceNotes.stream = stream;
-        voiceNotes.recorder = new MediaRecorder(stream);
-        voiceNotes.chunks = [];
-
-        voiceNotes.recorder.ondataavailable = e => {
-            if (e.data.size) voiceNotes.chunks.push(e.data);
-        };
-
-        voiceNotes.recorder.onstop = async () => {
-            const blob = new Blob(voiceNotes.chunks, { type: 'audio/webm' });
-            const text = await transcribeWithWhisper(blob);
-            if (text) {
-                voiceNotes.textarea.value += text + '\n';
-            }
-            releaseMicrophone();
-            voiceNotes.recorder = null;
-        };
-
-        voiceNotes.recorder.start();
-        startBtn.disabled = true;
-        stopBtn.disabled = false;
-    } catch (err) {
-        console.error("Accès au microphone refusé ou impossible", err);
-        alert('Accès au microphone refusé ou impossible.');
-        releaseMicrophone();
-    }
+    noteVocale.recorder = new MediaRecorder(noteVocale.mediaStream);
+    noteVocale.recorder.ondataavailable = async e => {
+      if (e.data.size > 0) {
+        const texte = await envoyerAudio(e.data);
+        if (texte) noteVocale.textArea.value += texte + ' ';
+      }
+    };
+    noteVocale.recorder.start(4000);
+    document.getElementById('btn-micro').classList.add('enregistrement');
+  } catch (err) {
+    console.error('Enregistrement impossible', err);
+    alert('Accès au microphone refusé');
+  }
 }
 
-function stopRecording() {
-    const startBtn = document.getElementById('start-record');
-    const stopBtn = document.getElementById('stop-record');
-    if (voiceNotes.recorder && voiceNotes.recorder.state !== 'inactive') {
-        voiceNotes.recorder.stop();
-    }
-    releaseMicrophone();
-    startBtn.disabled = false;
-    stopBtn.disabled = true;
+function arreterEnregistrement() {
+  noteVocale.recorder?.stop();
+  noteVocale.mediaStream?.getTracks().forEach(t => t.stop());
+  noteVocale.audioCtx?.close();
+  document.getElementById('btn-micro').classList.remove('enregistrement');
 }
 
-function saveNotes() {
-    if (voiceNotes.textarea) {
-        localStorage.setItem('c2r_voice_notes', voiceNotes.textarea.value);
-    }
+function dessinerVisualiseur() {
+  if (!noteVocale.analyser) return;
+  requestAnimationFrame(dessinerVisualiseur);
+  noteVocale.analyser.getByteFrequencyData(noteVocale.dataArray);
+  const width = noteVocale.canvas.width;
+  const height = noteVocale.canvas.height;
+  noteVocale.canvasCtx.clearRect(0, 0, width, height);
+  const barWidth = width / noteVocale.dataArray.length;
+  for (let i = 0; i < noteVocale.dataArray.length; i++) {
+    const value = noteVocale.dataArray[i];
+    const barHeight = value / 255 * height;
+    noteVocale.canvasCtx.fillStyle = '#ff1f1f';
+    noteVocale.canvasCtx.fillRect(i * barWidth, height - barHeight, barWidth - 1, barHeight);
+  }
 }
 
-async function transcribeWithWhisper(blob) {
-    const apiKey = window.WHISPER_API_KEY;
-    if (!apiKey) {
-        console.warn('Clé API Whisper non fournie');
-        return '';
-    }
-
-    const formData = new FormData();
-    formData.append('file', blob, 'audio.webm');
-    formData.append('model', 'whisper-1');
-
-    try {
-        const response = await fetch('https://api.openai.com/v1/audio/transcriptions', {
-            method: 'POST',
-            headers: {
-                'Authorization': 'Bearer ' + apiKey
-            },
-            body: formData
-        });
-        const data = await response.json();
-        return data.text || '';
-    } catch (err) {
-        console.error('Erreur Whisper:', err);
-        return '';
-    }
+async function envoyerAudio(blob) {
+  const fd = new FormData();
+  fd.append('file', blob, 'audio.webm');
+  try {
+    const r = await fetch('/api/whisper', { method: 'POST', body: fd });
+    const data = await r.json();
+    return data.text;
+  } catch (err) {
+    console.error('Erreur Whisper', err);
+    return '';
+  }
 }
 
-// Initialiser l'application dès que possible
+async function envoyerAction(action) {
+  const texte = noteVocale.textArea.value;
+  try {
+    const r = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action, texte }),
+    });
+    const data = await r.json();
+    if (data.result) noteVocale.textArea.value = data.result;
+  } catch (err) {
+    console.error('Erreur ChatGPT', err);
+  }
+}
+
+function copierTexte() {
+  navigator.clipboard.writeText(noteVocale.textArea.value);
+}
+
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initVoiceNotes);
+  document.addEventListener('DOMContentLoaded', initNoteVocale);
 } else {
-    initVoiceNotes();
+  initNoteVocale();
 }

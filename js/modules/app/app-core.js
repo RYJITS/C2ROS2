@@ -43,10 +43,10 @@ class AppCore {
                 builtin: true,
                 path: './apps/notepad/'
             },
-            {
+                        {
                 id: 'voicenotes',
-                name: 'Notes Vocales',
-                description: 'Prise de notes avec transcription vocale Whisper',
+                name: 'Notes Vocales C2R',
+                description: 'Enregistrement vocal avec transcription live et actions IA',
                 icon: IconManager.getIcon('microphone'),
                 category: 'Productivité',
                 type: 'application',

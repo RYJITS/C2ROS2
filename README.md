@@ -56,7 +56,7 @@ Le Store propose un bouton unique pour installer ou désinstaller une applicatio
   3. **Installer C2R OS** — un bouton permet d'ajouter l'application sur smartphone en mode PWA.
   4. **Infos sur les applications** — cette tuile renvoie directement au Store pour découvrir les différents types d'apps disponibles.
 - Les applications internes utilisent désormais uniquement les icônes Font Awesome pour un style unifié.
-- L'application **Notes Vocales** permet d'enregistrer votre voix et de la transcrire via Whisper.
+- L'application **Notes Vocales C2R** enregistre la voix, affiche la transcription en direct via Whisper et propose des actions ChatGPT (résumé, email, rapport, compte-rendu).
 - Sur mobile, l'application peut s'installer en plein écran grâce au fichier `manifest.webmanifest`.
 - Les icônes PWA ne sont pas incluses dans le dépôt pour éviter d'ajouter des fichiers binaires.
 - Une tuile d'accueil propose l'installation directe de l'application en PWA.

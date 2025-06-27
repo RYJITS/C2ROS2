@@ -1,11 +1,12 @@
-# Agent de l'application voicenotes
+# Agent de l'application Note Vocale C2R
 
-- Concevoir l'interface de façon épurée et responsive.
-- Utiliser HTML, CSS et JavaScript de manière modulaire.
-- Documenter toute nouvelle fonctionnalité directement dans ce fichier.
-- La fonction d'enregistrement doit vérifier la disponibilité du microphone et
-  gérer les erreurs d'autorisation.
-- Les pistes audio doivent être libérées dès la fin de l'enregistrement.
-- L'initialisation est déclenchée immédiatement si le DOM est déjà prêt afin
-  que le bouton **Enregistrer** fonctionne dans les applications chargées
-  dynamiquement.
+Cette application permet d'enregistrer la voix de l'utilisateur, de transcrire le contenu en temps réel via Whisper puis de reformuler le texte avec ChatGPT.
+
+## Directives techniques
+- Interface épurée et responsive en HTML, CSS et JavaScript.
+- Visualisation audio animée pendant l'enregistrement.
+- Les boutons permettent d'obtenir un résumé, un email, un rapport ou un compte‑rendu via l'API backend.
+- Les fichiers audio ne sont jamais sauvegardés, uniquement traités en mémoire.
+- L'application vérifie la présence du microphone et gère les erreurs d'autorisation.
+- L'initialisation s'exécute dès que le DOM est prêt pour un démarrage rapide dans les pages chargées dynamiquement.
+- Documenter toute nouvelle fonctionnalité directement ici.

@@ -1,15 +1,12 @@
-<div class="voicenotes-app">
-    <h2><span data-icon="microphone"></span> Notes vocales</h2>
-    <textarea id="voicenotes-area" placeholder="Vos notes ici..."></textarea>
-    <div class="controls">
-        <button id="start-record" class="record-btn">
-            <span data-icon="microphone"></span> Enregistrer
-        </button>
-        <button id="stop-record" class="record-btn" disabled>
-            <span data-icon="stop"></span> Stop
-        </button>
-        <button id="save-notes">
-            <span data-icon="save"></span> Sauvegarder
-        </button>
-    </div>
+<div class="note-vocale-app">
+  <canvas id="visualiseur" aria-hidden="true"></canvas>
+  <button id="btn-micro" aria-label="Démarrer l'enregistrement"></button>
+  <textarea id="texte-transcrit" placeholder="Votre dictée apparaît ici..."></textarea>
+  <div class="actions">
+    <button data-action="resume">Résumé</button>
+    <button data-action="email">Email</button>
+    <button data-action="rapport">Rapport</button>
+    <button data-action="compterendu">Compte-rendu</button>
+    <button id="copier-texte">Copier</button>
+  </div>
 </div>

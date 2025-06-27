@@ -12,7 +12,7 @@ Un menu déroulant liste plusieurs moteurs IA
 (Stockfish, LCZero…). Le champ situé dessous permet de saisir l'URL de l'API.
 Sans configuration, un robot local joue hors ligne.
 L'application s'installe via le Store et se lance dans une modale dédiée.
-Une nouvelle application **Notes Vocales** enregistre la voix de l'utilisateur puis utilise Whisper pour la convertir automatiquement en texte.
+L'application **Notes Vocales C2R** enregistre la voix, affiche la transcription en direct puis propose des formats générés par ChatGPT.
 Une application **Recherche d'Emploi** aide désormais à générer un CV et une lettre grâce à l'API OpenAI.
 
 Depuis juillet 2025, les applications s'ouvrent dans des modales générées par `UICore`. Le conteneur obsolète `.app-runner` a été supprimé pour éviter l'apparition d'une tuile « Application » inutile.

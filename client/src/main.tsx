@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import ChessBoard from './ChessBoard';
 
 const App = () => {
-  return <h1>Bienvenue sur la plateforme d'echecs</h1>;
+  return <ChessBoard />;
 };
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

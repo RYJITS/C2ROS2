@@ -21,3 +21,7 @@
 - Affichage d'un minuteur de cinq minutes par couleur.
 - Arrêt de la partie lorsque l'un des joueurs n'a plus de temps.
 - Liste chronologique des coups joués mise à jour après chaque mouvement.
+
+## Version avancee
+
+Une version complete en React et Node.js est disponible a la racine du projet dans les dossiers `client` et `server`. Cette application remplace progressivement celle presente ici.

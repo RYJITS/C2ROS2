@@ -6,6 +6,7 @@ let timerWhite = 300;
 let timerBlack = 300;
 let timerInterval = null;
 let currentColor = 'w';
+let selectedSquare = null;
 const unicodePieces = {
   'P': '\u2659',
   'R': '\u2656',
@@ -25,6 +26,7 @@ function onDragStart (source, piece) {
   if (game.game_over()) return false;
   if (game.turn() === 'w' && piece.startsWith('b')) return false;
   if (game.turn() === 'b' && piece.startsWith('w')) return false;
+  clearHighlights();
 }
 
 function onDrop (source, target) {
@@ -33,6 +35,8 @@ function onDrop (source, target) {
   moveHistory.push(source + target);
   updateMoveHistory();
   switchTurn();
+  selectedSquare = null;
+  clearHighlights();
 }
 
 function onSnapEnd () {
@@ -69,6 +73,58 @@ function updateStatus () {
   if (statusEl) statusEl.textContent = status;
 }
 
+function clearHighlights () {
+  document.querySelectorAll('.square').forEach(sq => {
+    sq.classList.remove('selected');
+    sq.classList.remove('highlight');
+  });
+}
+
+function highlightMoves (coord) {
+  const moves = game.validMoves(coord);
+  moves.forEach(dest => {
+    const sq = document.querySelector(`[data-coord="${dest}"]`);
+    if (sq) sq.classList.add('highlight');
+  });
+}
+
+function selectSquare (coord) {
+  const piece = game.get(coord);
+  if (!piece) return;
+  if ((game.turn() === 'w' && piece === piece.toLowerCase()) ||
+      (game.turn() === 'b' && piece === piece.toUpperCase())) return;
+  selectedSquare = coord;
+  clearHighlights();
+  const sq = document.querySelector(`[data-coord="${coord}"]`);
+  if (sq) sq.classList.add('selected');
+  highlightMoves(coord);
+}
+
+function onSquareClick (coord) {
+  if (selectedSquare) {
+    if (selectedSquare === coord) {
+      selectedSquare = null;
+      clearHighlights();
+      return;
+    }
+    const move = game.move({from: selectedSquare, to: coord, promotion: 'q'});
+    if (move) {
+      moveHistory.push(selectedSquare + coord);
+      updateMoveHistory();
+      switchTurn();
+      renderBoard();
+      updateStatus();
+      setTimeout(makeAiMove, 300);
+      selectedSquare = null;
+      clearHighlights();
+    } else {
+      selectSquare(coord);
+    }
+  } else {
+    selectSquare(coord);
+  }
+}
+
 function createBoard () {
   const boardEl = document.getElementById('board');
   boardEl.innerHTML = '';
@@ -88,12 +144,18 @@ function createBoard () {
         if (res === 'snapback') renderBoard();
         else { renderBoard(); onSnapEnd(); }
       });
+      square.addEventListener('click', () => onSquareClick(coord));
       square.addEventListener('touchend', e => {
         e.preventDefault();
-        const target = square.dataset.coord;
-        const res = onDrop(dragSource, target);
-        if (res === 'snapback') renderBoard();
-        else { renderBoard(); onSnapEnd(); }
+        if (dragSource) {
+          const target = square.dataset.coord;
+          const res = onDrop(dragSource, target);
+          dragSource = null;
+          if (res === 'snapback') renderBoard();
+          else { renderBoard(); onSnapEnd(); }
+        } else {
+          onSquareClick(coord);
+        }
       });
       boardEl.appendChild(square);
     }
@@ -102,6 +164,7 @@ function createBoard () {
 
 function renderBoard () {
   const boardEl = document.getElementById('board');
+  clearHighlights();
   for (let r = 0; r < 8; r++) {
     for (let c = 0; c < 8; c++) {
       const coord = game.toCoord(r, c);
@@ -131,6 +194,11 @@ function renderBoard () {
         square.innerHTML = '';
       }
     }
+  }
+  if (selectedSquare) {
+    const sq = boardEl.querySelector(`[data-coord="${selectedSquare}"]`);
+    if (sq) sq.classList.add('selected');
+    highlightMoves(selectedSquare);
   }
 }
 
@@ -188,7 +256,9 @@ function initGame () {
   timerWhite = 300;
   timerBlack = 300;
   currentColor = 'w';
+  selectedSquare = null;
   createBoard();
+  clearHighlights();
   renderBoard();
   updateStatus();
   updateMoveHistory();

@@ -14,3 +14,4 @@ Ce dépôt contient un ensemble d'applications et de pages web modulaires. Les i
 ## Plateforme d'echecs moderne
 
 Un projet complet de jeu d'echecs en ligne est installe dans les dossiers racines `client`, `server`, `ai` et `db`. Il utilise React, Node.js, PostgreSQL et Docker. Consultez `docs/chess-platform/README.md` pour le detail du lancement.
+Le composant `ChessBoard` presente dans `client/src` permet d'afficher l'echiquier en React. Il gere les deplacements des pieces via `chess.js`, le surlignage des coups et les animations de mouvement.

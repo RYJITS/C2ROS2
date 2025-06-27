@@ -89,4 +89,8 @@ Les tests couvrent la gestion des icônes via `IconManager`.
 
 ## Jeu d'échecs
 
-Pour jouer, installez l'application depuis le Store. L'échiquier est entièrement géré en local via `simple-chess.js`. Ce script est désormais ajouté dynamiquement par `app.js` afin d'éviter l'erreur de chargement.
+Pour jouer, installez l'application depuis le Store. L'échiquier est entièrement géré en local via `simple-chess.js`. Ce script est ajouté dynamiquement par `app.js` afin d'éviter l'erreur de chargement.
+
+## Nouvelle plateforme d'échecs
+
+Une version avancée de la plateforme est en cours de développement dans les dossiers `client` et `server`. Elle s'appuie sur React, Node.js et PostgreSQL. Les instructions de lancement se trouvent dans `docs/chess-platform/README.md`.

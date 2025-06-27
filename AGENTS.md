@@ -10,3 +10,7 @@ Ce dépôt contient un ensemble d'applications et de pages web modulaires. Les i
 - Mettez à jour systématiquement les fichiers `AGENTS.md` pour refléter les dernières fonctionnalités et choix techniques.
 - Les boutons de contrôle des fenêtres (fermer, agrandir, réduire) utilisent les symboles « × », « □ » et « − » sans arrière‑plan.
 
+
+## Plateforme d'echecs moderne
+
+Un projet complet de jeu d'echecs en ligne est installe dans les dossiers racines `client`, `server`, `ai` et `db`. Il utilise React, Node.js, PostgreSQL et Docker. Consultez `docs/chess-platform/README.md` pour le detail du lancement.

@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: chess
+      POSTGRES_PASSWORD: chesspass
+      POSTGRES_DB: chessdb
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  server:
+    build: ./server
+    environment:
+      - DATABASE_URL=postgresql://chess:chesspass@db:5432/chessdb
+      - JWT_SECRET=change_me
+      - PORT=3001
+    depends_on:
+      - db
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./server:/usr/src/app
+    command: npm run dev
+
+  client:
+    build: ./client
+    depends_on:
+      - server
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/usr/src/app
+    command: npm run dev
+
+volumes:
+  db_data:

@@ -13,3 +13,9 @@
   après l'événement `DOMContentLoaded` afin d'éviter l'écran noir.
 - Le fichier `simple-chess.js` est désormais chargé dynamiquement par
   `loadDependencies()` afin d'éviter l'erreur "Erreur de chargement".
+
+## Fonctionnalités supplémentaires
+
+- Affichage d'un minuteur de cinq minutes par couleur.
+- Arrêt de la partie lorsque l'un des joueurs n'a plus de temps.
+- Liste chronologique des coups joués mise à jour après chaque mouvement.

@@ -1,6 +1,11 @@
 let game = null;
 let aiEndpoint = '';
 let dragSource = null;
+let moveHistory = [];
+let timerWhite = 300;
+let timerBlack = 300;
+let timerInterval = null;
+let currentColor = 'w';
 const unicodePieces = {
   'P': '\u2659',
   'R': '\u2656',
@@ -25,6 +30,9 @@ function onDragStart (source, piece) {
 function onDrop (source, target) {
   const move = game.move({from: source, to: target, promotion: 'q'});
   if (move === null) return 'snapback';
+  moveHistory.push(source + target);
+  updateMoveHistory();
+  switchTurn();
 }
 
 function onSnapEnd () {
@@ -39,6 +47,9 @@ function makeAiMove () {
   if (moves.length === 0) return;
   const move = moves[Math.floor(Math.random() * moves.length)];
   game.move(move);
+  moveHistory.push(move);
+  updateMoveHistory();
+  switchTurn();
   renderBoard();
   updateStatus();
 }
@@ -46,8 +57,14 @@ function makeAiMove () {
 function updateStatus () {
   const statusEl = document.getElementById('chess-status');
   let status = '';
-  if (game.in_checkmate()) status = 'Échec et mat';
-  else if (game.in_draw()) status = 'Match nul';
+  if (game.in_checkmate()) {
+    status = 'Échec et mat';
+    clearInterval(timerInterval);
+  }
+  else if (game.in_draw()) {
+    status = 'Match nul';
+    clearInterval(timerInterval);
+  }
   else status = game.turn() === 'w' ? 'À vous de jouer' : 'Coup des noirs';
   if (statusEl) statusEl.textContent = status;
 }
@@ -107,11 +124,65 @@ function renderBoard () {
   }
 }
 
+function formatTime (seconds) {
+  const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+  const s = (seconds % 60).toString().padStart(2, '0');
+  return `${m}:${s}`;
+}
+
+function updateTimerDisplay () {
+  const whiteEl = document.getElementById('timer-white');
+  const blackEl = document.getElementById('timer-black');
+  if (whiteEl) whiteEl.textContent = formatTime(timerWhite);
+  if (blackEl) blackEl.textContent = formatTime(timerBlack);
+}
+
+function startTimer () {
+  updateTimerDisplay();
+  timerInterval = setInterval(() => {
+    if (currentColor === 'w') {
+      timerWhite--;
+      if (timerWhite <= 0) endGameByTime('blancs');
+    } else {
+      timerBlack--;
+      if (timerBlack <= 0) endGameByTime('noirs');
+    }
+    updateTimerDisplay();
+  }, 1000);
+}
+
+function endGameByTime (color) {
+  clearInterval(timerInterval);
+  const statusEl = document.getElementById('chess-status');
+  if (statusEl) statusEl.textContent = `Temps écoul\u00e9 : les ${color} gagnent`;
+}
+
+function switchTurn () {
+  currentColor = currentColor === 'w' ? 'b' : 'w';
+}
+
+function updateMoveHistory () {
+  const list = document.getElementById('move-history');
+  if (!list) return;
+  list.innerHTML = '';
+  moveHistory.forEach((m, idx) => {
+    const li = document.createElement('li');
+    li.textContent = `${idx + 1}. ${m}`;
+    list.appendChild(li);
+  });
+}
+
 function initGame () {
   game = new SimpleChess();
+  moveHistory = [];
+  timerWhite = 300;
+  timerBlack = 300;
+  currentColor = 'w';
   createBoard();
   renderBoard();
   updateStatus();
+  updateMoveHistory();
+  updateTimerDisplay();
 }
 
 function loadDependencies () {
@@ -132,6 +203,7 @@ async function startChess() {
   try {
     await loadDependencies();
     initGame();
+    startTimer();
   } catch (error) {
     console.error('Erreur chargement dépendances échiquier:', error);
     const statusEl = document.getElementById('chess-status');

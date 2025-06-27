@@ -4,17 +4,36 @@
 }
 
 #board {
-  width: 400px;
+  width: 480px;
   margin: 0 auto;
 }
 
 .square {
-  width: 50px;
-  height: 50px;
+  position: relative;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+  font-size: 48px;
+  cursor: pointer;
+}
+
+.square.selected {
+  outline: 3px solid #4CAF50;
+}
+
+.square.highlight::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 .light { background: #f0d9b5; }

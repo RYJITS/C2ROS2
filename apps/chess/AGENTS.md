@@ -8,6 +8,9 @@
 
 - L'interface n'utilise plus de bibliothèques externes. Le jeu repose sur le fichier `simple-chess.js` pour la logique et la gestion de l'échiquier.
 - Les pièces sont affichées à l'aide des caractères Unicode et peuvent être déplacées par glisser-déposer ou par interaction tactile.
+- Les pièces blanches appartiennent au joueur 1 et les pièces noires au joueur 2. Les captures sont possibles.
+- La taille des pièces a été augmentée pour une meilleure visibilité.
+- Lorsqu'une pièce est sélectionnée, sa case est entourée d'un liseré vert et les destinations autorisées sont indiquées par un point central.
 - Un robot local joue aléatoirement lorsque c'est au tour des noirs.
 - L'initialisation se déclenche automatiquement même si le script est injecté
   après l'événement `DOMContentLoaded` afin d'éviter l'écran noir.

@@ -5,6 +5,7 @@
 - Documenter toute nouvelle fonctionnalité directement dans ce fichier.
 - Tous les chemins restent **relatifs** pour compatibilité GitHub Pages.
 - Un garde global empêche le double montage lorsque le module est chargé plusieurs fois.
+- Le Store importe `engine.js` et `chess.js` comme modules ES, puis appelle explicitement `mountChessPro(root)` après injection du HTML.
 
 ## Fonctionnalités
 
@@ -13,7 +14,7 @@
 - Import et export de positions FEN.
 - Possibilité de retourner l'échiquier.
 - Surlignage des coups légaux et coordonnées optionnelles.
-- Chargement automatique depuis `chess.html` ou via le Store.
+- L'application est montée via le Store qui gère le chargement et l'appel à `mountChessPro`.
 
 ## Paramètres
 

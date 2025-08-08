@@ -29,17 +29,6 @@ function ensureStyle(href) {
     document.head.appendChild(link);
 }
 
-function loadModule(src) {
-    return new Promise((resolve, reject) => {
-        const url = resolveAsset(src);
-        const s = document.createElement('script');
-        s.type = 'module';
-        s.src = url;
-        s.onload = resolve;
-        s.onerror = () => reject(new Error('Failed to load ' + url));
-        document.head.appendChild(s);
-    });
-}
 class UICore {
     constructor() {
         this.config = window.C2R_CONFIG;
@@ -745,20 +734,48 @@ class UICore {
             const styles = app.styles || [`apps/${app.id}/app.css`];
             const scripts = app.scripts || [`apps/${app.id}/app.js`];
 
+            // 3.1 Injecter les styles déclarés
             (styles || []).forEach(ensureStyle);
-            for (const m of (scripts || [])) await loadModule(m);
 
-            const response = await fetch(resolveAsset(entry));
-            if (!response.ok) {
-                throw new Error(`Erreur chargement ${app.name}`);
-            }
+            // 3.2 Charger le HTML d’entrée
+            const entryUrl = resolveAsset(entry);
+            const html = await fetch(entryUrl).then(r => {
+                if (!r.ok) throw new Error(`Erreur chargement ${app.name}`);
+                return r.text();
+            });
 
-            const htmlContent = await response.text();
+            // 3.3 Insérer le HTML dans la modal
             const appContent = appModal.querySelector('.app-modal-content');
-            appContent.innerHTML = htmlContent;
+            appContent.innerHTML = html;
             IconManager.inject(appContent);
 
-            // Afficher la modal
+            // 3.4 Importer les modules ES
+            for (const m of (scripts || [])) {
+                const url = resolveAsset(m);
+                await import(url);
+            }
+
+            // 3.5 Montage explicite pour Échecs Pro
+            if (app.id === 'chess') {
+                try {
+                    const mainModUrl = resolveAsset('apps/chess/chess.js');
+                    const mod = await import(mainModUrl);
+                    const root = appContent.querySelector('.c2r-chess-pro');
+                    if (mod && typeof mod.mountChessPro === 'function' && root) {
+                        if (!window.__C2R_CHESS_MOUNTED) {
+                            window.__C2R_CHESS_MOUNTED = true;
+                            if (!root.__mounted) {
+                                root.__mounted = true;
+                                mod.mountChessPro(root);
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.error('Chess mount failed:', e);
+                }
+            }
+
+            // 3.6 Afficher la modal
             appModal.classList.add('show');
 
             this.showNotification(`${app.name} lancée avec succès`, 'success');

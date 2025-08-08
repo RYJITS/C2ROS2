@@ -5,6 +5,41 @@
  * Description: Gestion des thèmes, navigation et interface responsive
  */
 
+// Base path pour GitHub Pages “project” (ex: /C2ROS2/)
+function getBasePath() {
+    const path = window.location.pathname;
+    return path.endsWith('/') ? path : path.replace(/\/[^/]*$/, '/');
+}
+
+// Résolution d’assets (relatifs/absolus) vers une URL chargeable
+function resolveAsset(p) {
+    if (!p) return p;
+    if (/^https?:\/\//i.test(p)) return p;
+    const base = getBasePath();
+    if (p.startsWith('/')) return base + p.replace(/^\//, '');
+    return base + p;
+}
+
+function ensureStyle(href) {
+    const url = resolveAsset(href);
+    if ([...document.styleSheets].some(s => s.href && (s.href === url || s.href.endsWith(href)))) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = url;
+    document.head.appendChild(link);
+}
+
+function loadModule(src) {
+    return new Promise((resolve, reject) => {
+        const url = resolveAsset(src);
+        const s = document.createElement('script');
+        s.type = 'module';
+        s.src = url;
+        s.onload = resolve;
+        s.onerror = () => reject(new Error('Failed to load ' + url));
+        document.head.appendChild(s);
+    });
+}
 class UICore {
     constructor() {
         this.config = window.C2R_CONFIG;
@@ -705,35 +740,35 @@ class UICore {
             // Créer une modal pour l'application
             const appModal = this.createAppModal(app);
             document.body.appendChild(appModal);
-            
-            // Charger le contenu HTML de l'application
-            const response = await fetch(`apps/${app.id}/app.html`);
+
+            const entry = app.entry || `apps/${app.id}/app.html`;
+            const styles = app.styles || [`apps/${app.id}/app.css`];
+            const scripts = app.scripts || [`apps/${app.id}/app.js`];
+
+            (styles || []).forEach(ensureStyle);
+            for (const m of (scripts || [])) await loadModule(m);
+
+            const response = await fetch(resolveAsset(entry));
             if (!response.ok) {
                 throw new Error(`Erreur chargement ${app.name}`);
             }
-            
+
             const htmlContent = await response.text();
             const appContent = appModal.querySelector('.app-modal-content');
             appContent.innerHTML = htmlContent;
             IconManager.inject(appContent);
-            
-            // Charger le CSS de l'application
-            await this.loadAppCSS(app.id);
-            
-            // Charger et exécuter le JavaScript de l'application
-            await this.loadAppJS(app.id);
-            
+
             // Afficher la modal
             appModal.classList.add('show');
-            
+
             this.showNotification(`${app.name} lancée avec succès`, 'success');
-            
+
         } catch (error) {
             console.error('Erreur lancement application:', error);
             this.showNotification(`Erreur lors du lancement de ${app.name}`, 'error');
         }
     }
-    
+
     /**
      * Créer une modal pour l'application
      * @param {Object} app - Application
@@ -774,49 +809,6 @@ class UICore {
      * Charger le CSS d'une application
      * @param {string} appId - ID de l'application
      */
-    async loadAppCSS(appId) {
-        return new Promise((resolve, reject) => {
-            // Vérifier si le CSS n'est pas déjà chargé
-            if (document.getElementById(`app-css-${appId}`)) {
-                resolve();
-                return;
-            }
-            
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = `apps/${appId}/app.css`;
-            link.id = `app-css-${appId}`;
-            
-            link.onload = () => resolve();
-            link.onerror = () => reject(new Error(`Erreur chargement CSS ${appId}`));
-            
-            document.head.appendChild(link);
-        });
-    }
-    
-    /**
-     * Charger le JavaScript d'une application
-     * @param {string} appId - ID de l'application
-     */
-    async loadAppJS(appId) {
-        return new Promise((resolve, reject) => {
-            // Vérifier si le JS n'est pas déjà chargé
-            if (document.getElementById(`app-js-${appId}`)) {
-                resolve();
-                return;
-            }
-            
-            const script = document.createElement('script');
-            script.src = `apps/${appId}/app.js`;
-            script.id = `app-js-${appId}`;
-            
-            script.onload = () => resolve();
-            script.onerror = () => reject(new Error(`Erreur chargement JS ${appId}`));
-            
-            document.head.appendChild(script);
-        });
-    }
-    
     /**
      * Fermer une application
      * @param {string} appId - ID de l'application

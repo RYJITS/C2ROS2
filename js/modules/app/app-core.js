@@ -207,9 +207,9 @@ class AppCore {
                 tags: ['jeu', 'échecs', 'ia'],
                 builtin: true,
                 path: './apps/chess/',
-                entry: '/apps/chess/chess.html',
-                scripts: ['/apps/chess/engine.js', '/apps/chess/chess.js'],
-                styles: ['/apps/chess/chess.css']
+                entry: 'apps/chess/chess.html',
+                scripts: ['apps/chess/engine.js', 'apps/chess/chess.js'],
+                styles: ['apps/chess/chess.css']
             },
         ];
         

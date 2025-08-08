@@ -1,6 +1,14 @@
 import { makeStart, parseFEN, toFEN, legalMoves, isCheckmate, isStalemate, san, applyMove, Color } from './engine.js';
 
+if (window.__C2R_CHESS_MOUNTED) {
+  // Déjà monté : éviter de re-binder des listeners
+} else {
+  window.__C2R_CHESS_MOUNTED = true;
+}
+
 export function mountChessPro(root){
+  if (!root || root.__mounted) return;
+  root.__mounted = true;
   const boardEl = root.querySelector('#chessBoard');
   const movesEl = root.querySelector('#chessMoves');
   const turnEl = root.querySelector('#chessTurn');

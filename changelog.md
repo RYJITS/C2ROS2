@@ -1,4 +1,8 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.34] - 2025-08-08 "ChessPro"
+
+### ♟️ Échecs Pro
+- Remplacement de l'application Échecs par une version complète avec SAN, FEN, flip, roque, prise en passant et promotion automatique.
 ## [1.1.33] - 2025-07-10 "StoreTop"
 
 ### 🖌️ Mise en page du Store

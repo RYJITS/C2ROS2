@@ -1,0 +1,13 @@
+{
+  "id": "chess",
+  "name": "Échecs Pro",
+  "type": "application",
+  "icon": "fa-solid fa-chess-knight",
+  "entry": "/apps/chess/chess.html",
+  "scripts": ["/apps/chess/engine.js", "/apps/chess/chess.js"],
+  "styles": ["/apps/chess/chess.css"],
+  "version": "1.0.0",
+  "description": "Échecs complets : roque, en passant, promotion, échec & mat, pat. SAN, FEN, flip, surlignage.",
+  "author": "C2R",
+  "pwa": false
+}

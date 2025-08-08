@@ -1,0 +1,46 @@
+<div class="c2r-chess-pro">
+  <div class="chess-header">
+    <h2>Échecs Pro</h2>
+    <div class="chess-actions">
+      <button id="chessFlipBtn" class="c2r-btn" title="Retourner l’échiquier">↻</button>
+      <button id="chessNewBtn" class="c2r-btn" title="Nouvelle partie">⟲</button>
+      <button id="chessSettingsBtn" class="c2r-btn" title="Paramètres">⚙</button>
+    </div>
+  </div>
+
+  <div class="chess-status">
+    <span id="chessTurn" class="badge">Trait aux Blancs</span>
+    <span id="chessState" class="badge muted"></span>
+  </div>
+
+  <div class="chess-layout">
+    <div class="boardWrap">
+      <div id="chessBoard" class="board" role="grid" aria-label="échiquier 8 par 8"></div>
+    </div>
+    <aside class="side">
+      <div class="panel">
+        <div class="panelTitle">Coups (SAN)</div>
+        <ol id="chessMoves" class="moves"></ol>
+      </div>
+      <div class="panel">
+        <div class="panelTitle">Position (FEN)</div>
+        <div class="fenRow">
+          <input id="chessFEN" type="text" placeholder="FEN" />
+          <button id="chessLoadFEN" class="c2r-btn">Charger</button>
+        </div>
+        <button id="chessCopyFEN" class="c2r-btn">Copier FEN</button>
+      </div>
+    </aside>
+  </div>
+
+  <dialog id="chessSettings">
+    <form method="dialog" class="settingsForm">
+      <h3>Paramètres</h3>
+      <label><input type="checkbox" id="chessShowCoords" checked> Afficher coordonnées</label>
+      <label><input type="checkbox" id="chessShowHints" checked> Surligner coups légaux</label>
+      <menu>
+        <button value="cancel">Fermer</button>
+      </menu>
+    </form>
+  </dialog>
+</div>

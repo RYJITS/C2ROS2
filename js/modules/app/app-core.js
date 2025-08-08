@@ -195,8 +195,8 @@ class AppCore {
             },
             {
                 id: 'chess',
-                name: 'Échecs IA',
-                description: 'Jouez contre une intelligence artificielle',
+                name: 'Échecs Pro',
+                description: 'Échecs complets : roque, en passant, promotion, échec & mat, pat. SAN, FEN, flip, surlignage.',
                 icon: IconManager.getIcon('chess'),
                 category: 'Jeu',
                 type: 'application',
@@ -206,7 +206,10 @@ class AppCore {
                 permissions: ['network', 'storage'],
                 tags: ['jeu', 'échecs', 'ia'],
                 builtin: true,
-                path: './apps/chess/'
+                path: './apps/chess/',
+                entry: '/apps/chess/chess.html',
+                scripts: ['/apps/chess/engine.js', '/apps/chess/chess.js'],
+                styles: ['/apps/chess/chess.css']
             },
         ];
         
@@ -285,31 +288,37 @@ class AppCore {
     async loadAppFiles(app) {
         const files = {
             html: '',
-            css: '',
-            js: ''
+            css: [],
+            js: []
         };
-        
+
         try {
-            // Charger HTML
-            const htmlResponse = await fetch(`${app.path}app.html`);
+            const htmlUrl = app.entry || `${app.path}app.html`;
+            const htmlResponse = await fetch(htmlUrl);
             if (htmlResponse.ok) {
                 files.html = await htmlResponse.text();
             }
-            
-            // Charger CSS
-            const cssResponse = await fetch(`${app.path}app.css`);
-            if (cssResponse.ok) {
-                files.css = await cssResponse.text();
+
+            if (app.styles && app.styles.length) {
+                files.css = app.styles.map(href => ({ href }));
+            } else {
+                const cssResponse = await fetch(`${app.path}app.css`);
+                if (cssResponse.ok) {
+                    files.css.push({ content: await cssResponse.text() });
+                }
             }
-            
-            // Charger JS
-            const jsResponse = await fetch(`${app.path}app.js`);
-            if (jsResponse.ok) {
-                files.js = await jsResponse.text();
+
+            if (app.scripts && app.scripts.length) {
+                files.js = app.scripts.map(src => ({ src, module: true }));
+            } else {
+                const jsResponse = await fetch(`${app.path}app.js`);
+                if (jsResponse.ok) {
+                    files.js.push({ content: await jsResponse.text() });
+                }
             }
-            
+
             return files;
-            
+
         } catch (error) {
             console.error(`Erreur chargement fichiers pour ${app.name}:`, error);
             throw error;
@@ -330,24 +339,41 @@ class AppCore {
             container.innerHTML = '';
             
             // Injecter le CSS
-            if (app.css) {
-                const styleElement = document.createElement('style');
-                styleElement.setAttribute('data-app', appId);
-                styleElement.textContent = app.css;
-                document.head.appendChild(styleElement);
+            if (app.css && app.css.length) {
+                app.css.forEach(style => {
+                    if (style.href) {
+                        const link = document.createElement('link');
+                        link.rel = 'stylesheet';
+                        link.href = style.href;
+                        link.setAttribute('data-app', appId);
+                        document.head.appendChild(link);
+                    } else if (style.content) {
+                        const styleElement = document.createElement('style');
+                        styleElement.setAttribute('data-app', appId);
+                        styleElement.textContent = style.content;
+                        document.head.appendChild(styleElement);
+                    }
+                });
             }
-            
+
             // Injecter le HTML
             if (app.html) {
                 container.innerHTML = app.html;
             }
-            
+
             // Exécuter le JavaScript
-            if (app.js) {
-                const scriptElement = document.createElement('script');
-                scriptElement.setAttribute('data-app', appId);
-                scriptElement.textContent = app.js;
-                document.head.appendChild(scriptElement);
+            if (app.js && app.js.length) {
+                app.js.forEach(script => {
+                    const scriptElement = document.createElement('script');
+                    scriptElement.setAttribute('data-app', appId);
+                    if (script.src) {
+                        scriptElement.type = script.module ? 'module' : 'text/javascript';
+                        scriptElement.src = script.src;
+                    } else if (script.content) {
+                        scriptElement.textContent = script.content;
+                    }
+                    document.head.appendChild(scriptElement);
+                });
             }
             
             this.currentApp = app;
@@ -370,7 +396,9 @@ class AppCore {
             // Supprimer les styles
             const styleElements = document.querySelectorAll(`style[data-app="${appId}"]`);
             styleElements.forEach(el => el.remove());
-            
+            const linkElements = document.querySelectorAll(`link[data-app="${appId}"]`);
+            linkElements.forEach(el => el.remove());
+
             // Supprimer les scripts
             const scriptElements = document.querySelectorAll(`script[data-app="${appId}"]`);
             scriptElements.forEach(el => el.remove());

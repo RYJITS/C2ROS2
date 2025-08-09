@@ -5,28 +5,35 @@
  * Description: Gestion des thèmes, navigation et interface responsive
  */
 
-// Base path pour GitHub Pages “project” (ex: /C2ROS2/)
+// Détermine le chemin de base pour GitHub Pages (ex: "/C2ROS2/")
 function getBasePath() {
     const path = window.location.pathname;
     return path.endsWith('/') ? path : path.replace(/\/[^/]*$/, '/');
 }
 
-// Résolution d’assets (relatifs/absolus) vers une URL chargeable
-function resolveAsset(p) {
+// Résout un chemin relatif ou absolu vers une URL utilisable
+function resolveURL(p) {
     if (!p) return p;
     if (/^https?:\/\//i.test(p)) return p;
-    const base = getBasePath();
-    if (p.startsWith('/')) return base + p.replace(/^\//, '');
-    return base + p;
+    const base = new URL(getBasePath(), location.origin);
+    return new URL(p.replace(/^\//, ''), base).href;
 }
 
+// Injecte une feuille de style si elle n'est pas déjà présente
 function ensureStyle(href) {
-    const url = resolveAsset(href);
+    const url = resolveURL(href);
     if ([...document.styleSheets].some(s => s.href && (s.href === url || s.href.endsWith(href)))) return;
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = url;
     document.head.appendChild(link);
+}
+
+// Importe dynamiquement un module ES
+async function importModule(path) {
+    const url = resolveURL(path);
+    console.debug('[Chess] import', url);
+    return await import(/* @vite-ignore */ url);
 }
 
 class UICore {
@@ -726,62 +733,57 @@ class UICore {
      */
     async loadAppContent(app) {
         try {
-            // Créer une modal pour l'application
+            if (app.id === 'chess') {
+                console.debug('[Chess] openApp', app?.id || app?.name, app);
+            }
+
             const appModal = this.createAppModal(app);
             document.body.appendChild(appModal);
 
-            const entry = app.entry || `apps/${app.id}/app.html`;
-            const styles = app.styles || [`apps/${app.id}/app.css`];
-            const scripts = app.scripts || [`apps/${app.id}/app.js`];
+            // 1) Styles
+            (app.styles || []).forEach(ensureStyle);
 
-            // 3.1 Injecter les styles déclarés
-            (styles || []).forEach(ensureStyle);
-
-            // 3.2 Charger le HTML d’entrée
-            const entryUrl = resolveAsset(entry);
+            // 2) HTML d’entrée
+            const entryUrl = resolveURL(app.entry || `apps/${app.id}/app.html`);
+            if (app.id === 'chess') console.debug('[Chess] fetch HTML', entryUrl);
             const html = await fetch(entryUrl).then(r => {
-                if (!r.ok) throw new Error(`Erreur chargement ${app.name}`);
+                if (!r.ok) throw new Error('HTTP ' + r.status + ' on ' + entryUrl);
                 return r.text();
             });
 
-            // 3.3 Insérer le HTML dans la modal
-            const appContent = appModal.querySelector('.app-modal-content');
-            appContent.innerHTML = html;
-            IconManager.inject(appContent);
+            // 3) Conteneur
+            const container = appModal.querySelector('.app-modal-content');
+            container.innerHTML = html;
+            IconManager.inject(container);
 
-            // 3.4 Importer les modules ES
-            for (const m of (scripts || [])) {
-                const url = resolveAsset(m);
-                await import(url);
+            // 4) Importer les modules ES
+            const modules = [];
+            for (const m of (app.scripts || [])) {
+                const mod = await importModule(m);
+                modules.push(mod);
             }
 
-            // 3.5 Montage explicite pour Échecs Pro
+            // 5) Montage explicite pour Échecs Pro
             if (app.id === 'chess') {
-                try {
-                    const mainModUrl = resolveAsset('apps/chess/chess.js');
-                    const mod = await import(mainModUrl);
-                    const root = appContent.querySelector('.c2r-chess-pro');
-                    if (mod && typeof mod.mountChessPro === 'function' && root) {
-                        if (!window.__C2R_CHESS_MOUNTED) {
-                            window.__C2R_CHESS_MOUNTED = true;
-                            if (!root.__mounted) {
-                                root.__mounted = true;
-                                mod.mountChessPro(root);
-                            }
-                        }
-                    }
-                } catch (e) {
-                    console.error('Chess mount failed:', e);
+                const main = modules.at(-1) || {};
+                const mount = main.mountChessPro || window.mountChessPro;
+                const root = container.querySelector('.c2r-chess-pro');
+                console.debug('[Chess] mount?', !!mount, 'root?', !!root);
+                if (typeof mount === 'function' && root) {
+                    if (!root.__mounted) { root.__mounted = true; mount(root); }
+                    console.info('[Chess] mounted OK');
+                } else {
+                    console.warn('[Chess] mountChessPro introuvable ou .c2r-chess-pro manquant');
                 }
             }
 
-            // 3.6 Afficher la modal
+            // 6) Afficher la modal
             appModal.classList.add('show');
 
             this.showNotification(`${app.name} lancée avec succès`, 'success');
 
-        } catch (error) {
-            console.error('Erreur lancement application:', error);
+        } catch (e) {
+            console.error('[Chess] openApp failed', e);
             this.showNotification(`Erreur lors du lancement de ${app.name}`, 'error');
         }
     }

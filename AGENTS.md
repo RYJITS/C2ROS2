@@ -10,6 +10,7 @@ Ce dépôt contient un ensemble d'applications et de pages web modulaires. Les i
 - Mettez à jour systématiquement les fichiers `AGENTS.md` pour refléter les dernières fonctionnalités et choix techniques.
 - Les boutons de contrôle des fenêtres (fermer, agrandir, réduire) utilisent les symboles « × », « □ » et « − » sans arrière‑plan.
 - Les ressources sont résolues dynamiquement pour GitHub Pages et les scripts sont chargés en modules ES.
+- Le Store charge les applications en important explicitement leurs modules ES puis en montant l'interface correspondante. L'app « Échecs Pro » est initialisée via `mountChessPro` avec des journaux de debug.
 
 
 ## Plateforme d'echecs moderne

@@ -6,6 +6,7 @@
 - Tous les chemins restent **relatifs** pour compatibilité GitHub Pages.
 - Un garde global empêche le double montage lorsque le module est chargé plusieurs fois.
 - Le Store importe `engine.js` et `chess.js` comme modules ES, puis appelle explicitement `mountChessPro(root)` après injection du HTML.
+- Chaque étape de chargement est tracée dans la console et les chemins respectent le préfixe GitHub Pages.
 
 ## Fonctionnalités
 

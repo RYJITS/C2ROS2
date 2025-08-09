@@ -1,4 +1,8 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.35] - 2025-08-08 "ChessLoader"
+
+### ♟️ Chargement explicite des modules
+- Le Store résout le chemin de base pour GitHub Pages, importe `engine.js` et `chess.js` comme modules ES puis appelle `mountChessPro` avec journalisation.
 ## [1.1.34] - 2025-08-08 "ChessPro"
 
 ### ♟️ Échecs Pro

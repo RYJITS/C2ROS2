@@ -1,4 +1,11 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.36] - 2025-08-09 "ChessMount"
+
+### ♟️ Correctifs Échecs Pro
+- Overlay de débogage activé via `?debug=1` capturant les journaux.
+- Import explicite des modules et montage manuel de `mountChessPro(root)`.
+- Levée du blocage des clics grâce aux règles CSS `pointer-events`.
+
 ## [1.1.35] - 2025-08-08 "ChessLoader"
 
 ### ♟️ Chargement explicite des modules

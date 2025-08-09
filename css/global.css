@@ -624,3 +624,7 @@ body[data-info-popups='disabled'] .notifications-container {
         width: calc(100% - 40px);
     }
 }
+
+.c2r-window .content, .c2r-chess-pro { pointer-events:auto; }
+.c2r-modal-backdrop { pointer-events:none; }
+

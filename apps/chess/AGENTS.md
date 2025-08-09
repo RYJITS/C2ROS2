@@ -4,7 +4,8 @@
 - Utiliser HTML, CSS et JavaScript en modules ES.
 - Documenter toute nouvelle fonctionnalité directement dans ce fichier.
 - Tous les chemins restent **relatifs** pour compatibilité GitHub Pages.
-- Un garde global empêche le double montage lorsque le module est chargé plusieurs fois.
+- Un garde global `__C2R_CHESS_EXPOSED` et l'attribut `root.__mounted` empêchent tout double montage.
+- `mountChessPro` est exposé sur `window` pour un appel explicite par le Store.
 - Le Store importe `engine.js` et `chess.js` comme modules ES, puis appelle explicitement `mountChessPro(root)` après injection du HTML.
 - Chaque étape de chargement est tracée dans la console et les chemins respectent le préfixe GitHub Pages.
 

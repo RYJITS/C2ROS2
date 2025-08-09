@@ -1,7 +1,7 @@
 import { makeStart, parseFEN, toFEN, legalMoves, isCheckmate, isStalemate, san, applyMove, Color } from './engine.js';
 
 if (window.__C2R_CHESS_MOUNTED) {
-  // Déjà monté : éviter de re-binder des listeners
+  // déjà importé quelque part : on laisse le loader appeler mount
 } else {
   window.__C2R_CHESS_MOUNTED = true;
 }

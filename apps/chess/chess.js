@@ -1,10 +1,6 @@
 import { makeStart, parseFEN, toFEN, legalMoves, isCheckmate, isStalemate, san, applyMove, Color } from './engine.js';
 
-if (window.__C2R_CHESS_MOUNTED) {
-  // déjà importé quelque part : on laisse le loader appeler mount
-} else {
-  window.__C2R_CHESS_MOUNTED = true;
-}
+if (!window.__C2R_CHESS_EXPOSED){ window.__C2R_CHESS_EXPOSED = true; }
 
 export function mountChessPro(root){
   if (!root || root.__mounted) return;
@@ -120,6 +116,8 @@ export function mountChessPro(root){
 
   render();
 }
+
+if (typeof window !== 'undefined') { window.mountChessPro = mountChessPro; }
 
 // Auto-mount si chess.html est chargé tel quel
 document.addEventListener('DOMContentLoaded', ()=>{

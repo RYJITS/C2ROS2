@@ -1,4 +1,9 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.37] - 2025-08-09 "MountFlag"
+
+### ♟️ Correctifs Échecs Pro
+- Le chargeur définit `root.__mounted` après l'appel à `mountChessPro`, assurant l'affichage de l'échiquier et l'activation des boutons.
+
 ## [1.1.36] - 2025-08-09 "ChessMount"
 
 ### ♟️ Correctifs Échecs Pro

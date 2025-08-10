@@ -40,7 +40,7 @@ async function openApp(app){
     const html = await fetch(entryUrl).then(r => { if(!r.ok) throw new Error(`HTTP ${r.status} on ${entryUrl}`); return r.text(); });
 
     // 3) Conteneur
-    const container = getAppContainer(app); // ta fonction existante
+    const container = getAppContainer(app);
     container.innerHTML = html;
 
     // 4) Importer les modules (les <script> dans innerHTML ne s’exécutent PAS)

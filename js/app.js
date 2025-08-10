@@ -71,4 +71,88 @@ async function openApp(app){
   }
 }
 
-window.C2R_APP_LOADER = { openApp };
+/**
+ * Créer un conteneur d'application
+ * @param {Object} app - Application
+ * @returns {HTMLElement} Conteneur
+ */
+function getAppContainer(app) {
+    let container = document.getElementById(`app-container-${app.id}`);
+    if (!container) {
+        container = document.createElement('div');
+        container.id = `app-container-${app.id}`;
+        container.className = 'app-container';
+        container.style.display = 'none';
+        document.body.appendChild(container);
+    }
+    return container;
+}
+
+/**
+ * Afficher la fenêtre d'application
+ * @param {HTMLElement} container - Conteneur de l'application
+ */
+function showAppWindow(container) {
+    // Si UICore est disponible, utiliser sa méthode
+    if (window.C2R_SYSTEM?.uiCore) {
+        const appId = container.id.replace('app-container-', '');
+        const app = window.C2R_SYSTEM.appCore.getApp(appId);
+        if (app) {
+            window.C2R_SYSTEM.uiCore.loadAppContent(app);
+            return;
+        }
+    }
+    
+    // Méthode de fallback : afficher dans une modal simple
+    const modal = document.createElement('div');
+    modal.className = 'simple-app-modal';
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+    `;
+    
+    const content = document.createElement('div');
+    content.style.cssText = `
+        background: #1a1a1a;
+        border-radius: 8px;
+        max-width: 90vw;
+        max-height: 90vh;
+        overflow: auto;
+        position: relative;
+    `;
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '×';
+    closeBtn.style.cssText = `
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1;
+    `;
+    closeBtn.onclick = () => modal.remove();
+    
+    content.appendChild(closeBtn);
+    
+    // Copier le contenu du conteneur dans la modal
+    const appContent = container.cloneNode(true);
+    appContent.style.display = 'block';
+    content.appendChild(appContent);
+    
+    modal.appendChild(content);
+    document.body.appendChild(modal);
+}
+
+window.C2R_APP_LOADER = { openApp, getAppContainer, showAppWindow };

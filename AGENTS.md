@@ -11,6 +11,8 @@ Ce dépôt contient un ensemble d'applications et de pages web modulaires. Les i
 - Les boutons de contrôle des fenêtres (fermer, agrandir, réduire) utilisent les symboles « × », « □ » et « − » sans arrière‑plan.
 - Les ressources sont résolues dynamiquement pour GitHub Pages et les scripts sont chargés en modules ES.
 - Le Store charge les applications en important explicitement leurs modules ES puis en montant l'interface correspondante. L'app « Échecs Pro » est initialisée via `mountChessPro` avec des journaux de debug.
+- Le chargeur marque `root.__mounted` seulement après l'exécution réussie de `mountChessPro` afin d'activer l'échiquier et les boutons.
+- L'UI Core respecte cette règle en appelant `mountChessPro` puis en définissant `root.__mounted`.
 - Un overlay de débogage activé par `?debug=1` capture tous les journaux console.
 
 

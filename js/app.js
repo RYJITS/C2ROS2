@@ -54,7 +54,10 @@ async function openApp(app){
     console.debug('[Loader] mount?', !!mount, 'root?', !!root);
 
     if (typeof mount === 'function' && root){
-      if (!root.__mounted){ root.__mounted = true; mount(root); }
+      if (!root.__mounted){
+        mount(root);
+        root.__mounted = true;
+      }
       console.info('[Loader] mounted OK');
     } else {
       console.warn('[Loader] mountChessPro introuvable OU .c2r-chess-pro manquant');

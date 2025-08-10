@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Échecs Pro</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="theme-dark">
+    <div style="padding: 20px;">
+        <h1>Test - Application Échecs Pro</h1>
+        <p>Cette page teste le chargement et l'exécution de l'application d'échecs.</p>
+        
+        <div style="margin: 20px 0;">
+            <button onclick="testChessApp()" style="background: #0066cc; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer;">
+                Lancer Échecs Pro
+            </button>
+            <button onclick="testDirectMount()" style="background: #22c55e; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; margin-left: 10px;">
+                Test Montage Direct
+            </button>
+        </div>
+        
+        <div id="test-output" style="background: #1a1a1a; padding: 15px; border-radius: 6px; font-family: monospace; color: #00ff00; margin-top: 20px; min-height: 200px; overflow: auto;"></div>
+        
+        <!-- Conteneur pour test direct -->
+        <div id="direct-test-container" style="margin-top: 20px; display: none; border: 2px solid #333; border-radius: 8px; padding: 15px;">
+            <h3>Test Direct</h3>
+            <div id="direct-chess-app"></div>
+        </div>
+    </div>
+
+    <!-- Chargement des modules -->
+    <script src="js/modules/core/config.js"></script>
+    <script src="js/modules/ui/icon-manager.js"></script>
+    <script src="js/modules/user/user-core.js"></script>
+    <script src="js/modules/app/app-core.js"></script>
+    <script src="js/modules/ui/ui-core.js"></script>
+    <script src="js/modules/profile/profile-system.js"></script>
+    <script src="js/modules/system/system-integration.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        const output = document.getElementById('test-output');
+        
+        function log(message) {
+            output.innerHTML += new Date().toLocaleTimeString() + ' - ' + message + '\n';
+            output.scrollTop = output.scrollHeight;
+            console.log(message);
+        }
+
+        // Initialiser le système
+        document.addEventListener('DOMContentLoaded', async () => {
+            log('🚀 Initialisation du système de test...');
+            
+            try {
+                // Créer une instance du système d'intégration
+                window.C2R_INTEGRATION = new SystemIntegration();
+                
+                // Attendre que le système soit prêt
+                window.addEventListener('c2rosReady', (event) => {
+                    log('✅ Système C2R OS prêt');
+                    log('📦 Modules chargés: ' + event.detail.system.getSystemStatus().modules.join(', '));
+                    
+                    // Vérifier que l'app d'échecs est disponible
+                    const chessApp = window.C2R_SYSTEM.appCore.getApp('chess');
+                    if (chessApp) {
+                        log('♟️ Application Échecs Pro trouvée: ' + chessApp.name);
+                        log('📝 Description: ' + chessApp.description);
+                        log('📄 Fichiers: HTML=' + chessApp.entry + ', Scripts=' + chessApp.scripts.join(', '));
+                    } else {
+                        log('❌ Application Échecs Pro non trouvée');
+                    }
+                });
+                
+            } catch (error) {
+                log('❌ Erreur initialisation: ' + error.message);
+            }
+        });
+
+        async function testChessApp() {
+            log('🧪 Test de lancement de l\'application Échecs Pro...');
+            
+            try {
+                const appCore = window.C2R_SYSTEM?.appCore;
+                const uiCore = window.C2R_SYSTEM?.uiCore;
+                
+                if (!appCore || !uiCore) {
+                    throw new Error('Modules système non disponibles');
+                }
+                
+                const chessApp = appCore.getApp('chess');
+                if (!chessApp) {
+                    throw new Error('Application Échecs Pro non trouvée');
+                }
+                
+                log('📱 Lancement via UICore...');
+                uiCore.launchApp('chess');
+                
+            } catch (error) {
+                log('❌ Erreur test app: ' + error.message);
+            }
+        }
+
+        async function testDirectMount() {
+            log('🔧 Test de montage direct de l\'application...');
+            
+            try {
+                const container = document.getElementById('direct-test-container');
+                const appContainer = document.getElementById('direct-chess-app');
+                container.style.display = 'block';
+                
+                // Charger les styles
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'apps/chess/chess.css';
+                document.head.appendChild(link);
+                
+                // Charger le HTML
+                const response = await fetch('apps/chess/chess.html');
+                const html = await response.text();
+                appContainer.innerHTML = html;
+                
+                log('📄 HTML chargé');
+                
+                // Charger les modules
+                const engineModule = await import('./apps/chess/engine.js');
+                const chessModule = await import('./apps/chess/chess.js');
+                
+                log('📦 Modules ES6 chargés');
+                
+                // Monter l'application
+                const root = appContainer.querySelector('.c2r-chess-pro');
+                if (root && chessModule.mountChessPro) {
+                    chessModule.mountChessPro(root);
+                    log('✅ Application montée avec succès!');
+                } else {
+                    log('❌ Échec du montage: root=' + !!root + ', mount=' + !!chessModule.mountChessPro);
+                }
+                
+            } catch (error) {
+                log('❌ Erreur test direct: ' + error.message);
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>

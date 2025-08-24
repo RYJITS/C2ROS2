@@ -43,7 +43,7 @@ async function openApp(app){
     const container = getAppContainer(app); // ta fonction existante
     container.innerHTML = html;
 
-    // 4) Importer les modules (les <script> dans innerHTML ne s’exécutent PAS)
+    // 4) Importer les modules (les <script> dans innerHTML ne s'executent PAS)
     const mods = [];
     for (const m of (app.scripts || [])) mods.push(await importModule(m));
 
@@ -54,17 +54,20 @@ async function openApp(app){
     console.debug('[Loader] mount?', !!mount, 'root?', !!root);
 
     if (typeof mount === 'function' && root){
-      if (!root.__mounted){ root.__mounted = true; mount(root); }
+      if (!root.__mounted){
+        mount(root);
+        root.__mounted = true;
+      }
       console.info('[Loader] mounted OK');
     } else {
       console.warn('[Loader] mountChessPro introuvable OU .c2r-chess-pro manquant');
     }
 
-    // 6) Afficher fenêtre/modale
+    // 6) Afficher fenetre/modale
     showAppWindow(container);
   } catch(e){
     console.error('[Loader] openApp failed', e);
-    alert('Échec lancement Échecs Pro : ' + e.message);
+    alert('Echec lancement Echecs Pro : ' + e.message);
   }
 }
 

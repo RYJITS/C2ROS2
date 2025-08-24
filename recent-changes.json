@@ -1,17 +1,32 @@
 [{
+    "version": "1.1.38",
+    "datetime": "2025-08-09 12:00",
+    "description": "Le Store monte Echecs Pro puis active le drapeau __mounted"
+  },
+  {
+    "version": "1.1.37",
+    "datetime": "2025-08-09 12:00",
+    "description": "Le chargeur attend la fin de mountChessPro avant de marquer l'app montee"
+  },
+  {
+    "version": "1.1.36",
+    "datetime": "2025-08-09 12:00",
+    "description": "Overlay de debug et montee explicite de mountChessPro"
+  },
+  {
     "version": "1.1.35",
     "datetime": "2025-08-08 12:00",
-    "description": "Import explicite des modules pour Échecs Pro"
+    "description": "Import explicite des modules pour Echecs Pro"
   },
   {
     "version": "1.1.34",
     "datetime": "2025-08-08 12:00",
-    "description": "Remplacement de l'application Échecs par Échecs Pro"
+    "description": "Remplacement de l'application Echecs par Echecs Pro"
   },
   {
     "version": "1.1.33",
     "datetime": "2025-07-10 12:00",
-    "description": "La tuile du Store remonte au sommet de l'écran"
+    "description": "La tuile du Store remonte au sommet de l'ecran"
   },
   {
     "version": "1.1.32",
@@ -21,21 +36,6 @@
   {
     "version": "1.1.31",
     "datetime": "2025-06-25 12:00",
-    "description": "Mise à jour de la date sur la page d'accueil"
-  },
-  {
-    "version": "1.1.30",
-    "datetime": "2025-07-09 12:00",
-    "description": "Tuile historique sur la page d'accueil"
-  },
-  {
-    "version": "1.1.29",
-    "datetime": "2025-07-08 14:20",
-    "description": "Harmonisation des contrôles"
-  },
-  {
-    "version": "1.1.29",
-    "datetime": "2025-07-08 10:10",
-    "description": "Notification de mise à jour"
+    "description": "Mise a jour de la date sur la page d'accueil"
   }
 ]

@@ -770,7 +770,10 @@ class UICore {
                 const root = container.querySelector('.c2r-chess-pro');
                 console.debug('[Chess] mount?', !!mount, 'root?', !!root);
                 if (typeof mount === 'function' && root) {
-                    if (!root.__mounted) { root.__mounted = true; mount(root); }
+                    if (!root.__mounted) {
+                        mount(root);
+                        root.__mounted = true;
+                    }
                     console.info('[Chess] mounted OK');
                 } else {
                     console.warn('[Chess] mountChessPro introuvable ou .c2r-chess-pro manquant');

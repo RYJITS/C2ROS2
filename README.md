@@ -2,12 +2,19 @@
 
 Mini OS modulaire basé sur HTML/CSS/JS.
 
-Les icônes Font Awesome sont chargées via CDN. Le fichier `index.html` référence directement `https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css`.
+## Page d'accueil C2R Design
+
+Le fichier `index.html` propose une landing page responsive présentant les services du studio (créativité IA, automatisation, formations et web apps). Elle adopte un thème sombre (fond noir, texte blanc, accent rouge #ff1f1f) et la police Montserrat. Les boutons mènent directement à l'interface principale `os.html` pour accéder au Store et au formulaire de contact. Cette même vitrine est intégrée comme section d'accueil dans `os.html` afin de bénéficier de la barre latérale.
+
+La section **Apprentissage et accompagnement** présente notamment l'automatisation avec Lya, l'intégration de l'IA en entreprise, la chaîne de production et le design augmenté.
+
+
+Les icônes Font Awesome sont chargées via CDN. Les fichiers `index.html` et `os.html` référencent directement `https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css`.
 
 - Voir [`docs/icon-workflow.md`](docs/icon-workflow.md) pour le workflow complet des icônes.
 - La documentation de chaque module se trouve dans `docs/*-readme.md`.
 - La liste des pop-ups indispensables figure dans [`docs/popup-readme.md`](docs/popup-readme.md).
-- Une section **Contact** intégrée dans `index.html` permet d'envoyer un message à `contact@c2ros.com`.
+- Une section **Contact** intégrée dans `os.html` permet d'envoyer un message à `contact@c2ros.com`.
 - La documentation de cette section se trouve dans [`docs/contact-readme.md`](docs/contact-readme.md).
 - Des fichiers `AGENTS.md` définissent les directives à suivre pour chaque page et chaque application. Consultez-les avant toute modification.
 

@@ -15,6 +15,16 @@ Ce dépôt contient un ensemble d'applications et de pages web modulaires. Les i
 - Un overlay de débogage activé par `?debug=1` capture tous les journaux console.
 
 
+## Page d'accueil C2R Design
+
+- Fichier `index.html` associé à `css/landing.css` pour une landing page responsive.
+- La même mise en page est intégrée dans `os.html` via la section `#page-home` et un conteneur `.landing-page` pour bénéficier de la barre latérale.
+- Palette sombre : fond noir, texte blanc, accent rouge #ff1f1f.
+- Police Montserrat pour l'ensemble des textes.
+- Structure verticale mobile-first (ratio 9:16) avec animations légères au défilement.
+- Boutons reliant l'interface principale `#store` et la section Contact (`#contact`).
+- La section **Apprentissage et accompagnement** détaille l'automatisation avec Lya, l'intégration de l'IA en entreprise, la chaîne de production et le design augmenté.
+
 ## Plateforme d'echecs moderne
 
 Un projet complet de jeu d'echecs en ligne est installe dans les dossiers racines `client`, `server`, `ai` et `db`. Il utilise React, Node.js, PostgreSQL et Docker. Consultez `docs/chess-platform/README.md` pour le detail du lancement.

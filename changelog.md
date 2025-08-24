@@ -1,4 +1,19 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.39] - 2025-08-10 "HomeLanding"
+
+### 🏠 Accueil unifié
+- La page vitrine est intégrée dans `os.html` via la section `#page-home` et conserve la barre latérale.
+- `css/landing.css` est désormais limité au conteneur `.landing-page` pour éviter tout conflit de style.
+- La section Formations détaille l'automatisation avec Lya, l'intégration de l'IA en entreprise, la chaîne de production et le design augmenté.
+
+## [1.1.38] - 2025-08-10 "LandingMain"
+
+### 🏠 Vitrine principale
+- `accueil.html` devient `index.html` pour servir de page vitrine.
+- L'ancien `index.html` est renommé `os.html`.
+- Les liens de la vitrine redirigent vers `os.html#store` et `os.html#contact`.
+- Le manifeste PWA démarre désormais sur `os.html`.
+
 ## [1.1.37] - 2025-08-09 "MountFlag"
 
 ### ♟️ Correctifs Échecs Pro
@@ -336,7 +351,8 @@
 
 ```
 c2rOS2/
-├── index.html                 # Page principale
+├── index.html                 # Page vitrine
+├── os.html                    # Interface principale
 ├── version.json              # Informations de version
 ├── changelog.md              # Ce fichier
 │

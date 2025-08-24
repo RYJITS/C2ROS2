@@ -1,7 +1,7 @@
 {
   "name": "C2R OS",
   "short_name": "C2R",
-  "start_url": "./index.html",
+  "start_url": "./os.html",
   "display": "standalone",
   "background_color": "#0D0D12",
   "theme_color": "#0D0D12"

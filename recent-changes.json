@@ -1,4 +1,9 @@
 [{
+    "version": "1.1.39",
+    "datetime": "2025-08-11 12:00",
+    "description": "Navigation mobile transformée en tiroir avec barre supérieure et overlay"
+  },
+  {
     "version": "1.1.37",
     "datetime": "2025-08-09 12:00",
     "description": "Le chargeur attend la fin de mountChessPro avant de marquer l'app montée"

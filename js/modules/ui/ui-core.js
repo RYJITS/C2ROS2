@@ -106,6 +106,15 @@ class UICore {
                 this.closeSidebar();
             });
         }
+
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggleSidebar();
+            });
+        }
         
         // Gestion responsive
         window.addEventListener('resize', () => {
@@ -1035,40 +1044,40 @@ class UICore {
      */
     toggleSidebar() {
         const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('overlay');
+        if (!sidebar) return;
 
-        if (window.innerWidth <= this.config.ui.responsiveBreakpoint) {
-            return;
-        }
+        const isOpen = sidebar.classList.contains('open');
 
-        if (sidebar && overlay) {
-            const isOpen = sidebar.classList.contains('open');
-
-            if (isOpen) {
-                this.closeSidebar();
-            } else {
-                this.openSidebar();
-            }
+        if (isOpen) {
+            this.closeSidebar();
+        } else {
+            this.openSidebar();
         }
     }
-    
+
     /**
      * Ouvrir la sidebar
      */
     openSidebar() {
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('overlay');
+        if (!sidebar) return;
 
-        if (window.innerWidth <= this.config.ui.responsiveBreakpoint) {
-            return;
+        const isMobile = window.innerWidth <= this.config.ui.responsiveBreakpoint;
+
+        sidebar.classList.add('open');
+
+        if (isMobile) {
+            overlay?.classList.add('show');
+            document.body.classList.add('sidebar-open');
+        } else {
+            overlay?.classList.remove('show');
+            document.body.classList.remove('sidebar-open');
         }
-
-        sidebar?.classList.add('open');
-        overlay?.classList.add('show');
 
         this.sidebarOpen = true;
     }
-    
+
     /**
      * Fermer la sidebar
      */
@@ -1078,7 +1087,8 @@ class UICore {
 
         sidebar?.classList.remove('open');
         overlay?.classList.remove('show');
-        
+        document.body.classList.remove('sidebar-open');
+
         this.sidebarOpen = false;
     }
     
@@ -1086,9 +1096,7 @@ class UICore {
      * Gérer le redimensionnement
      */
     handleResize() {
-        if (window.innerWidth > this.config.ui.responsiveBreakpoint) {
-            this.closeSidebar();
-        }
+        this.closeSidebar();
     }
     
     /**

@@ -1,8 +1,8 @@
 {
-  "version": "1.1.34",
-  "build": "2025-08-08",
-  "codename": "Genesis",
-  "description": "Premier déploiement du système C2R OS",
+  "version": "1.1.39",
+  "build": "2025-08-11",
+  "codename": "DualScreen",
+  "description": "Optimisations smartphone/bureau du shell C2R OS",
   "core_modules": [
     "UserCore",
     "AuthSystem", 

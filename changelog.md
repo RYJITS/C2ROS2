@@ -1,4 +1,11 @@
 # 📝 C2R OS - Journal des modifications
+## [1.1.39] - 2025-08-11 "DualScreen"
+
+### 📱🖥️ Responsivité généralisée
+- Ajout d'une barre supérieure mobile avec bouton hamburger pour ouvrir le menu latéral.
+- Conversion de la sidebar compacte en tiroir pleine hauteur sur smartphone avec blocage du défilement.
+- Harmonisation des styles mobiles pour la barre latérale et sécurisation de l'ouverture/fermeture via l'overlay.
+
 ## [1.1.38] - 2025-08-10 "LandingMain"
 
 ### 🏠 Vitrine principale
